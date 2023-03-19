@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Markdown kitchen sink
-nav_order: 99
+title: Test
+nav_order: 2
 ---
 
 # Test
+
+$\sum _i ^n i$
