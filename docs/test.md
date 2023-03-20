@@ -28,3 +28,19 @@ $$
     \end{array} \right)
 \end{aligned}
 $$
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'location.href',
+    owner: 'zej97',
+    repo: 'zej97.github.io',
+    oauth: {
+        client_id: '790566d6d3d3cea0463a',
+        client_secret: 'd1845b571c0254dd0274f2936c3d53f672776ab8',
+    },
+})
+gitment.render('container')
+</script>
