@@ -2,7 +2,6 @@
 title: Game Theory
 layout: default
 nav_order: 2
-math: mathjax
 ---
 # Game Theory
 

@@ -1,11 +1,6 @@
 title: Ze Jin
 description: Post Knowledge & Experience!
 theme: just-the-docs
-# remote_theme: just-the-docs/just-the-docs@v0.4.2
 
 url: https://zej97.github.io
-math: mathjax
-
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
-
+math: katex
