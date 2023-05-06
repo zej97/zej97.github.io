@@ -16,6 +16,6 @@ For some reasons, I was not able to attend NYU to continue my computer science e
 If you happen to come across this blog, feel free to discuss any topic with me. 
 
 
-Gin (zejin.97@gmail.com)
+Gin [zejin.97@gmail.com](zejin.97@gmail.com)
 
 6 May 2023
