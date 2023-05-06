@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 
-Welcome to the **{{ site.title }}** blog!
+Welcome to the **{{ site.title }}**'s blog!
 
 Here you will find a collection of articles about recommender systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry of recommender systems. In addition, I will share some knowledge I learned like game theory. I hope you will find them useful. For me, writing is a way to learn. If you find any mistakes, please let me know. I will be very grateful. 
 
