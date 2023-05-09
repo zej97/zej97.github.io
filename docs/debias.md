@@ -46,9 +46,11 @@ where $\rm DNN$ is the ranking model, $u$ is the user's features, $t$ is the can
 (Todo: the difference between relative position and absolute position).
 
 ## Conclusion
-The experiment was carried out in the Douyin (TikTok) live broadcast. This model the model led to an average increase of 0.2% in viewing time and a 0.18% increase in CTR UAUC. 
+The experiment was carried out in the Douyin (TikTok) live broadcast. This model led to an average increase of 0.2% in viewing time and a 0.18% increase in CTR UAUC. 
 
 However, there are many hidden obstacles when it comes to debiasing. First, our understanding of bias may not be accurate. Second, our debiasing approach cannot guarantee the complete removal of bias or, even worse, it may introduce new biases. These two points should be taken into account when designing debiasing algorithms at the begining.
+
+It is definitely difficult to earn short-term indicators, but it will be of great help to the healthy ecology of the long-term recommendation system.
 
 
 ---
