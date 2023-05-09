@@ -3,8 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
-
+<img style="float: left; border-radius: 50%; margin:0px 22px" src="./assets/images/portrait.jpg"  width="25%">
 Welcome to the **{{ site.title }}**'s blog!
 
 Here you will find a collection of articles about recommender systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful. For me, writing is a way to learn. If you find any mistakes, please let me know. I will be very grateful for your feedback. 
@@ -15,6 +14,8 @@ For some reasons, I was unable to attend [MSc CS at Courant, NYU](https://cims.n
 
 If you have come across this blog, I would be delighted to engage with you in any discussion related to the topics that I address. These topics range from current events to personal experiences that have shaped my worldview. I am always eager to learn from others and expand my knowledge base, so please do not hesitate to share your thoughts and opinions with me. I welcome any and all conversations that can broaden our perspectives and foster mutual understanding.
 
-Gin zejin.97@gmail.com
+Gin 
+
+[LinkedIn](https://www.linkedin.com/in/ze-jin-7219531b2/) zejin.97@gmail.com 
 
 6 May 2023
