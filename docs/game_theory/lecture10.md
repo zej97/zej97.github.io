@@ -14,8 +14,8 @@ Players making “moves” to which other players react with “moves”.
 Actually, the tree here can be regarded as a **state-transformation machine**.
 
 1. Let $\Sigma = \lbrace  a_1, a_2, \cdots, a_k \rbrace$ be an **alphabet**. A **tree** over $\Sigma$ is a set $T \subseteq \Sigma^\ast$ of nodes $w \in \Sigma^\ast$ such that: if $w = w'a \in T$, then $w'\in T$. (i.e. it is a prefix closed subset of $\Sigma^\ast$.)
-2. For a node $w \in T$, the **children** of $w$ are $ch(w) = \lbrace w'\in T \vert w' = wa, \text{for some } a\in \Sigma\rbrace$. For $w \in T$, let $Act(w) = \lbrace a\in \Sigma \vert wa\in T\rbrace$ be “**actions**” available at $w$.
-3. A leaf (or terminal) node $w \in T$ is one where $ch(w) = \empty$. Let $L_T = \lbrace w\in T \vert w \text{ a leaf} \rbrace$.
+2. For a node $w \in T$, the **children** of $w$ are $ch(w) = \lbrace w'\in T \mid w' = wa, \text{for some } a\in \Sigma\rbrace$. For $w \in T$, let $Act(w) = \lbrace a\in \Sigma \mid wa\in T\rbrace$ be “**actions**” available at $w$.
+3. A leaf (or terminal) node $w \in T$ is one where $ch(w) = \empty$. Let $L_T = \lbrace w\in T \mid w \text{ a leaf} \rbrace$.
 4. A (finite or infinite) path $\pi$ in $T$ is sequence $\pi = w_0, w_1, w_2, \cdots$ of nodes $w_i\in T$, where if $w_{i + 1} \in T$ then $w_{i + 1} = w_ia$, for some $a \in \Sigma$. It is a **complete path (or play)** if $w_0 = \epsilon$ and every non-leaf node in $\pi$ has a child in $\pi$. Let $\Psi_{T}$ denote the **set of** **plays** of $T$.
 
 ### Game in Extensive form
