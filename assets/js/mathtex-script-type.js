@@ -3,7 +3,10 @@
 
 // import katex from "katex";
 
-const macros = {};
+const macros = {
+    '{': '\\{',
+    '}': '\\}',
+  };
 
 let scripts = document.body.getElementsByTagName("script");
 scripts = Array.prototype.slice.call(scripts);

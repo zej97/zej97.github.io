@@ -15,7 +15,7 @@ $$
 The training and updating of parameters $w_{i, j}$ requires numerous non-zero $x_i$ and $x_j$ samples. However, due to the sparsity of the data (one-hot encoding for category features), most features are zero. 
 For example, the following three features (Country, Day, Ad_type) are all categorical, and they need to be one-hot encoded into numerical value.
 
-| Clicked | Country=USA | Country=FRA | Country=CN | Day=4/2/23 | Day=7/3/23 | Day=5/4/23 | Ad_type=Food | Ad_type=Car | Ad_type=Bood |
+| Clicked | Country=USA | Country=FRA | Country=CN | Day=4/2/23 | Day=7/3/23 | Day=5/4/23 | Ad_type=Food | Ad_type=Car | Ad_type=Book |
 |:-------:|:-----------:|:-----------:|:--------:|:----------:|:----------:|:--------:|:------------:|:-----------:|:--------:|
 |    1    |      1      |      0      |    0     |      0     |      1     |    0     |       1      |      0      |    0     |
 |    0    |      0      |      1      |    0     |      1     |      0     |    0     |       0      |      1      |    0     |
@@ -86,7 +86,7 @@ $$
 FM parameters:
 
 $$
-\Theta= \{w_0, \mathbf{w}, \mathbf{V}\} = \{w_0,w_1,…,w_n,v_{1,1},…,v_{n,k}\}
+\Theta= \lbrace w_0, \mathbf{w}, \mathbf{V}\rbrace = \lbrace w_0,w_1,…,w_n,v_{1,1},…,v_{n,k}\rbrace
 $$
 
 where $w_0$ is the bias term, $\mathbf{w}$ is the first-order feature weight vector, and $\mathbf{V}$ is the second-order feature interaction matrix.
