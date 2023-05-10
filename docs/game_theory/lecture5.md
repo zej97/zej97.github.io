@@ -19,7 +19,7 @@ nav_order: 4
     
     where we assume the coefficients $c_i$ and constant $d$ are rational numbers.
     
-2. An **optimization criterion**: ${\rm Opt} \in \text{\lbrace Maximize, Minimize\rbrace}$.
+2. An **optimization criterion**: ${\rm Opt} \in \lbrace \text{Maximize, Minimize}\rbrace$.
 3. A set (or system) $C(x_1, \cdots, x_n)$ of $m$ **linear constraints**, or **linear inequalities/equalities**, $C_i(x_1, \cdots, x_n), i = 1, \cdots, m$, where $C_i(x)$ has form:
     
     $$

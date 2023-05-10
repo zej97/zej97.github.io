@@ -34,15 +34,15 @@ So, the adversary’s goal is to minimize $y^{\rm T}b$, subject to $c^{\rm T} \l
 **Proposition**: (Weak Duality)
 
 $$
-c^{\rm T} x^\ast \leq b^{\rm T}y^*
+c^{\rm T} x^\ast \leq b^{\rm T}y^\ast
 $$
 
 **Theorem**: (Strong Duality, von Neumann’47) One of the following for situations holds:
 
-1. Both the primal and dual LPs are feasible, and for any optimal solutions $x^\ast$ of the primal and $y^*$ of the dual:
+1. Both the primal and dual LPs are feasible, and for any optimal solutions $x^\ast$ of the primal and $y^\ast$ of the dual:
     
     $$
-    c^{\rm T} x^\ast = b^{\rm T}y^*
+    c^{\rm T} x^\ast = b^{\rm T}y^\ast
     $$
     
 2. The primal is infeasible and the dual is unbounded.
@@ -51,26 +51,26 @@ $$
 
 ### Useful Corollary of LP Duality
 
-Solutions $x^\ast$ and $y^*$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
+Solutions $x^\ast$ and $y^\ast$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
 
 1. For each primal constraint, $(Ax)_i \leq b_i$, $i = 1, \cdots, m$, either $(Ax^\ast)_i = b_i$ or $y_i^* = 0$ (or both).
-2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^*) = c_j$ or $x^\ast_j = 0$ (or both).
+2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^\ast) = c_j$ or $x^\ast_j = 0$ (or both).
 
 **Proof**: By weak duality
 
 $$
-c^{\rm T}x^\ast \leq ((y^*)^{\rm T}A)x^\ast = (y^*)^{\rm T}(Ax^\ast) \leq (y^*)^{\rm T}b
+c^{\rm T}x^\ast \leq ((y^\ast)^{\rm T}A)x^\ast = (y^\ast)^{\rm T}(Ax^\ast) \leq (y^\ast)^{\rm T}b
 $$
 
-By strong duality each inequality holds with equality precisely when $x^\ast$ and $y^*$ are optimal. So, when optimal,
+By strong duality each inequality holds with equality precisely when $x^\ast$ and $y^\ast$ are optimal. So, when optimal,
 
 $$
-(((y^*)^{\rm T}A - c^{\rm T})x^\ast = 0
+(((y^\ast)^{\rm T}A - c^{\rm T})x^\ast = 0
 $$
 
-Since both $(((y^*)^{\rm T}A -  c^{\rm T}) \geq 0$ and $x^\ast \geq 0$, it must be that for each $j = 1, \cdots, n$, $(A^{\rm T}y^*)_j = c_j$ or $x^\ast_j = 0$.
+Since both $(((y^\ast)^{\rm T}A -  c^{\rm T}) \geq 0$ and $x^\ast \geq 0$, it must be that for each $j = 1, \cdots, n$, $(A^{\rm T}y^\ast)_j = c_j$ or $x^\ast_j = 0$.
 
-Likewise, when optimal, $(y^*)^{\rm T}(b - Ax^\ast) = 0$, and thus, for each $i = 1, \cdots, m$, $(Ax^\ast)_i = b_i$ or $y_i^* = 0$.
+Likewise, when optimal, $(y^\ast)^{\rm T}(b - Ax^\ast) = 0$, and thus, for each $i = 1, \cdots, m$, $(Ax^\ast)_i = b_i$ or $y_i^* = 0$.
 
 ### General Recipe for LP Duals
 
