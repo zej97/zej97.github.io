@@ -17,7 +17,7 @@ A perfect information (PI) game: 1 node per information set.
 
 Base case, depth 0: In this case we are at a leaf $w$. There is nothing to show: each player $i$ gets payoff $u_i(w)$, and the strategies in the SPNE $s^\ast$ are empty.
 
-Inductive step: Suppose depth of $$\mathcal{G}_w$$ is $$k + 1$$. Let $$Act(w) = \lbrace a'_1, \cdots, a'_r\rbrace$$ be the set of actions available at the root of $$\mathcal{G}_w$$. The subtrees $$T_{wa_j'}$$, for $$j = 1, \cdots, r$$, each define a PI-subgame $$\mathcal{G}_{wa_j'}$$, of depth $\leq k$$.
+Inductive step: Suppose depth of $$\mathcal{G}_w$$ is $$k + 1$$. Let $$Act(w) = \lbrace a'_1, \cdots, a'_r\rbrace$$ be the set of actions available at the root of $$\mathcal{G}_w$$. The subtrees $$T_{wa_j'}$$, for $$j = 1, \cdots, r$$, each define a PI-subgame $$\mathcal{G}_{wa_j'}$$, of depth $$\leq k$$.
 
 Thus, by induction, each game $\mathcal{G}_{wa_j'}$ has a pure strategy SPNE, $s^{wa'_j} = (s_1^{wa_j'}, \cdots, s_n^{wa_j'})$.
 
