@@ -6,3 +6,5 @@ nav_order: 4
 ---
 # Ranking Model: User Behaviour Sequence Modelling
 
+## Search-based User Interest Modelling (SIM)
+
