@@ -121,4 +121,22 @@ Since $U_i(x^\ast) = \sum_{j = 1}^{m_i}x^\ast_i(j) \cdot U_i(x^\ast_{-i};\pi_{i,
 
 In summary, $U_i(x^\ast)$ cannot be greater than $U_i(x_{-i}^\ast; \pi_{i,j})$ if $x_i^\ast(j) > 0$. Therefore, $U_i(x^\ast) = U_i(x^\ast_i; \pi_{i, j})$.
 
+### NE need not to be Pareto optimal
+Given a profile $x \in X$ in an $n$-player game, **the (purely utilitarian) social welfare** is:
+
+$$
+U_1(x) + U_2(x) + \cdots + U_n(x)
+$$
+
+A profile $x \in X$ is **Pareto efficient** (a.k.a.,**Pareto Optimal**) if there is no other profile $x' \in X$ such that $U_i(x') \geq U_i(x)$ for all $i$ and $U_j(x') > U_j(x)$ for some $j$.
+
 ### Evolutionarily Stable Strategies
+
+**Definitio**n: A 2-player game is symmetric if $S_1 = S_2$, and for all $s_1, s_2 \in S_1$, $u_1(s_1, s_2) = u_2(s_2, s_1)$.
+
+**Definition**: In a 2p-sym-game, mixed strategy $x_1^\ast$ is an **evolutionarily stable strategy (ESS)** if:
+
+1. $x_1^\ast$ is a best response to itself, i.e., $x^\ast = (x_1^\ast, x_2^\ast)$ is a symmetric NE &
+2. If $x_1' \neq x_2'$ is another best response to $x_1^\ast$, then $U_1(x'_1, x'_2) < U_1(x_1^\ast, x'_1)$.
+
+Nash also proves that every symmetric game has a symmetric NE, $(x_1^\ast, x_2^\ast)$. However, not every symmetric game has a ESS.

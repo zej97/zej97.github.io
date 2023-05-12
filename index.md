@@ -6,15 +6,17 @@ nav_order: 1
 <img style="float: left; border-radius: 50%; margin:0px 22px" src="./assets/images/portrait.jpg"  width="25%">
 Welcome to the **{{ site.title }}**'s blog!
 
-Here you will find a collection of articles about recommender systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful. For me, writing is a way to learn. If you find any mistakes, please let me know. I will be very grateful for your feedback. 
+Here you will find a collection of articles about recommender systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.
 
-In 2020, I earned a Bachelor of Engineering degree in Computer Science from [Beihang University](https://ev.buaa.edu.cn/). Currently, I am a master student at [the School of Informatics, University of Edinburgh](https://www.ed.ac.uk/informatics) studing financial computing (unfortunately, after actually studying for a while, I realized that I have no interest in finance, xD).
+In 2020, I graduated from [Beihang University](https://ev.buaa.edu.cn/) with a Bachelor of Engineering degree in Computer Science. Throughout my undergraduate studies, I immersed myself in a variety of computer science subjects, including algorithms, data structures, and software engineering. By designing and developing a single-cycle CPU, a compiler, and complex software systems, I acquired practical skills and knowledge that helped me gain a holistic understanding of computer science.
 
-For some reasons, I was unable to attend [MSc CS at Courant, NYU](https://cims.nyu.edu/dynamic/) to continue my computer science education, despite receiving their offer in 2020. Instead, I interned at the recommendation departments of [Kwai](https://www.kwai.com/) and [ByteDance](https://www.bytedance.com/en/) from 2020 and 2022. I am immensely grateful to both companies for providing me with the opportunities to work with them and for the knowledge I gained during my time there.
+Currently, I am pursuing my master's degree in financial computing at [the School of Informatics, University of Edinburgh](https://www.ed.ac.uk/informatics). This program has been an incredibly enriching experience, as I have been exposed to a wide range of financial concepts and technologies.
+
+During the period between 2020 and 2022, I had the privilege of interning at the recommendation departments of two globally recognized companies, namely [Kwai](https://www.kwai.com/) and [ByteDance](https://www.bytedance.com/en/). The experience was priceless, and I was able to gain a deeper understanding of the whole lifecycle of giant recommendation systems and valuable practical experience. I am grateful to both companies for the opportunities I had to work with them and the knowledge I gained during my time there.
 
 If you have come across this blog, I would be delighted to engage with you in any discussion related to the topics that I address. These topics range from current events to personal experiences that have shaped my worldview. I am always eager to learn from others and expand my knowledge base, so please do not hesitate to share your thoughts and opinions with me. I welcome any and all conversations that can broaden our perspectives and foster mutual understanding.
 
-Gin 
+Ze Jin
 
 [LinkedIn](https://www.linkedin.com/in/ze-jin-7219531b2/) zejin.97@gmail.com 
 

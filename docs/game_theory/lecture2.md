@@ -62,4 +62,4 @@ $x$ is called a pure Nash Equilibrium if in addition every $x_i$ is a pure strat
 
 *The Fundamental Theorem of Game Theory*
 
-**Theorem(Nash 1950)** Every time $n$-person strategic game has a mixed Nash Equilibrium.
+**Theorem(Nash 1950)** Every finite $n$-person strategic game has a mixed Nash Equilibrium.
