@@ -10,7 +10,7 @@ nav_order: 2
 
 **Theorem(Brouwer, 1909)** Every continuous function $f: D \to D$ mapping a compact and convex, nonempty subset $D \subseteq \mathbb{R}^m$ to itself has a “fixed point”, i.e., there is $x^\ast \in D$ such that $f(x^\ast) = x^\ast$.
 
-**Fact**: ****The set of profiles $X = X_1 \times \cdots \times X_n$ is a compact and convex subset of $\mathbb{R}^m$, where $m = \sum_{i = 1}^n m_i$, with $m_i = \lvert S_i \rvert$.
+**Fact**: The set of profiles $X = X_1 \times \cdots \times X_n$ is a compact and convex subset of $\mathbb{R}^m$, where $m = \sum_{i = 1}^n m_i$, with $m_i = \lvert S_i \rvert$.
 
 ### Proof of Nash’s Theorem
 
@@ -81,7 +81,7 @@ We will show that in fact this implies $\varphi_{i, j}(x^\ast)$ must be equal to
 **Proof of claim**: Since $U_i(x)$ is the weighted average of $U_i(x_{-i}; \pi_{i, j})$’s, based on the weights in $x_i$, there **must be** **some** $j$ used in $x_i$, i.e., with $x_i(j) > 0$, such that $U_i(x_{-i};\pi_{i, j})$ is no more than the weighted average. i.e., 
 
 $$
-U_i(x_i;\pi_{i, j}) \leq U_i(x)
+U_i(x_{-i};\pi_{i, j}) \leq U_i(x)
 $$
 
 Therefore,
@@ -137,6 +137,6 @@ A profile $x \in X$ is **Pareto efficient** (a.k.a.,**Pareto Optimal**) if there
 **Definition**: In a 2p-sym-game, mixed strategy $x_1^\ast$ is an **evolutionarily stable strategy (ESS)** if:
 
 1. $x_1^\ast$ is a best response to itself, i.e., $x^\ast = (x_1^\ast, x_2^\ast)$ is a symmetric NE &
-2. If $x_1' \neq x_2'$ is another best response to $x_1^\ast$, then $U_1(x'_1, x'_2) < U_1(x_1^\ast, x'_1)$.
+2. If $x_1' \neq x_1^\ast$ is another best response to $x_1^\ast$, then $U_1(x'_1, x'_1) < U_1(x_1^\ast, x'_1)$.
 
 Nash also proves that every symmetric game has a symmetric NE, $(x_1^\ast, x_2^\ast)$. However, not every symmetric game has a ESS.

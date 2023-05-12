@@ -8,7 +8,7 @@ nav_order: 3
 
 ### Min-maximizing strategies
 
-Suppose Player 1 chooses a mixed strategy $x_1^\ast \in X_1$, by trying to maximum the “worst that can happen would be for Player 2 to choose $x_2$ which minimizes $(x_1^\ast)^{\rm T}Ax_2$”.
+Suppose Player 1 chooses a mixed strategy $x_1^\ast \in X_1$, by trying to maximum the “worst that can happen would be for Player 2 to choose $x_2$ which minimizes $(x_1^\ast)^\top Ax_2$”.
 
 **Definition**: $x_1^\ast \in X_1$ is a ***minmaximizer*** for Player 1 if 
 
