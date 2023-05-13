@@ -4,7 +4,7 @@ layout: default
 nav_order: 3
 ---
 # Large Language Models
-# Timeline
+## Timeline
 
 | Model | Company | Cite | Date |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ nav_order: 3
 | GPT-3 | OpenAI | 3k | 05/2020 |
 
 
-# GPT
+## GPT
 
 [2018 OpenAI: Improving Language Understanding by Generative Pre-Training](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
 
@@ -24,34 +24,34 @@ nav_order: 3
 
 </aside>
 
-# GPT-2
+## GPT-2
 
 2019 OpenAI: Language Models are Unsupervised Multitask Learners
 
-## Basic Info
+### Basic Info
 
 - Dataset: WebText
 - Parameter: 1.5B
 - Zero-shot
 
-# GPT-3
+## GPT-3
 
 [2020 OpenAI: Language Models are Few-shot Learners](https://arxiv.org/pdf/2005.14165.pdf)
 
 For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with model GPT-3 achieves strong performance on many NLP datasets, including translation, question-answer, etc.
 
-## Basic Info
+### Basic Info
 
 - Parameter: 175B
 - Information Retrieval: LSH, delete similar articles
 
-# GPT-4
+## GPT-4
 
-# InstructGPT
+## InstructGPT
 
 [2022 OpenAI: Training language models to follow instructions with human feedback](https://arxiv.org/abs/2203.02155)
 
-# GPT4
+## GPT4
 
 ## References
 - **[CS324 - Large Language Models](https://stanford-cs324.github.io/winter2022/)**

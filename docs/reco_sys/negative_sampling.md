@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 # Negative Sampling
-During the ranking stage, we often encounter various sophisticated models, while the recall model is usually simple. This is because the number of samples processed in the ranking stage is much smaller than that in the recall stage. Hence, selecting the appropriate samples in the recall phase is crucial. The selection of negative samples is a key issue in the recall phase.
+During the ranking stage, we often employ various sophisticated models, while the recall model is usually simple. This is because the number of samples processed in the ranking stage is much smaller than that in the recall stage. Hence, selecting the appropriate samples in the recall phase is crucial. The selection of negative samples is a key issue in the recall stage.
 
 According to Facebook's research[^1], non-click impressions cannot be used as negative samples. A model trained using non-click impressions as negatives has significantly worse model recall compared to using random negatives, with an absolute regression in recall of 55% for the people embedding model. This finding contradicts the ideas of some colleagues. Although "non-click impressions" have several straightforward properties that could be quite useful:
 
@@ -53,7 +53,7 @@ However, not all business logic can have a clear signal. In such cases, we can o
 3. retrain embedding model using the newly generated hard triplets.
 4. the procedure can be iterative.
 
-The researchers discovered that, rather than using difficult examples, sampling between rank 101-500 led to the best model recall. While the offline stage uses the entire item set as the candidate pool, the online stage uses a set that contains the positive samples of other users in the same mini-batch. Note that hard negative samples are only a supplement to the easy negative samples.
+The researchers discovered that, rather than using *hardest* examples, sampling between rank 101-500 led to the best model recall. While the offline stage uses the entire item set as the candidate pool, the online stage uses a set that contains the positive samples of other users in the same mini-batch. Note that hard negative samples are only a supplement to the easy negative samples.
 
 ## Are non-click impressions entirely useless?
 Todo
