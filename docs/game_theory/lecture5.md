@@ -11,7 +11,7 @@ nav_order: 4
 
 **Definition**: A Linear Programming or Linear Optimization problem instance  $(f, {\rm Opt}, C)$, consists of:
 
-1. A **linear objective function** $f: \mathbb{R}^n \to \mathbb{R}$, given by:
+1. A **linear objective function** $f: \mathbb{R}^n \mapsto \mathbb{R}$, given by:
     
     $$
     f(x_1, \cdots, x_n) = c_1x_1 + c_2x_2 + \cdots + c_nx_n + d
@@ -34,6 +34,10 @@ nav_order: 4
 1. $v = (v_1, \cdots, v_n) \in \mathbb{R}^n$ **satisfies** $C_i(x)$ if plugging in $v$ for the variables $x = (x_1, \cdots, x_n)$, the constraint $C_i(v)$ holds true.
 2. $v\in \mathbb{R}^n$ is called a solution to a system $C(x)$, if $v$ satisfies every constraint $C_i \in C$.
 3. Let $K(C) \subseteq \mathbb{R}^n$ denote the set of all solutions to the system $C(x)$. We say $C$ is **feasible** if $K(C)$ is not empty.
+4. An optimal solution, for $\text{Opt = Maximize}$, is some $x^\ast \in K(C)$ such that 
+    $$
+    f(x^\ast) = \max_{x\in K(C)}f(x)
+    $$
 
 **Statement**:
 
@@ -63,6 +67,6 @@ The following three possible “answers” to an LP problem do cover all possibi
 4. Don’t need “$\alpha \geq \beta$”, where $\beta \in \mathbb{R}: \alpha \geq \beta \Leftrightarrow -\alpha \leq - \beta$.
 5. We can constrain every variable $x_i$ to be $x_i \geq 0$:
     
-    Introduce two variables $x^+_i, x_i^-$ for each variable $x_i$. Replace each occurence of $x_i$ by $(x_i^+, x_i^-)$, and add the constraints $x_i^+\geq 0, x_i^-\geq 0$.
+    Introduce two variables $x^+_i, x_i^-$ for each variable $x_i$. Replace each occurrence of $x_i$ by $(x_i^+, x_i^-)$, and add the constraints $x_i^+\geq 0, x_i^-\geq 0$.
     
     (N.B. can’t do both (2.) and (5.) together.)
