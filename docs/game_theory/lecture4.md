@@ -8,15 +8,15 @@ nav_order: 3
 
 ### Min-maximizing strategies
 
-Suppose Player 1 chooses a mixed strategy $x_1^\ast \in X_1$, by trying to maximum the “worst that can happen would be for Player 2 to choose $x_2$ which minimizes $(x_1^\ast)^\top Ax_2$”.
+Suppose Player 1 chooses a mixed strategy $x_1^\ast \in X_1$, by trying to maximum the “worst that can happen would be for Player 2 to choose $x_2$ which minimizes $(x_1^\ast)^\top Ax_2$”, where $A$ is the payoff matrix $[u(i,j)]_{m_1\times m_2}$.
 
-**Definition**: $x_1^\ast \in X_1$ is a ***minmaximizer*** for Player 1 if 
+**Definition**: $x_1^\ast \in X_1$ is a **minmaximizer** for Player 1 if 
 
 $$
 \min_{x_2\in X_2}(x_1^\ast)Ax_2 = \max_{x_1\in X_1}\min_{x_2\in X_2}(x_1)^{\rm T}Ax_2
 $$
 
-Similarly, $x_2^\ast \in X_2$ is a ***maxminimizer*** for Player 2 if 
+Similarly, $x_2^\ast \in X_2$ is a **maxminimizer** for Player 2 if 
 
 $$
 \max_{x_1\in X_1}(x_1)^{\rm T}Ax_2^\ast = \min_{x_2\in X_2}\max_{x_1 \in X_1}(x_1)^{\rm T}A{x_2}

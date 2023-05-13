@@ -8,16 +8,22 @@ Welcome to the **{{ site.title }}**'s blog!
 
 Here you will find a collection of articles about recommender systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.
 
-In 2020, I graduated from [Beihang University](https://ev.buaa.edu.cn/) with a Bachelor of Engineering degree in Computer Science. Throughout my undergraduate studies, I immersed myself in a variety of computer science subjects, including algorithms, data structures, and software engineering. By designing and developing a single-cycle CPU, a compiler, and complex software systems, I acquired practical skills and knowledge that helped me gain a holistic understanding of computer science.
+In 2020, I graduated from [Beihang University](https://ev.buaa.edu.cn/) with a Bachelor of Engineering degree in Computer Science. Throughout my undergraduate studies, I immersed myself in a variety of computer science subjects, including *operation systems*, *compilers*, *computer organization and architecture*, *software engineering*, *computer networking*, etc. By designing and developing a single-cycle CPU, a C0 compiler, and complex multi-threaded software systems, I acquired practical skills and knowledge that helped me gain a holistic understanding of computer science.
 
-Currently, I am pursuing my master's degree in financial computing at [the School of Informatics, University of Edinburgh](https://www.ed.ac.uk/informatics). This program has been an incredibly enriching experience, as I have been exposed to a wide range of financial concepts and technologies.
+In 2018, I participated in a project with the [CAS](https://english.cas.cn/) studying the role of entity relationship features in text extracted by GCN for multimodal matching. The following year, I was involved in the development of a face recognition model at [Megvii](https://en.megvii.com/), where I gained exposure to vector search engines. These experiences not only provided me with a deeper understanding of natural language processing and computer vision, but they also served as a stepping stone for me to explore the field of recommendation systems.
 
-During the period between 2020 and 2022, I had the privilege of interning at the recommendation departments of two globally recognized companies, namely [Kwai](https://www.kwai.com/) and [ByteDance](https://www.bytedance.com/en/). The experience was priceless, and I was able to gain a deeper understanding of the whole lifecycle of giant recommendation systems and valuable practical experience. I am grateful to both companies for the opportunities I had to work with them and the knowledge I gained during my time there.
+In 2020, I had the privilege of joining [Kwai](https://www.kwai.com/) as a recommended algorithm engineer intern. During my time there, I was tasked with developing the deployment process for the recall model on the new middle platform, improving deployment efficiency and reducing operation and maintenance costs.  Furthermore, I participated in the development of a new recall model that achieved significant performance in the online environment. Additionally, I collaborated with my mentor to develop and release the initial version of the Kwai general recommendation embedding, called RecoEmbedding, which is now widely used in various recall and ranking models at Kwai.
 
-If you have come across this blog, I would be delighted to engage with you in any discussion related to the topics that I address. These topics range from current events to personal experiences that have shaped my worldview. I am always eager to learn from others and expand my knowledge base, so please do not hesitate to share your thoughts and opinions with me. I welcome any and all conversations that can broaden our perspectives and foster mutual understanding.
+In 2021, I joined [ByteDance](https://www.bytedance.com/en/)'s recommendation department. While my previous role at Kwai involved developing recall models, my main responsibility at ByteDance is to develop ranking models. The model I developed to remove position bias has delivered impressive results in the online environment. Through my participation in the development of a large-scale recommendation system, I gained invaluable knowledge and experience. This experience provided me with a deep understanding of the complexities and challenges involved in developing effective recommendation systems, and equipped me with the skills and expertise needed to tackle these challenges head-on.
+
+Driven by an interest in quant, I am currently pursuing my master's degree in financial computing at [the School of Informatics, University of Edinburgh](https://www.ed.ac.uk/informatics).
+
+I welcome any opportunity to engage in discussions related to the topics I address in my blog. Sharing knowledge and exchanging ideas with others is a vital part of my learning process. Therefore, I encourage you to share your thoughts and opinions with me, as I am always eager to expand my understanding and learn from others.
 
 Ze Jin
 
 [LinkedIn](https://www.linkedin.com/in/ze-jin-7219531b2/) zejin.97@gmail.com 
 
 6 May 2023
+
+
