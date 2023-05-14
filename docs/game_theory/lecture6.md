@@ -122,4 +122,4 @@ $$
 
 ### Further Reading
 
-[***Simplex Algorithm - oi-wiki***](https://oi-wiki.org/math/simplex/)
+1. [**Simplex Algorithm - oi-wiki**](https://oi-wiki.org/math/simplex/)
