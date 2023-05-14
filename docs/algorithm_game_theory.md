@@ -10,6 +10,8 @@ has_children: true
 
 The following are notes from the lecture: [CS4 Algorithmic Game Theory and Applications](https://www.inf.ed.ac.uk/teaching/courses/agta/) in UoE.
 
+## Core Notes
+
 ### Nash's Theorem
 
 **Theorem(Nash 1950)** Every finite $n$-person strategic game has a mixed Nash Equilibrium.
@@ -42,3 +44,13 @@ In a minimax profile $x^\ast = (x_1^\ast, x_2^\ast)$,
 
 1. if $x_2^\ast(j) > 0$, then $((x^\ast_1)^\top A)_j = (x^\ast_1)^\top A x_2^\ast = v^\ast$.
 2. if $x_1^\ast(j) > 0$, then $(Ax^\ast_2)_j = (x_1^\ast)^\top A x_2^\ast = v^\ast$.
+
+### Useful Corollary of LP Duality
+
+Solutions $x^*$ and $y^*$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
+
+1. For each primal constraint, $(Ax)_i \leq b_i$, $i = 1, \cdots, m$, either $(Ax^*)_i = b_i$ or $y_i^* = 0$ (or both).
+2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^*) = c_j$ or $x^*_j = 0$ (or both).
+
+### Dominance
+Only a pure strategy can be strictly dominant.

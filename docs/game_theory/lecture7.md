@@ -54,7 +54,7 @@ $$
 Solutions $x^\ast$ and $y^\ast$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
 
 1. For each primal constraint, $(Ax)_i \leq b_i$, $i = 1, \cdots, m$, either $(Ax^\ast)_i = b_i$ or $y_i^* = 0$ (or both).
-2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^\ast) = c_j$ or $x^\ast_j = 0$ (or both).
+2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^\ast)_j = c_j$ or $x^\ast_j = 0$ (or both).
 
 **Proof**: By weak duality
 
@@ -115,3 +115,5 @@ Dual to this LP:
 $$
 \begin{align*} & u - (Ay)_i \geq 0, \text{ for } i = 1, \cdots, m_i,\\& y_1 + \cdots + y_{m_2} = 1 \\& y_j \geq 0 \text{ for } j = 1, \cdots, m_2. \end{align*}
 $$
+
+Thus, the minimax theorem follows from LP Duality: the optimal value for the two LPs is the **same**.
