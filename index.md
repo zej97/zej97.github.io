@@ -1,12 +1,26 @@
 ---
 title: Home
 layout: home
+nav_exclude: false
 nav_order: 1
 ---
-<img style="float: left; border-radius: 50%; margin:1px 24px" src="./assets/images/portrait.jpg"  width="25%">
-Welcome to the **{{ site.title }}**'s blog!
+<!-- <img style="float: left; border-radius: 50%; margin:1px 24px" src="./assets/images/ze-jin.jpg"  width="25%"> -->
+<div class="staffer">
+   <a> 
+    <img style="float: left; border-radius: 50%; height: 120px; margin-right: 1rem;" class="staffer-image" src="./assets/images/ze-jin.jpg" alt=""> 
+   </a>
+   <div>
+      <h3 style="margin: 0.5rem; color: #7253ed" class="staffer-name"> 
+        Ze Jin
+      </h3>
+      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">Postgraduate Student at the University of Edinburgh</p>
+      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">LinkedIn: <a href="https://www.linkedin.com/in/ze-jin-7219531b2/">@Ze Jin</a></p>
+      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">Email: zejin.97@gmail.com</p>
+      <hr/>
+   </div>
+</div>
 
-Here you will find a collection of articles about recommendation systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.
+Welcome to the my blog! Here you will find a collection of articles about recommendation systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.
 
 In 2020, I graduated from [Beihang University](https://ev.buaa.edu.cn/) with a Bachelor of Engineering degree in Computer Science. Throughout my undergraduate studies, I immersed myself in a variety of computer science subjects, including *operation systems*, *compilers*, *computer organization and architecture*, *software engineering*, *computer networking*, etc. By designing and developing a single-cycle CPU, a C0 compiler, and complex multi-threaded software systems, I acquired practical skills and knowledge that helped me gain a holistic understanding of computer science.
 
@@ -19,11 +33,3 @@ In 2021, I joined [ByteDance](https://www.bytedance.com/en/)'s recommendation de
 Driven by an interest in quant, I am currently pursuing my master's degree in financial computing at [the School of Informatics, University of Edinburgh](https://www.ed.ac.uk/informatics).
 
 I welcome any opportunity to engage in discussions related to the topics I address in my blog. Sharing knowledge and exchanging ideas with others is a vital part of my learning process. Therefore, I encourage you to share your thoughts and opinions with me, as I am always eager to expand my understanding and learn from others.
-
-Ze Jin
-
-[LinkedIn](https://www.linkedin.com/in/ze-jin-7219531b2/) zejin.97@gmail.com 
-
-6 May 2023
-
-

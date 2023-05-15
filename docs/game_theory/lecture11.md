@@ -11,7 +11,7 @@ nav_order: 10
 
 A perfect information (PI) game: 1 node per information set.
 
-**Theorem ([Kuhn’53])** Every **finite $n$-person extensive PI-game**, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some pure profile, $s^\ast = (s_1^\ast, \cdots, s^\ast_n)$, is a SPNE.
+**Theorem ([Kuhn’53])** Every **finite $n$-person extensive PI-game**, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some **pure** profile, $s^\ast = (s_1^\ast, \cdots, s^\ast_n)$, is a SPNE.
 
 **Proof** We prove by induction on the depth of a subgame $\mathcal G_w$ that it has a pure SPNE, $s^w = (s_1^w, \cdots, s_n^w)$. Then $s^\ast:=s^{\epsilon}$.
 
