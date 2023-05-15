@@ -64,7 +64,7 @@ $$
 \sup_{s_1\in S_1}\inf_{s_2\in S_2} u(s_1, s_2) = \inf_{s_2\in S_2}\sup_{s_1\in S_1} u(s_1, s_2)
 $$
 
-($\sup$, i.e., supremum denotes least upper bound, and $\inf$, i.e., infimum denotes greatest lower bound.) A strategy $s^*_1 \in S_1$ such that for any $s_2 \in S_2$, $u(s^*_1, s_2) = 1$ (and vice versa for player 2). 
+($\sup$, i.e., supremum denotes least upper bound, and $\inf$, i.e., infimum denotes greatest lower bound.) A strategy $s^\ast_1 \in S_1$ such that for any $s_2 \in S_2$, $u(s^\ast_1, s_2) = 1$ (and vice versa for player 2). 
 
 **Not every win-lose PI-game determined.**
 
