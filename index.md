@@ -3,7 +3,7 @@ title: Home
 layout: home
 nav_order: 1
 ---
-<img style="float: left; border-radius: 50%; margin:0px 22px" src="./assets/images/portrait.jpg"  width="25%">
+<img style="float: left; border-radius: 50%; margin:1px 24px" src="./assets/images/portrait.jpg"  width="25%">
 Welcome to the **{{ site.title }}**'s blog!
 
 Here you will find a collection of articles about recommendation systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.

@@ -124,7 +124,7 @@ $$
 Then, calculate the derivation of the $\hat{y}$ with respect to the parameter $\theta$:
 
 $$
-\frac{\partial\hat{y}}{\partial\theta}= \begin{cases}   1,   & if\,\,\theta\,\,is\,\,w_0 \\   x_i, & if\,\,\theta\,\,is\,\,w_i \\   x_i\sum_{j=1}^nv_{j,f}x_j-v_{i,f}x_i^2 & if\,\,\theta\,\,is\,\,v_{i,f} \\ \end{cases}
+\frac{\partial\hat{y}}{\partial\theta}= \begin{cases} 1, & \text{if }\theta\text{ is }w_0, \\ x_i, & \text{if }\theta \text{ is }w_i, \\ x_i\sum_{j=1}^nv_{j,f}x_j-v_{i,f}x_i^2 & \text{if }\theta\text{ is }v_{i,f}. \\ \end{cases}
 $$
 
 Finally, we can get the derivation of the loss function with respect to the parameter $\theta$:

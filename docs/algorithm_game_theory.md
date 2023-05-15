@@ -10,7 +10,7 @@ has_children: true
 
 The following are notes from the lecture: [CS4 Algorithmic Game Theory and Applications](https://www.inf.ed.ac.uk/teaching/courses/agta/) in UoE.
 
-## Core Notes
+## Key Notes
 
 ### Nash's Theorem
 
@@ -54,3 +54,12 @@ Solutions $x^*$ and $y^*$ to the primal and dual LPs, respectively, are both opt
 
 ### Dominance
 Only a pure strategy can be strictly dominant.
+
+### Computing Nash Equilibria: **a first clue**
+
+**Proposition** In an $n$-player game, a profile $x^\ast$ is a Nash Equilibrium if and only if there exists $w_1, \cdots, w_n \in \mathbb{R}$, such that the following hold:
+
+1. For all players $i$, and every $\pi_{i, j}\in {\rm support}(x_i^\ast)$, $U_i(x_{-i}^*; \pi_{i, j}) = w_i$, and 
+2. For all players $i$, and every $\pi_{i, j} \notin {\rm support}(x_i^\ast)$, $U_i(x_{-i}^*; \pi_{i, j}) \leq w_i$.
+
+**Note**: such $w_i$’s necessarily satisfy $w_i = U_i(x^\ast).$
