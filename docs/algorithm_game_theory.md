@@ -66,3 +66,52 @@ Only a pure strategy can be strictly dominant.
 
 ### Kuhn's Theorem
 **Theorem ([Kuhn’53])** Every finite $n$-person extensive PI-game, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some pure profile, $s^* = (s_1^*, \cdots, s^*_n)$, is a SPNE.
+
+### History oblivious payoff
+
+Let’s call payoff function $u()$ history oblivious (**h.o.**), if for all infinite plays $\pi\ \&\ \pi'$, if $\inf(\pi) = \inf(\pi')$, then $u(\pi) = u(\pi')$, and for all finite complete plays $wv$ and $w'v$, 
+
+$$
+u(wv) = u(w'v)
+$$
+
+Call a graph game h.o. if its payoffs are h.o.. $**w$ and $w'$ represent histories here.**
+
+### Finitistic payoff
+
+Let’s call an h.o. payoff function finitistic if for all infinite plays $\pi$ and $\pi'$, $u(\pi) = u(\pi')$. Let’s call game on a graph $\mathcal{G}_{v_0}$ finitistic if its payoff function is. 
+
+### Memoryless strategies and determainacy
+
+**Definition**: For a game $\mathcal{G}_{v_0}$, a pure strategy $s_i$ for player $i$ is **memoryless strategy** if for all $wv, w'v \in Pl'_i$, $s_i(wv) = s_i(w'v)$, and if $wv_0\in Pl_i'$ then $s_i(wv_0) = s_i(\epsilon)$. 
+
+I.e., the strategy always makes the same move from vertex, regardless of the history of how it got there.
+
+**Theorem A** Finitistic games on finite graphs are memorylessly determined. Moreover, there is an efficient (P-time) algorithm to compute memoryless value-achieving strategies in such game.
+
+### The win-lose case: easy “fixed point” algorithm
+
+We first prove the **theorem** for finitistic win-lose games via an easy bottom up fixed point algorithm.
+
+$\text{Input}$: Game graph $G = (V, E, pl, v_0)$.
+
+Assume w.l.o.g. all infinite plays are win for player 2 (other case is symmetric). “Dead end”: vertex with no outgoing edge.
+
+- $\text{Good} := \lbrace v\in V \mid v \text{ a dead end that wins for player 1}\rbrace$.
+- $\text{Bad}:= \lbrace v\in V \mid v \text{ a dead end that wins for player 2} \rbrace$
+1. $\mathbf{Initialize}$:  $\text{Win}_1 := \text{Good}; St_1 := \emptyset$;
+2. $\mathbf{Repeat}$
+    1. $\text{Foreach } v\notin \text{Win}_1$:
+        1. $\text{If } (pl(v) = 1 \ \&\ \exist (v, v')\in E: v'\in \text{Win}_1)$:
+            
+            $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace; St_1 := St_1 \cup \lbrace v\mapsto v'\rbrace$;
+            
+        2. $\text{If } (pl(v) = 2 \ \&\ \forall (v, v')\in E: v'\in \text{Win}_1)$:
+            
+            $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace$;
+            
+    
+    $\mathbf{Until} \text{ The set Win}_1 \text{ does not change}$;
+    
+
+Player 1 has a winning strategy iff $v_0 \in \text{Win}_1$. If so, $St_1$ is a **memoryless winning strategy** for player 1.
