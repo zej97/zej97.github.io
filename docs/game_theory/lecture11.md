@@ -13,6 +13,16 @@ A perfect information (PI) game: 1 node per information set.
 
 **Theorem ([Kuhn’53])** Every **finite $n$-person extensive PI-game**, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some **pure** profile, $s^\ast = (s_1^\ast, \cdots, s^\ast_n)$, is a SPNE.
 
+**Definition**: For a game $\mathcal{G}$ with game tree $T$, and for $w\in T$, define the subtree $T_w \subseteq T$, by: 
+
+$$
+T_w=\lbrace w^{\prime} \in T \mid w^{\prime}=w w^{\prime \prime} \text { for } w^{\prime \prime} \in \Sigma^\ast \rbrace
+$$
+
+Since tree is finite, we can just associate payoffs to the leaves. Thus, the subtree $T_w$, in an obvious way, defines a “**subgame**”, $\mathcal{G}_w$, which is also a PI-game.
+
+The **depth** of a node $w$ in $T$ is its **length** $\lvert w \rvert$  as a string. The depth of tree $T$ is the maximum depth of any node in $T$. The depth of a game $\mathcal{G}$ is the depth of its game tree.
+
 **Proof** We prove by induction on the depth of a subgame $\mathcal G_w$ that it has a pure SPNE, $s^w = (s_1^w, \cdots, s_n^w)$. Then $s^\ast:=s^{\epsilon}$.
 
 Base case, depth 0: In this case we are at a leaf $w$. There is nothing to show: each player $i$ gets payoff $u_i(w)$, and the strategies in the SPNE $s^\ast$ are empty.
@@ -27,7 +37,7 @@ To define $s^w = (s_1^w, \cdots, s^w_n)$, there are two cases to consider
     
     Let the strategy $s_i^w$ for player $i$ be just the obvious “union” $\bigcup_{a'\in Act(w)}s_i^{wa'}$, of its pure strategies in each of the subgames. (Note that $Act(w)$ denotes probability sets here.)
     
-    Claim: $s^w = (s_1^w, \cdots, s_n^w)$ must be a pure SPNE of $\mathcal{G}_w$ (depth $k + 1$). 
+    **Claim**: $s^w = (s_1^w, \cdots, s_n^w)$ must be a pure SPNE of $\mathcal{G}_w$ (depth $k + 1$). 
     
     Suppose not. Then some player $i$ could improve its expected payoff by switching to a different pure strategy in one of the subgames. But that violates the inductive hypothesis on that subgame. 
     

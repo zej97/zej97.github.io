@@ -57,9 +57,3 @@ $$
 In other words, no player can improve its own payoff by ***unilaterally*** deviating from the mixed strategy profile $x = (x_1, \cdots, x_n)$.
 
 $x$ is called a pure Nash Equilibrium if in addition every $x_i$ is a pure strategy $\pi_{i, j}$, for some $j \in S_j$.
-
-### Nash’s Theorem
-
-*The Fundamental Theorem of Game Theory*
-
-**Theorem(Nash 1950)** Every finite $n$-person strategic game has a mixed Nash Equilibrium.

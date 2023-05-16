@@ -6,6 +6,12 @@ nav_order: 2
 ---
 ## Lecture 3 Nash’s Theorem
 
+### Nash’s Theorem
+
+*The Fundamental Theorem of Game Theory*
+
+**Theorem(Nash 1950)** Every finite $n$-person strategic game has a mixed Nash Equilibrium.
+
 ### The Brouwer Fixed Point Theorem
 
 **Theorem(Brouwer, 1909)** Every continuous function $f: D \to D$ mapping a compact and convex, nonempty subset $D \subseteq \mathbb{R}^m$ to itself has a “fixed point”, i.e., there is $x^\ast \in D$ such that $f(x^\ast) = x^\ast$.
