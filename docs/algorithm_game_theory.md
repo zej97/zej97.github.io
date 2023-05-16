@@ -115,3 +115,7 @@ Assume w.l.o.g. all infinite plays are win for player 2 (other case is symmetric
     
 
 Player 1 has a winning strategy iff $v_0 \in \text{Win}_1$. If so, $St_1$ is a **memoryless winning strategy** for player 1.
+
+### Memoryless determinacy
+
+**Theorem** ([Condon’92]) Every simple stochastic game is memorylessly determined.
