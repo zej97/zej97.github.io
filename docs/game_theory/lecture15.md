@@ -57,13 +57,13 @@ $$
 \begin{align*}x_{T} &= 1 \\ x_i &= \max\lbrace x_j \mid v_j \in E(v_i)\rbrace \quad\text{for } v_i\in V_1 \\ x_i &= \sum_{v_j\in E(v_i)} q_{v_i}(v_j)\cdot x_j \quad\text{for } v_i\in V_0\end{align*}
 $$
 
-Theorem These max-linear Bellman equations for the MDP, have a (unique) least non-negative solution vector $x^* = (x_1^*, \cdots, x_n^*) \in [0, 1]^n$, in which $x_i^*$ is the optimal probability for player 1 to reach the target $v_{T}$ in the MDP $G_{v_i}$ starting at $v_i$.
+Theorem These max-linear Bellman equations for the MDP, have a (unique) least non-negative solution vector $x^\ast = (x_1^\ast, \cdots, x_n^\ast) \in [0, 1]^n$, in which $x_i^\ast$ is the optimal probability for player 1 to reach the target $v_{T}$ in the MDP $G_{v_i}$ starting at $v_i$.
 
 ### Computing optimal values
 
-One way to compute the solution $x^*$ for the Bellman equations $x = L(x)$ is **value iteration**: consider the sequence $L(\mathbf{0}), L(L(\mathbf{0})), \cdots, L^m(\mathbf{0})$.
+One way to compute the solution $x^\ast$ for the Bellman equations $x = L(x)$ is **value iteration**: consider the sequence $L(\mathbf{0}), L(L(\mathbf{0})), \cdots, L^m(\mathbf{0})$.
 
-**Fact**: $\lim_{m\to \infty} L^{m}(\mathbf{0}) = x^*$.
+**Fact**: $\lim_{m\to \infty} L^{m}(\mathbf{0}) = x^\ast$.
 
 Unfortunately, value iteration can be very slow in the worst case (requiring exponentially many iterations.) Instead, we can use LP. Let $V = \lbrace v_1, \cdots, v_n\rbrace$ be the vertices of MDP, $G$. We have one LP variable $x_i$ for each vertex $v_i \in V$.
 
@@ -75,7 +75,7 @@ $$
 \begin{align*}x_{T} &= 1\\ x_i&\geq x_j, \text{ for each } v_i\in V_1, \text{ and } v_j \in E(v_i);\\ x_i &= \sum_{v_j\in E(v_i)}q_{v_i}(v_j) \cdot x_j, \text{ for each } v_i\in V_0; \\ x_i &\geq 0 \text{ for } i = 1, \cdots, n.\end{align*}
 $$
 
-Theorem For $(x_1^*, \cdots, x_n^*)\in \mathbb{R}^n$ an optimal solution to this LP (which must exist), each $x_i^*$ is the optimal value for player 1 in the game $G_{v_i}$. 
+Theorem For $(x_1^\ast, \cdots, x_n^\ast)\in \mathbb{R}^n$ an optimal solution to this LP (which must exist), each $x_i^\ast$ is the optimal value for player 1 in the game $G_{v_i}$. 
 
 ### Extracting the optimal strategy
 
