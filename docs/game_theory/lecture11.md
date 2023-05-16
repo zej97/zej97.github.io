@@ -50,9 +50,23 @@ To define $s^w = (s_1^w, \cdots, s^w_n)$, there are two cases to consider
 
 ### Algorithm for computing a SPNE in finite PI-games
 
-The proof yields an EASY “bottom up” algorithm for computing a pure SPNE in a finite PI-game.
+The proof yields an EASY **“bottom up”** algorithm for computing a pure SPNE in a finite PI-game.
 
 ### Consequences for zero-sum finite PI-games
+
+Recall that, by the Minimax Theorem, for every finite zero-sum game $\Gamma$, there is a value $v^\ast$ such that for any NE $(x^\ast_1, x^\ast_2)$ of $\Gamma$, $v^\ast = U(x_1^\ast, x_2^\ast)$, and 
+
+$$
+\max _{x_1 \in X_1} \min _{x_2 \in X_2} U\left(x_1, x_2\right)=v^*=\min _{x_2 \in X_2} \max _{x_1 \in X_1} U\left(x_1, x_2\right)
+$$
+
+It follows from Kuhn’s theorem that for extensive PI-games $\mathcal{G}$ there is in fact a pure NE (in fact, SPNE) $(s^\ast_1, s^\ast_2)$ such that $v^\ast = u(s^\ast_1, s^\ast_2):= h(s^\ast_1, s^\ast_2)$, and thus that in fact
+
+$$
+\max_{s_1\in S_1}\min_{s_2\in S_2}u(s_1, s_2) = v^\ast =  \min_{s_2\in S_2}\max_{s_1\in S_1}u(s_1, s_2)
+$$
+
+(P.S., unique $v^\ast$+ useful corollary for Nash Equilibria)
 
 **Definition** A finite zero-sum game $\Gamma$ is determined, if 
 
@@ -64,7 +78,53 @@ $$
 
 **Proposition** ([Zermelo’1912]) Every finite zero-sum PI-game, $\mathcal{G}$, is determined. Moreover, the value & a pure minimax profile can be computed “efficiently” from $\mathcal{G}$.
 
+### Chess
+
+Chess is a finite PI-game (after 50 moves with no piece taken, it ends in a draw). In fact, it’s a **win-lose-draw PI-game**: no chance nodes possible payoffs are 1, -1 and 0.
+
+**Proposition** ([Zermelo’1912])  In Chess, either:
+
+1. White has a winning strategy, or
+2. Black has a winning strategy, or 
+3. Both players have strategies to force a draw.
+
+A **winning strategy**, e.g., for White is a pure strategy $s^\ast_1$ that guarantees value $u(s^\ast_1, s_2) = 1$, for all $s_2$.
+
+However, the tree is too big, and that’s why we need $\alpha$-$\beta$-pruning.
+
 ### Minimax search with $\alpha$-$\beta$-pruning
+
+Assume, for simplicity, that players alternate moves, root belongs to Player 1 (maximizer), and 
+
+$$
+-1 \leq {\rm Eval}(w) \leq +1
+$$
+
+Score $-1$ ($+1$) means player 1 definitely loses (wins). Start the search by calling: $\mathbf{MaxVal}(w, \alpha, \beta)$;
+
+$\mathbf{MaxVal}(w, \alpha, \beta)$
+
+1. If $\text{depth}(w) \ge \text{MaxDepth}$ then **return** $\text{Eval}(w)$.
+
+2. Else, for each $a\in Act(w)$
+
+    1. $\alpha:= \max\lbrace\alpha, \mathbf{MaxVal}(wa, \alpha, \beta)\rbrace$;
+
+    2. if $\alpha \geq \beta$, then **return** $\beta$
+
+3. **return** $\alpha$
+
+$\mathbf{MaxVal}(w, \alpha, \beta)$
+
+1. If $\text{depth}(w) \ge \text{MaxDepth}$ then **return** $\text{Eval}(w)$.
+
+2. Else, for each $a\in Act(w)$
+
+    1. $\alpha:= \max\lbrace\alpha, \mathbf{MaxVal}(wa, \alpha, \beta)\rbrace$;
+
+    2. if $\alpha \geq \beta$, then **return** $\alpha$
+
+3. **return** $\beta$
 
 ### Let’s generalize to infinite zero-sum PI-games
 
@@ -73,6 +133,8 @@ For infinite games $\max \& \min$ may not exist! Instead, we call an (infinite) 
 $$
 \sup_{s_1\in S_1}\inf_{s_2\in S_2} u(s_1, s_2) = \inf_{s_2\in S_2}\sup_{s_1\in S_1} u(s_1, s_2)
 $$
+
+In the simple setting of infinite win-lose PI-games (2 players, zero-sum, no chance nodes, and only payoffs are 1 and -1), this definition says a game is determined precisely when one player or the other has a winning strategy: a strategy $s^\ast_1 \in S_1$ such that for any $s_2\in S_2$, $u(s^\ast_1, s_2) = 1$ (and vice versa for player 2).
 
 ($\sup$, i.e., supremum denotes least upper bound, and $\inf$, i.e., infimum denotes greatest lower bound.) A strategy $s^\ast_1 \in S_1$ such that for any $s_2 \in S_2$, $u(s^\ast_1, s_2) = 1$ (and vice versa for player 2). 
 

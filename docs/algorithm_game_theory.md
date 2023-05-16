@@ -63,3 +63,6 @@ Only a pure strategy can be strictly dominant.
 2. For all players $i$, and every $\pi_{i, j} \notin {\rm support}(x_i^\ast)$, $U_i(x_{-i}^*; \pi_{i, j}) \leq w_i$.
 
 **Note**: such $w_i$’s necessarily satisfy $w_i = U_i(x^\ast).$
+
+### Kuhn's Theorem
+**Theorem ([Kuhn’53])** Every finite $n$-person extensive PI-game, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some pure profile, $s^* = (s_1^*, \cdots, s^*_n)$, is a SPNE.
