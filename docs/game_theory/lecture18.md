@@ -47,7 +47,7 @@ A non-zero price vector, $p^\ast \geq 0$, together with bundles, $x_i^*$, of goo
 
 - Let $A$ be a set of outcomes, $N$ a number of voters of decision criteria. We shall denote the set of all full linear orderings of $A$ by $L(A)$.
     
-    A (strict) social welfare function (preference aggreation rule) is a function:
+    A (strict) social welfare function (preference aggregation rule) is a function:
     
     $$
     F: L(A)^N \to L(A)

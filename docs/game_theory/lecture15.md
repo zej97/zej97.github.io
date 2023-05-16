@@ -103,7 +103,7 @@ In Shapley’s stochastic games, at each state, both player **simultaneously and
 - For each “nature” vertex, $v\in V_0$, a probability distribution $q_v: E(v)\mapsto [0, 1]$, over the set of “actions” at $v$, such that $\sum_{v'\in E(v)}q_v(v') = 1$.
 - A start vertex $v_0 \in V$.
 - A target vertex $v_T \in V$.
-- <details>
+ <details>
     <summary><b>Note</b>: a congestion game and a simple stochastic game are two different types of games and cannot be equated.
     </summary>
 
@@ -111,7 +111,7 @@ In Shapley’s stochastic games, at each state, both player **simultaneously and
     On the other hand, a simple stochastic game is a dynamic game in which players take turns to choose actions, and the game transitions between states probabilistically. The payoff of each player depends on the state of the game and the actions chosen by all players. Simple stochastic games can be cooperative or non-cooperative, and the optimal strategy for each player can depend on the strategies of the other players.
     Therefore, while both congestion games and simple stochastic games involve some level of randomness, they are fundamentally different types of games with different characteristics and cannot be reduced to each other.
 
-    </details> 
+</details> 
 
 ### Memoryless determinacy
 

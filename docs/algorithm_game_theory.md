@@ -119,3 +119,7 @@ Player 1 has a winning strategy iff $v_0 \in \text{Win}_1$. If so, $St_1$ is a *
 ### Memoryless determinacy
 
 **Theorem** ([Condon’92]) Every simple stochastic game is memorylessly determined.
+
+### Best response dynamics and pure NE
+
+**Theorem**: ([Rosenthal’73]) In any congestion game, every sequence of strict improvement steps is necessarily finite, and terminates in a pure NE. 
