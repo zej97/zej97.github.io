@@ -123,3 +123,19 @@ Player 1 has a winning strategy iff $v_0 \in \text{Win}_1$. If so, $St_1$ is a *
 ### Best response dynamics and pure NE
 
 **Theorem**: ([Rosenthal’73]) In any congestion game, every sequence of strict improvement steps is necessarily finite, and terminates in a pure NE. 
+
+### VCG is incentive-compatible (i.e., strategy-proof)
+
+**Theorem ([Vickrey,1961],[Clarke,1971],[Groves,1973])** The VCG mechanism is incentive compatible (i.e., strategy proof). In other words, declaring their true valuation function $v_i$ is a (weakly) dominant strategy for all player $i$.
+
+Proof Suppose players declare valuations $v_1', \cdots, v_n'$. Suppose player $i$’s true valuation is $v_i$. Let $c^\ast = f(v_i, v_{-i}^\ast)$, and let $c''=f(v_i', v_{-i}')$. Recall $c^\ast\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v'_k(c^\ast)$ . In other words, for all $c\in C$, 
+
+$$
+v_i^\ast(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v_k'(c^\ast) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c)
+$$
+
+Thus, $u_i(c^\ast) =$ 
+
+$$
+\begin{align*}v_i(c^\ast) - p_i(c^\ast) &= v_i(c^\ast) + (\sum_{k\in V-\lbrace i\rbrace}v'_k(c^\ast)) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\&\geq v_i'(c'') + (\sum_{k\in V-\lbrace i\rbrace}v_k'(c'')) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\ &= v_i(c'') - p_i(c'') = u_i(c'') \end{align*}
+$$
