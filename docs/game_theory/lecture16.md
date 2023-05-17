@@ -114,3 +114,11 @@ Let pure-${\rm NE}(\Gamma)$ denote the set of pure NEs in the game $\Gamma$. For
 $$
 \text{pure-PoA}(\Gamma) := \frac{\max_{s\in S}{\rm welfare}(s)}{\min_{s\in\text{pure-}{\rm NE}(\Gamma)(\Gamma)}{\rm welfare}(s)}
 $$
+
+### Price of anarchy in the flow network game
+
+- For flow $f$ let ${\rm welfare}(f):= 1/(\text{average s-t-delay})$
+- In Braess’s paradox, the price of anarchy is $\frac{4}{3}$: by playing the NE the average delay is 2, but playing half-and-half on the upper and lower route, the average delay is $\frac{3}{2}$ (and that’s optimal).
+- [Roughgarden-Tardos’00] showed that in a more general flow network setting (where there can be multiple source-destination pairs $(s_j, t_j)$), as long as congestions labeling edges are linear functions of  $x$, the worst-case price of anarchy is $\frac{4}{3}$.
+
+**Theorem**: [Christodoulou-Koutsoupias’2005]. The pure price of anarchy for a pure NE in atomic network congestion games with linear utilities is $\frac{5}{2}$.
