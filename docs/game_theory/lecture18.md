@@ -15,19 +15,19 @@ nav_order: 14
     
     Assume utility functions satisfy certain “reasonable” conditions:
     
-    1. *Continuity*: It means that a small change in prices should not cause a large change in demand.
-    2. *Quasi-concavity*: In other words, quasi-concavity means that if an agent likes two bundles of goods, then they will like any bundle that lies between those two bundles.
-    3. *Non-satiation*: It means that more is always better. In other words, if a bundle of goods x gives an agent $i$ a utility of $u(x)$, then any bundle $y$ that has more of at least one good and no less of any other good than $x$ should give $i$ a higher utility than $x$.
+    1. ***Continuity***: It means that a small change in prices should not cause a large change in demand.
+    2. ***Quasi-concavity***: In other words, quasi-concavity means that if an agent likes two bundles of goods, then they will like any bundle that lies between those two bundles.
+    3. ***Non-satiation***: It means that more is always better. In other words, if a bundle of goods x gives an agent $i$ a utility of $u(x)$, then any bundle $y$ that has more of at least one good and no less of any other good than $x$ should give $i$ a higher utility than $x$.
 - Assume agent endowments satisfy certain “reasonable conditions”. E.g., each agent has a **positive endowment** of every good. (Much less suffices: e.g., each agent has something another agent wants, and the graph of this is strongly-connected.)
 - Given a price vector, $p \in \mathbb{R}^m_{\geq 0}$, each agent $i$ has an optimal demand set, $D_i(p) \subseteq \mathbb{R}^m_{\geq 0}$. This is the set of bundles of goods, $x_i$, that maximize agent $i$’s utility, and which $i$ can afford to buy at prices $p$ by selling its endowment $w_i$ at prices $p$.
 
 ### Existence of market equilibrium for an exchange economy
 
-A non-zero price vector, $p^\ast \geq 0$, together with bundles, $x_i^*$, of goods for each agent $i$, constitutes a **market (price) equilibrium** for an exchange economy, if at prices $p^\ast$, for every agent $i$, $x^\ast_i$ is an **optimal demand bundle**, and moreover with these demands the market clears (i.e., basically supply = demand). In other words:
+A non-zero price vector, $p^\ast \geq 0$, together with bundles, $x_i^\ast$, of goods for each agent $i$, constitutes a **market (price) equilibrium** for an exchange economy, if at prices $p^\ast$, for every agent $i$, $x^\ast_i$ is an **optimal demand bundle**, and moreover with these demands the market clears (i.e., basically supply = demand). In other words:
 
 1. For all agents $i$, $x^\ast_i\in D_i(p^\ast)$. (All agents optimize utility at price $p^\ast$)
-2. $\sum_ix_i^* \leq \sum_i w_i$. (Demands do not exceed supply for any commodity.)
-3. Furthermore, for **all goods** $j$, if $(\sum_ix^\ast_i)_j < (\sum_iw_i)_j$, then $p_j^* = 0$. (In other words, only free goods can have excess supply.)
+2. $\sum_ix_i^\ast \leq \sum_i w_i$. (Demands do not exceed supply for any commodity.)
+3. Furthermore, for **all goods** $j$, if $(\sum_ix^\ast_i)_j < (\sum_iw_i)_j$, then $p_j^\ast = 0$. (In other words, only free goods can have excess supply.)
 
 **Theorem ([Arrow-Debreu, 1954])** Every exchange economy has a market (price) equilibrium.
 
@@ -59,37 +59,37 @@ A non-zero price vector, $p^\ast \geq 0$, together with bundles, $x_i^*$, of goo
 ### The Vickrey-Clarke-Groves (VCG) Mechanism
 
 - Each voter $i\in V$ is asked to submit their nonnegative valuation function, $v_i'$. ($v_i'$ may or may not be $i$’s actual valuation function $v_i$.)
-- The mechanism then computes an **optimal candidate**, $f(v_1', \cdots, v'_n) := c^*$, that maximizes total value:
+- The mechanism then computes an **optimal candidate**, $f(v_1', \cdots, v'_n) := c^\ast$, that maximizes total value:
     
     $$
-    f(v_1',\cdots, v_n'):= c^*\in \argmax_c \sum_{k\in V}v_k'(c)
+    f(v_1',\cdots, v_n'):= c^\ast\in \argmax_c \sum_{k\in V}v_k'(c)
     $$
     
-    This candidate $c^*$ is chosen as the **winner of the election**.
+    This candidate $c^\ast$ is chosen as the **winner of the election**.
     
-- Moreover, each voter $i$ has to pay an amount $p_i(c^*)$ to the mechanism, which is **independent of** $v_i'$, defined by (the marginal harm their has caused to other bidders):
+- Moreover, each voter $i$ has to pay an amount $p_i(c^\ast)$ to the mechanism, which is **independent of** $v_i'$, defined by (the marginal harm their has caused to other bidders):
     
     $$
-    p_i(c^*) := (\max_{c'\in C} \sum_{j\in V-\lbrace i\rbrace}v'_j(c')) - \sum_{j\in V-\lbrace i\rbrace}v'_j(c^*)
+    p_i(c^\ast) := (\max_{c'\in C} \sum_{j\in V-\lbrace i\rbrace}v'_j(c')) - \sum_{j\in V-\lbrace i\rbrace}v'_j(c^\ast)
     $$
     
 
 **Key Point [1]**: This marginal harm caused to other participants (i.e. the final price paid by each individual with a successful bid) can be calculated as: (sum of bids of the auction from the best combination of bids *excluding the participant under consideration*) − (what other *winning* bidders have bid in the current (best) combination of bids). If the sum of bids of the second best combination of bids is the same as that of the best combination, then the price paid by the buyers will be the same as their initial bid. In all other cases, the price paid by the buyers will be lower.
 
-**Key Point [2]**: These payments align the incentives of all voters: each voter $i$, even knowing the valuation functions $v_j'$ declared by voters $j \neq i$, will want to declare a function $v_i'$ that yields a winner $c^* = f(v_1',\cdots, v_n')$ which maximizes $v_i(c^*) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c^*)$. So, it should $v'_i:= v_i$. 
+**Key Point [2]**: These payments align the incentives of all voters: each voter $i$, even knowing the valuation functions $v_j'$ declared by voters $j \neq i$, will want to declare a function $v_i'$ that yields a winner $c^\ast = f(v_1',\cdots, v_n')$ which maximizes $v_i(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c^\ast)$. So, it should $v'_i:= v_i$. 
 
 ### VCG is incentive-compatible (i.e., strategy-proof)
 
 **Theorem ([Vickrey,1961],[Clarke,1971],[Groves,1973])** The VCG mechanism is incentive compatible (i.e., strategy proof). In other words, declaring their true valuation function $v_i$ is a (weakly) dominant strategy for all player $i$.
 
-Proof Suppose players declare valuations $v_1', \cdots, v_n'$. Suppose player $i$’s true valuation is $v_i$. Let $c^* = f(v_i, v_{-i}^*)$, and let $c''=f(v_i', v_{-i}')$. Recall $c^*\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v'_k(c^*)$ . In other words, for all $c\in C$, 
+Proof Suppose players declare valuations $v_1', \cdots, v_n'$. Suppose player $i$’s true valuation is $v_i$. Let $c^\ast = f(v_i, v_{-i}^\ast)$, and let $c''=f(v_i', v_{-i}')$. Recall $c^\ast\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v'_k(c^\ast)$ . In other words, for all $c\in C$, 
 
 $$
-v_i^*(c^*) + \sum_{k\in V-\lbrace i\rbrace}v_k'(c^*) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c)
+v_i^\ast(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v_k'(c^\ast) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c)
 $$
 
-Thus, $u_i(c^*) =$ 
+Thus, $u_i(c^\ast) =$ 
 
 $$
-\begin{align*}v_i(c^*) - p_i(c^*) &= v_i(c^*) + (\sum_{k\in V-\lbrace i\rbrace}v'_k(c^*)) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\&\geq v_i'(c'') + (\sum_{k\in V-\lbrace i\rbrace}v_k'(c'')) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\ &= v_i(c'') - p_i(c'') = u_i(c'') \end{align*}
+\begin{align*}v_i(c^\ast) - p_i(c^\ast) &= v_i(c^\ast) + (\sum_{k\in V-\lbrace i\rbrace}v'_k(c^\ast)) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\&\geq v_i'(c'') + (\sum_{k\in V-\lbrace i\rbrace}v_k'(c'')) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\ &= v_i(c'') - p_i(c'') = u_i(c'') \end{align*}
 $$
