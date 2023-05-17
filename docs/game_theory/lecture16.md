@@ -4,7 +4,25 @@ title: Lecture 16 Selfish Network Routing, Congestion Games, and the Price of An
 parent: Game Theory
 nav_order: 12
 ---
-
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 200px; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
 ## Lecture 16 Selfish Network Routing, Congestion Games, and the Price of Anarchy
 
 ### (Selfish) Network Routing as a Game
@@ -81,11 +99,31 @@ $a = \min_s\varphi(s)$ and $b = \max_s\varphi(s)$. Thus, every improvement seque
 
 Finally, note that the last profile $s$ in any improvement sequence which can not be further improved is, by definition, a pure Nash equilibrium.
 
-### A flow network game
+### A flow network game and Braess’s paradox
 
-### Braess’s paradox
+<div class="row">
+  <div class="column">
+    <p>1. Flow network</p>
+    <pre class="mermaid" style="float: left;">
+    graph LR
+        s -- 1 --> t
+        s -- x --> t
+    </pre>
+  </div>
 
-Add one more road, but it will cause a 15-minute delay.
+  <div class="column">
+    <p>2. Braess's paradox</p>
+    <pre class="mermaid" style="">
+    graph LR
+        s -- 1 --> b -- x --> t
+        s -- x --> a -- 1 --> t
+    </pre>
+  </div>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  </script>
+</div>
 
 ### Social welfare and the price of anarchy
 
