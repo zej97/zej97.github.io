@@ -46,7 +46,7 @@ $$
 
 ### Nash Equilibrium
 
-**Definition**: ****For a strategic game $\Gamma$, a strategy profile $x = (x_1, \cdots, x_n) \in X$ is a mixed Nash Equilibrium if for every Player $i$, $x_i$ is a best response to $x_{- i}$.
+**Definition**: For a strategic game $\Gamma$, a strategy profile $x = (x_1, \cdots, x_n) \in X$ is a mixed Nash Equilibrium if for every Player $i$, $x_i$ is a best response to $x_{- i}$.
 
 In other words, for every Player $i = 1, \cdots, n$, and for every mixed strategy $y_i \in X_i$,
 

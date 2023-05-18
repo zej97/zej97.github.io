@@ -52,7 +52,7 @@ But why does embedding help when there are numerous sparse features? And why peo
 The time complexity of equation $(2)$ is $O(kn^2)$. With following optimization, we can reduce the time complexity to $O(kn)$.
 
 $$
-\sum_{i=1}^n \sum_{j=i+1}^n \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j \\ = \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j - \frac{1}{2}\sum_{i=1}^n \langle \mathbf{v}_i, \mathbf{v}_i \rangle x_i x_i \tag{4}
+\begin{align*}&\sum_{i=1}^n \sum_{j=i+1}^n \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j \\ &= \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j - \frac{1}{2}\sum_{i=1}^n \langle \mathbf{v}_i, \mathbf{v}_i \rangle x_i x_i\end{align*} \tag{4}
 $$
 
 The RHS of equation $(4)$ derives from the $\langle \mathbf{V}, \mathbf{V} \rangle$ subtracting the redundant diagonal elements $\langle \mathbf{v}_i, \mathbf{v}_i \rangle x_i x_i$. 
@@ -71,7 +71,7 @@ In the recall stage, we need to calculate the similarity between the embedding o
 We decompose the second-order feature interaction into the sum of the term of users and the term of items. Then we get the following equation:
 
 $$
-(5) = \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{u \in U} v_{u, f} x_{u} + \sum_{t \in I} v_{t, f} x_{t}\right)^{2}-\sum_{u \in U} v_{u, f}^{2} x_{u}^{2} - \sum_{t\in I} v_{t, f}^{2} x_{t}^{2}\right) \\ = \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{u \in U} v_{u, f} x_{u}\right)^{2} + \left(\sum_{t \in I} v_{t, f} x_{t}\right)^{2} + 2{\sum_{u \in U} v_{u, f} x_{u}}{\sum_{t \in I} v_{t, f} x_{t}} - \sum_{u \in U} v_{u, f}^{2} x_{u}^{2} - \sum_{t \in I} v_{t, f}^{2} x_{t}^{2}\right) \tag{6}
+\begin{align*}&(5) = \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{u \in U} v_{u, f} x_{u} + \sum_{t \in I} v_{t, f} x_{t}\right)^{2}-\sum_{u \in U} v_{u, f}^{2} x_{u}^{2} - \sum_{t\in I} v_{t, f}^{2} x_{t}^{2}\right) \\ &= \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{u \in U} v_{u, f} x_{u}\right)^{2} + \left(\sum_{t \in I} v_{t, f} x_{t}\right)^{2} \\ + 2{\sum_{u \in U} v_{u, f} x_{u}}{\sum_{t \in I} v_{t, f} x_{t}} - \sum_{u \in U} v_{u, f}^{2} x_{u}^{2} - \sum_{t \in I} v_{t, f}^{2} x_{t}^{2}\right) \end{align*}\tag{6}
 $$
 
 Where the $U$ and $I$ are the set of users and items respectively. The $x_u$ and $x_t$ are the user's feature vector and the item's feature vector respectively. 
@@ -79,7 +79,7 @@ Where the $U$ and $I$ are the set of users and items respectively. The $x_u$ and
 For the same user, even if they interact with different items, the scores of the first-order and second-order interaction terms between user features are the same. Therefore, the formula can be simplified again by removing the internal interaction features, and get the matching score of the user and the item:
 
 $$
-\text{MatchScore}_{FM} = \sum_{t \in I} w_{t} x_{t} + \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{t \in I} v_{t, f} x_{t}\right)^{2} - \sum_{t \in I} v_{t, f}^{2} x_{t}^{2}\right) + \sum_{f=1}^{k}\left( {\sum_{u \in U} v_{u, f} x_{u}}{\sum_{t \in I} v_{t, f} x_{t}} \right) \tag{7}
+\begin{align*}&\text{MatchScore}_{FM} = \sum_{t \in I} w_{t} x_{t} + \\&\frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{t \in I} v_{t, f} x_{t}\right)^{2} - \sum_{t \in I} v_{t, f}^{2} x_{t}^{2}\right) + \sum_{f=1}^{k}\left( {\sum_{u \in U} v_{u, f} x_{u}}{\sum_{t \in I} v_{t, f} x_{t}} \right) \end{align*}\tag{7}
 $$
 
 ## Parameter Update[^2]
