@@ -47,10 +47,10 @@ In a minimax profile $x^\ast = (x_1^\ast, x_2^\ast)$,
 
 ### Useful Corollary of LP Duality
 
-Solutions $x^*$ and $y^*$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
+Solutions $x^\ast$ and $y^\ast$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
 
-1. For each primal constraint, $(Ax)_i \leq b_i$, $i = 1, \cdots, m$, either $(Ax^*)_i = b_i$ or $y_i^* = 0$ (or both).
-2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^*) = c_j$ or $x^*_j = 0$ (or both).
+1. For each primal constraint, $(Ax)_i \leq b_i$, $i = 1, \cdots, m$, either $(Ax^\ast)_i = b_i$ or $y_i^\ast = 0$ (or both).
+2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^\ast) = c_j$ or $x^\ast_j = 0$ (or both).
 
 ### Dominance
 Only a pure strategy can be strictly dominant.
@@ -59,13 +59,13 @@ Only a pure strategy can be strictly dominant.
 
 **Proposition** In an $n$-player game, a profile $x^\ast$ is a Nash Equilibrium if and only if there exists $w_1, \cdots, w_n \in \mathbb{R}$, such that the following hold:
 
-1. For all players $i$, and every $\pi_{i, j}\in {\rm support}(x_i^\ast)$, $U_i(x_{-i}^*; \pi_{i, j}) = w_i$, and 
-2. For all players $i$, and every $\pi_{i, j} \notin {\rm support}(x_i^\ast)$, $U_i(x_{-i}^*; \pi_{i, j}) \leq w_i$.
+1. For all players $i$, and every $\pi_{i, j}\in {\rm support}(x_i^\ast)$, $U_i(x_{-i}^\ast; \pi_{i, j}) = w_i$, and 
+2. For all players $i$, and every $\pi_{i, j} \notin {\rm support}(x_i^\ast)$, $U_i(x_{-i}^\ast; \pi_{i, j}) \leq w_i$.
 
 **Note**: such $w_i$’s necessarily satisfy $w_i = U_i(x^\ast).$
 
 ### Kuhn's Theorem
-**Theorem ([Kuhn’53])** Every finite $n$-person extensive PI-game, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some pure profile, $s^* = (s_1^*, \cdots, s^*_n)$, is a SPNE.
+**Theorem ([Kuhn’53])** Every finite $n$-person extensive PI-game, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some pure profile, $s^\ast = (s_1^\ast, \cdots, s^\ast_n)$, is a SPNE.
 
 ### History oblivious payoff
 
