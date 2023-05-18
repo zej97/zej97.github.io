@@ -27,23 +27,23 @@ The **depth** of a node $w$ in $T$ is its **length** $\lvert w \rvert$  as a str
 
 Base case, depth 0: In this case we are at a leaf $w$. There is nothing to show: each player $i$ gets payoff $u_i(w)$, and the strategies in the SPNE $s^\ast$ are empty.
 
-Inductive step: Suppose depth of $$\mathcal{G}_w$$ is $$k + 1$$. Let $$Act(w) = \lbrace a'_1, \cdots, a'_r\rbrace$$ be the set of actions available at the root of $$\mathcal{G}_w$$. The subtrees $$T_{wa_j'}$$, for $$j = 1, \cdots, r$$, each define a PI-subgame $$\mathcal{G}_{wa_j'}$$, of depth $$\leq k$$.
+Inductive step: Suppose depth of $$\mathcal{G}_w$$ is $$k + 1$$. Let $$Act(w) = \lbrace a^\prime_1, \cdots, a^\prime_r\rbrace$$ be the set of actions available at the root of $$\mathcal{G}_w$$. The subtrees $$T_{wa_j^\prime}$$, for $$j = 1, \cdots, r$$, each define a PI-subgame $$\mathcal{G}_{wa_j^\prime}$$, of depth $$\leq k$$.
 
-Thus, by induction, each game $\mathcal{G}_{wa_j'}$ has a pure strategy SPNE, $s^{wa'_j} = (s_1^{wa_j'}, \cdots, s_n^{wa_j'})$.
+Thus, by induction, each game $\mathcal{G}_{wa_j^\prime}$ has a pure strategy SPNE, $s^{wa^\prime_j} = (s_1^{wa_j^\prime}, \cdots, s_n^{wa_j^\prime})$.
 
 To define $s^w = (s_1^w, \cdots, s^w_n)$, there are two cases to consider
 
 1. $w \in Pl_0$, i.e., the root node, $w$, of $T_w$ is a chance node (belongs to “nature”).
     
-    Let the strategy $s_i^w$ for player $i$ be just the obvious “union” $\bigcup_{a'\in Act(w)}s_i^{wa'}$, of its pure strategies in each of the subgames. (Note that $Act(w)$ denotes probability sets here.)
+    Let the strategy $s_i^w$ for player $i$ be just the obvious “union” $\bigcup_{a^\prime\in Act(w)}s_i^{wa^\prime}$, of its pure strategies in each of the subgames. (Note that $Act(w)$ denotes probability sets here.)
     
     **Claim**: $s^w = (s_1^w, \cdots, s_n^w)$ must be a pure SPNE of $\mathcal{G}_w$ (depth $k + 1$). 
     
     Suppose not. Then some player $i$ could improve its expected payoff by switching to a different pure strategy in one of the subgames. But that violates the inductive hypothesis on that subgame. 
     
-2. $w \in Pl_i, i > 0$: the root, $w$, of $T_w$ belongs to player $i$. For $a \in Act(w)$, let $$h_i^{wa}(s^{wa})$$ be the expected payoff to player $i$ in the subgame $\mathcal{G}_{wa}$. Let $$a' = \argmax_{a\in Act(w)}h_i^{wa}(s^{wa})$$. For player $$i' \neq i$$, define $$s_{i'}^w = (\bigcup_{a\in Act(w)}s_{i'}^{wa})$$.
+2. $w \in Pl_i, i > 0$: the root, $w$, of $T_w$ belongs to player $i$. For $a \in Act(w)$, let $$h_i^{wa}(s^{wa})$$ be the expected payoff to player $i$ in the subgame $\mathcal{G}_{wa}$. Let $$a^\prime = \argmax_{a\in Act(w)}h_i^{wa}(s^{wa})$$. For player $$i^\prime \neq i$$, define $$s_{i^\prime}^w = (\bigcup_{a\in Act(w)}s_{i^\prime}^{wa})$$.
     
-    For $i$, define $s_i^{w} = (\bigcup_{a\in Act(w)}s_i^{wa}) \cup \{w\to a'\}$. 
+    For $i$, define $s_i^{w} = (\bigcup_{a\in Act(w)}s_i^{wa}) \cup \{w\to a^\prime\}$. 
     
     Claim: $s^w = (s_1^w, \cdots, s_n^w)$ is a pure SPNE of $\mathcal{G}_w$. $\quad \text{Q.E.D}$ 
     

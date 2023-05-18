@@ -18,7 +18,7 @@ nav_order: 8
 
 ### First algorithm to find NE's in 2-player games
 
-$\text{Input}$: A 2-player strategic game $\Gamma$, given by rational values $u_1(s, s')$ & $u_2(s, s')$, for all $s\in S_1$ & $s' \in S_2$. (I.e., the input is $2 \cdot m_1 \cdot m_2$ rational numbers.)
+$\text{Input}$: A 2-player strategic game $\Gamma$, given by rational values $u_1(s, s^\prime)$ & $u_2(s, s^\prime)$, for all $s\in S_1$ & $s^\prime \in S_2$. (I.e., the input is $2 \cdot m_1 \cdot m_2$ rational numbers.)
 
 $\text{Alogrithm}$:
 

@@ -77,10 +77,10 @@ A Bayesian Game, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p)$$,
 
 ### Bayesian Nash Equilibrium
 
-**Definition**: A strategy profile $s = (s_1, \cdots, s_n)$ is a **(pure) Bayesian Nash equilibrium (BNE)** if for all player $i$ and all types $t_i \in T_i$, and all strategies $s_i'$ for player $i$, we have: 
+**Definition**: A strategy profile $s = (s_1, \cdots, s_n)$ is a **(pure) Bayesian Nash equilibrium (BNE)** if for all player $i$ and all types $t_i \in T_i$, and all strategies $s_i^\prime$ for player $i$, we have: 
 
 $$
-U_i(s, t_i) \geq U_i((s_i';s_{-i}), t_i).
+U_i(s, t_i) \geq U_i((s_i^\prime;s_{-i}), t_i).
 $$
 
 **Proposition**: Every finite **Bayesian Game has a mixed strategy BNE**.

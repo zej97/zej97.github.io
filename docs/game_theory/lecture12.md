@@ -19,12 +19,11 @@ A 2-player **game graph**, $G = (V, E, pl)$ consists of:
 A game graph $G$ together with a start vertex $v_0 \in V$, defines a game tree $T_{v_0}$ given by:
 
 - Action alphabet $\Sigma = V$. Thus $T_{v_0} \subseteq V^*$.
-- $\epsilon \in T_{v_0}$, and $wv'' \in T_{v_0}$, for $v'' \in V$, if and only if
-    - $w = \epsilon$ and $(v_0, v'') \in E$, or
-    - $w = w'v'$, for some $v'\in V$, and $(v', v'')\in E$.
+- $\epsilon \in T_{v_0}$, and $wv^{\prime\prime} \in T_{v_0}$, for $v^{\prime\prime} \in V$, if and only if
+    - $w = \epsilon$ and $(v_0, v^{\prime\prime}) \in E$, or
+    - $w = w^{\prime\prime}$, for some $v^\prime\in V$, and $(v^\prime, v^{\prime\prime})\in E$.
     
-    **(If last vertex of any node $w$ is $v'$, it have action $v''$ if and only if $(v', v'')\in E$.)**
-    
+    **(If last vertex of any node $w$ is $v^\prime$, it have action $v^{\prime\prime}$ if and only if $(v^\prime, v^{\prime\prime})\in E$.)**
 
 ### Games on graphs
 
@@ -38,9 +37,9 @@ These together define a 2-player zero-sum PI-game with game tree $T_{v_0}$.
 
 ### History oblivious payoff
 
-Suppose $\exist$ vertex $v'$ of graph $G$ that is a “dead end”. E.g., in chess this could be “checkmate for Player I”.
+Suppose $\exist$ vertex $v^\prime$ of graph $G$ that is a “dead end”. E.g., in chess this could be “checkmate for Player I”.
 
-There may be many ways to get to $v'$, but the winner is the same for any finite play $wv' \in V^\ast$. I.e., $u(wv') = u(w'v')$, for all $wv', w'v' \in V^\ast$. So, the pay off is “**history oblivious**”.
+There may be many ways to get to $v^\prime$, but the winner is the same for any finite play $wv^\prime \in V^\ast$. I.e., $u(wv^\prime) = u(w^\prime v^\prime)$, for all $wv^\prime, w^{\prime\prime} \in V^\ast$. So, the pay off is “**history oblivious**”.
 
 What about for infinite plays $\pi$? We can think of $\pi$ as an infinite sequence $v_0v_1v_2\cdots$, where each $v_i \in V$. We use the notation $\pi \in V^\omega$.
 
@@ -52,19 +51,19 @@ $$
 
 I.e., the entry of the cycle in the infinite play $\pi$.
 
-Let’s call payoff function $u()$ history oblivious (**h.o.**), if for all infinite plays $\pi\ \&\ \pi'$, if $\inf(\pi) = \inf(\pi')$, then $u(\pi) = u(\pi')$, and for all finite complete plays $wv$ and $w'v$, 
+Let’s call payoff function $u()$ history oblivious (**h.o.**), if for all infinite plays $\pi\ \&\ \pi^\prime$, if $\inf(\pi) = \inf(\pi^\prime)$, then $u(\pi) = u(\pi^\prime)$, and for all finite complete plays $wv$ and $w^\prime v$, 
 
 $$
-u(wv) = u(w'v)
+u(wv) = u(w^\prime v)
 $$
 
-**Call a graph game h.o. if its payoffs are h.o.. $w$ and $w'$ represent histories here.**
+**Call a graph game h.o. if its payoffs are h.o.. $w$ and $w^\prime$ represent histories here.**
 
 ### Finitistic payoffs
 
 Note that in chess, if the play $\pi$ is infinite, then the play is always a draw, i.e., $u(\pi) = 0$.
 
-Let’s call an h.o. payoff function **finitistic** if for **ALL infinite plays** $\pi$ and $\pi'$, $u(\pi) = u(\pi')$. Let’s call game on a graph $\mathcal{G}_{v_0}$ finitistic if its payoff function is. 
+Let’s call an h.o. payoff function **finitistic** if for **ALL infinite plays** $\pi$ and $\pi^\prime$, $u(\pi) = u(\pi^\prime)$. Let’s call game on a graph $\mathcal{G}_{v_0}$ finitistic if its payoff function is. 
 
 **So, in win-lose-draw finitistic games, infinite plays are either all wins, all losses, or all draws, for player 1.**
 
@@ -72,7 +71,7 @@ Let’s call an h.o. payoff function **finitistic** if for **ALL infinite plays*
 
 ### Memoryless strategies and determinacy
 
-**Definition**: For a game $\mathcal{G}_{v_0}$, a strategy $s_i$ for player $i$ is **memoryless strategy** if for all $wv, w'v \in Pl'_i$, $s_i(wv) = s_i(w'v)$, and if $wv_0\in Pl_i'$ then $s_i(wv_0) = s_i(\epsilon)$. 
+**Definition**: For a game $\mathcal{G}_{v_0}$, a strategy $s_i$ for player $i$ is **memoryless strategy** if for all $wv, w^\prime v \in Pl^\prime_i$, $s_i(wv) = s_i(w^\prime v)$, and if $wv_0\in Pl_i^\prime$ then $s_i(wv_0) = s_i(\epsilon)$. 
 
 **I.e., the strategy always makes the same move from vertex, regardless of the history of how it got there.**
 

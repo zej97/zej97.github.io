@@ -7,33 +7,33 @@ nav_order: 7
 ## Lecture 8 Computing Solutions for General Finite Strategic Games, Part I: Dominance and iterated strategy elimination
 ### A partial-order on strategies: dominance
 
-**Definition**: For $x_i, x_i' \in X_i$, we say $x_i$ dominates $x'_i$, denoted $x_i \succeq x'_i$, if for all $x_{-i} \in X_{-i}$,
+**Definition**: For $x_i, x_i^\prime \in X_i$, we say $x_i$ dominates $x^\prime_i$, denoted $x_i \succeq x^\prime_i$, if for all $x_{-i} \in X_{-i}$,
 
 $$
-U_i(x_{-i};x_i) \geq U_i(x_{-i};x_i')
+U_i(x_{-i};x_i) \geq U_i(x_{-i};x_i^\prime)
 $$
 
-We say $x_i$ strictly dominates $x_i'$, denoted $x_i \succ x_i'$, if for all $x_{-i}\in X_{-i}$
+We say $x_i$ strictly dominates $x_i^\prime$, denoted $x_i \succ x_i^\prime$, if for all $x_{-i}\in X_{-i}$
 
 $$
-U_i(x_{-i};x_i) > U_i(x_{-i};x_i')
+U_i(x_{-i};x_i) > U_i(x_{-i};x_i^\prime)
 $$
 
-Proposition: $x_i$ dominates $x_i'$ if and only if for all pure counter profiles $\pi_{-i}\in X_{-i}$.
+Proposition: $x_i$ dominates $x_i^\prime$ if and only if for all pure counter profiles $\pi_{-i}\in X_{-i}$.
 
 $$
-U_i(\pi_{-i};x_i) \geq U_i(\pi_{-i};x_i')
+U_i(\pi_{-i};x_i) \geq U_i(\pi_{-i};x_i^\prime)
 $$
 
-Likewise, $x_i$ strictly dominates $x_i'$ iff for all $\pi_{-i}$
+Likewise, $x_i$ strictly dominates $x_i^\prime$ iff for all $\pi_{-i}$
 
 $$
-U_i(\pi_{-i};x_i) > U_i(\pi_{-i};x_i')
+U_i(\pi_{-i};x_i) > U_i(\pi_{-i};x_i^\prime)
 $$
 
 ### Obviously good strategies: dominant strategies
 
-**Definition**: A mixed strategy $x_i \in X_i$ is **dominant** if for all $x_i' \in X_i, x_i \succeq x_i'$. $x_i$ is **strictly dominant** if for all $x_i' \in X_i$ such that $x_i \neq x_i', x_i \succ x_i'$.
+**Definition**: A mixed strategy $x_i \in X_i$ is **dominant** if for all $x_i^\prime \in X_i, x_i \succeq x_i^\prime$. $x_i$ is **strictly dominant** if for all $x_i^\prime \in X_i$ such that $x_i \neq x_i^\prime, x_i \succ x_i^\prime$.
 
 **Definition**: For a mixed strategy $x_i$, its **support**, ${\rm support}(x_i)$, is the set of pure strategies $\pi_{i, j}$, such that $x_i(j) > 0$.
 
@@ -60,7 +60,7 @@ If $x_i$ is strictly dominant, it must clearly be equal to the unique pure strat
 
 ### Obviously bad: strictly dominated strategies
 
-**Definition**: We say a strategy $x_i \in X_i$ is **strictly dominated** if there ***exists*** another strategy $x_i'$ such that $x_i' \succ x_i$. We say $x_i$ is **weakly dominated** if there ***exists*** $x_i'$ such that $x_i' \succeq x_i$ and for some $x_{-i} \in X_i$, $U_i(x_{-i}; x_i') > U_i(x_{-i}; x_i)$.
+**Definition**: We say a strategy $x_i \in X_i$ is **strictly dominated** if there ***exists*** another strategy $x_i^\prime$ such that $x_i^\prime \succ x_i$. We say $x_i$ is **weakly dominated** if there ***exists*** $x_i^\prime$ such that $x_i^\prime \succeq x_i$ and for some $x_{-i} \in X_i$, $U_i(x_{-i}; x_i^\prime) > U_i(x_{-i}; x_i)$.
 
 Weakly dominated strategies aren’t necessarily as “bad”. It depends on what you think others will play. In particular, there can be Nash Equilibria where everybody is playing a weakly dominated strategy: 
 

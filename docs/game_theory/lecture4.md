@@ -113,10 +113,10 @@ Then we have
     \min_{x_2 \in X_2}(x_1^\ast)^\top Ax_2 = (x_1^\ast)^\top Ax_2^\ast = \max_{x_1\in X_1}(x_1)^\top Ax_2^\ast
     $$
     
-4. We didn’t assume anything about the particular NE we chose. So, for ever NE, $x^\ast$, letting $v' = (x^\ast)^\top Ax_2^\ast$,
+4. We didn’t assume anything about the particular NE we chose. So, for ever NE, $x^\ast$, letting $v^\prime = (x^\ast)^\top Ax_2^\ast$,
     
     $$
-    \max_{x_1\in X_1}\min_{x_2 \in X_2}(x_1)^\top Ax_2 = v' = v^\ast = (x_1^\ast)^\top Ax_2^\ast = \min_{x_2\in X_2}\max_{x_1\in X_1}(x_1)^\top Ax_2
+    \max_{x_1\in X_1}\min_{x_2 \in X_2}(x_1)^\top Ax_2 = v^\prime = v^\ast = (x_1^\ast)^\top Ax_2^\ast = \min_{x_2\in X_2}\max_{x_1\in X_1}(x_1)^\top Ax_2
     $$
     
     Moreover, if $x^\ast = (x_1^\ast, x_2^\ast)$ satisfies conditions (1.) and (2.) for some $v^\ast$, then $x^\ast$ must be a NE.

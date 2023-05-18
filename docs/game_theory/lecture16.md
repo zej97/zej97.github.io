@@ -51,9 +51,9 @@ $$G = (N, R, (Z_i)_{i\in N}, (d_r)_{r\in R})$$
 
 ### Best response dynamics and pure Nash Equilibria
 
-In a **congestion game** $G$, for any pure strategy profile $$s = (s_1, \cdots, s_n)$$, suppose that some player $i$ has a better alternative strategy, $$s'_i\in Z_i$$, such that $$C_i(s_{-i}; s_i') < C_i(s)$$.
+In a **congestion game** $G$, for any pure strategy profile $$s = (s_1, \cdots, s_n)$$, suppose that some player $i$ has a better alternative strategy, $$s^\prime_i\in Z_i$$, such that $$C_i(s_{-i}; s_i^\prime) < C_i(s)$$.
 
-Player $i$ can switch (unilaterally) from $s_i$ to $s_i'$. This takes us from profile perform a sequence of such **(strict) improvement steps**.
+Player $i$ can switch (unilaterally) from $s_i$ to $s_i^\prime$. This takes us from profile perform a sequence of such **(strict) improvement steps**.
 
 **Theorem**: ([Rosenthal’73]) In any congestion game, every sequence of strict improvement steps is necessarily finite, and terminates in a **pure NE**. 
 
@@ -65,14 +65,14 @@ $$
 \varphi(s) \doteq \sum_{r\in R}\sum_{j=1}^{n_r(s)}d_r(j)
 $$
 
-This function computes the **total cost or benefit of the players' choices in the game**. Sometimes called the **social cost function**. the Let $s' := (s_{-i}; s_i')$.
+This function computes the **total cost or benefit of the players^\prime choices in the game**. Sometimes called the **social cost function**. the Let $s^\prime := (s_{-i}; s_i^\prime)$.
 
-**Claim**: $\varphi(s) - \varphi(s') = C_i(s) - C_i(s')$. 
+**Claim**: $\varphi(s) - \varphi(s^\prime) = C_i(s) - C_i(s^\prime)$. 
 
-For $i'\in \lbrace 1, \cdots, n \rbrace$, define
+For $i^\prime\in \lbrace 1, \cdots, n \rbrace$, define
 
 $$
-n_r^{(i')}(s) = \lvert \lbrace i \mid r\in  s_i \wedge  i \in \lbrace 1, \cdots, i'\rbrace  \rbrace  \rvert
+n_r^{(i^\prime)}(s) = \lvert \lbrace i \mid r\in  s_i \wedge  i \in \lbrace 1, \cdots, i^\prime\rbrace  \rbrace  \rvert
 $$
 
 By exchanging the order of summation in equation $(1)$ for 
@@ -87,7 +87,7 @@ $$
 \sum_{r\in s_n}d_r(n^{(n)}_r(s)) = \sum_{r\in s_n}d_r(n_r(s)) = C_n(s)
 $$
 
-So, if player $n$ switches from strategy $s_n$ to $s_n'$, leading us from profile $s$ to $s'$, then $\varphi(s) - \varphi(s') = C_i(s) - C_i(s')$. 
+So, if player $n$ switches from strategy $s_n$ to $s_n^\prime$, leading us from profile $s$ to $s^\prime$, then $\varphi(s) - \varphi(s^\prime) = C_i(s) - C_i(s^\prime)$. 
 
 $n_r(s)$ is the total congestion on resource $r$. The formula $\sum_{j=1}^{n_r(s)}$ doesn’t need have a intuitively explanation. This constructed formula represents a sense of potential which is quite like the gravitational potential energy.
 

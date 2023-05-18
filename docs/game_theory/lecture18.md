@@ -44,7 +44,7 @@ We shall see that some things become impossible to do without money.
 The section ***Let’s bring money back into the picture & The Vickrey-Clarke-Groves (VCG) Mechanism*** really helps us to understand the concepts.
 
 - Let $C$ be a set of **outcomes (candidates)**, and let  $L$ be the set of total **orderings (preferences)** ($\prec$) on $C$. A social choice function is a function $f: L^n\mapsto C$. ($C = \{c_1, \cdots, c_m\}$, $L^n = L_1\times \cdots \times L_n$, $\prec_i\in Li$)
-- $f$ can be **strategically manipulated** by player (voter) $i$, if some $\prec_1,\cdots,\prec_n\in L^n$, we have $c\prec_i c'$ (not the best outcome for player $i$), and if $c = f(\prec_1, \cdots, \prec_n)$, and there exists some other ordering $\prec_i'$ such that $c' = f(\prec_1, \cdots, \prec_i', \cdots, \prec_n)$.
+- $f$ can be **strategically manipulated** by player (voter) $i$, if some $\prec_1,\cdots,\prec_n\in L^n$, we have $c\prec_i c^\prime$ (not the best outcome for player $i$), and if $c = f(\prec_1, \cdots, \prec_n)$, and there exists some other ordering $\prec_i^\prime$ such that $c^\prime = f(\prec_1, \cdots, \prec_i^\prime, \cdots, \prec_n)$.
     - **Note**: More intuitively, player $i$ is dominant. $L_i$ can dominant the selection of outcomes (candidates).
 - $f$ is called **incentive compatible** (strategy-proof) if it can not be strategically manipulated by anyone.
 - $f$ is a **dictatorship** if there is some player $i$ such that for all $\prec_1, \cdots, \prec_n$, $f(\prec_1, \cdots, \prec_n) = c_i$, where $c_i$ is the maximum outcome for player $i$, i.e. $\forall b\neq c_i,\ b\prec_i c_i$.
@@ -75,51 +75,51 @@ The section ***Let’s bring money back into the picture & The Vickrey-Clarke-Gr
     f(v_1, \cdots, v_n) = c^\ast \in \argmax_c\sum_{i\in V}v_i(c)
     $$
     
-- But voters could be dishonest and lie about their true value function. (Voter $i$ can declare a different non-negative value functions $v_i'$.)
+- But voters could be dishonest and lie about their true value function. (Voter $i$ can declare a different non-negative value functions $v_i^\prime$.)
 - Can we incentivize the voters to tell the truth?
 - **Yes, if we are allowed to ask them to pay money.**    
 
 ### The Vickrey-Clarke-Groves (VCG) Mechanism
 
-- Each voter $i\in V$ is asked to submit their nonnegative valuation function, $v_i'$. ($v_i'$ may or may not be $i$’s **actual** valuation function $v_i$.)
-- The mechanism then computes an **optimal candidate**, $f(v_1', \cdots, v'_n) := c^\ast$, that maximizes total value:
+- Each voter $i\in V$ is asked to submit their nonnegative valuation function, $v_i^\prime$. ($v_i^\prime$ may or may not be $i$’s **actual** valuation function $v_i$.)
+- The mechanism then computes an **optimal candidate**, $f(v_1^\prime, \cdots, v^\prime_n) := c^\ast$, that maximizes total value:
     
     $$
-    f(v_1',\cdots, v_n'):= c^\ast\in \argmax_c \sum_{k\in V}v_k'(c)
+    f(v_1^\prime,\cdots, v_n^\prime):= c^\ast\in \argmax_c \sum_{k\in V}v_k^\prime(c)
     $$
     
     This candidate $c^\ast$ is chosen as the **winner of the election**.
     
-- Moreover, each voter $i$ has to **pay** an amount $p_i(c^\ast)$ to the mechanism, which is **independent of** $v_i'$, defined by (the marginal harm their has caused to other bidders):
+- Moreover, each voter $i$ has to **pay** an amount $p_i(c^\ast)$ to the mechanism, which is **independent of** $v_i^\prime$, defined by (the marginal harm their has caused to other bidders):
     
     $$
-    p_i(c^\ast) := (\max_{c'\in C} \sum_{j\in V-\lbrace i\rbrace}v'_j(c')) - \sum_{j\in V-\lbrace i\rbrace}v'_j(c^\ast)
+    p_i(c^\ast) := (\max_{c^\prime\in C} \sum_{j\in V-\lbrace i\rbrace}v^\prime_j(c^\prime)) - \sum_{j\in V-\lbrace i\rbrace}v^\prime_j(c^\ast)
     $$
 
 **Key Point [1]**: This marginal harm caused to other participants (i.e. the final price paid by each individual with a successful bid) can be calculated as: **(sum of bids of the auction from the best combination of bids *excluding the participant under consideration*) − (what other *winning* bidders have bid in the current (best) combination of bids)**. If the sum of bids of the second best combination of bids is the same as that of the best combination, then the price paid by the buyers will be the same as their initial bid. In all other cases, the price paid by the buyers will be lower.
 
-**Key Point [2]**: These payments align the incentives of all voters: each voter $i$, even knowing the valuation functions $v_j'$ declared by voters $j \neq i$, will want to declare a function $v_i'$ that yields a winner $c^\ast = f(v_1',\cdots, v_n')$ which maximizes $v_i(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c^\ast)$. So, it should $v'_i:= v_i$. 
+**Key Point [2]**: These payments align the incentives of all voters: each voter $i$, even knowing the valuation functions $v_j^\prime$ declared by voters $j \neq i$, will want to declare a function $v_i^\prime$ that yields a winner $c^\ast = f(v_1^\prime,\cdots, v_n^\prime)$ which maximizes $v_i(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v^\prime_k(c^\ast)$. So, it should $v^\prime_i:= v_i$. 
 
 ### Basic properties of VCG
 
-Let $f(v_1', \cdots, v_n') = c^\ast$ be the outcome chosen as the winner by the VCG mechanism, based on their declared (non-negative) valuation functions $v_1', \cdots, v_n'$. Then for every voter $i$ both its **payment** $p_i(c^\ast)$ and its **purported utility** $u'_i(c^\ast) = v'_i(c^\ast) - p_i(c^\ast)$ are non-negative, i.e.:
+Let $f(v_1^\prime, \cdots, v_n^\prime) = c^\ast$ be the outcome chosen as the winner by the VCG mechanism, based on their declared (non-negative) valuation functions $v_1^\prime, \cdots, v_n^\prime$. Then for every voter $i$ both its **payment** $p_i(c^\ast)$ and its **purported utility** $u^\prime_i(c^\ast) = v^\prime_i(c^\ast) - p_i(c^\ast)$ are non-negative, i.e.:
 
-$p_i(c^\ast) \ge 0$  and $u_i'(c^\ast) := v'_i(c^\ast) - p_i(c^\ast) \ge 0$.
+$p_i(c^\ast) \ge 0$  and $u_i^\prime(c^\ast) := v^\prime_i(c^\ast) - p_i(c^\ast) \ge 0$.
 
 ### VCG is incentive-compatible (i.e., strategy-proof)
 
 **Theorem ([Vickrey,1961],[Clarke,1971],[Groves,1973])** The VCG mechanism is incentive compatible (i.e., strategy proof). In other words, declaring their true valuation function $v_i$ is a (weakly) dominant strategy for all player $i$.
 
-Proof Suppose players declare valuations $v_1', \cdots, v_n'$. Suppose player $i$’s true valuation is $v_i$. Let $c^\ast = f(v_i, v_{-i}')$, and let $c''=f(v_i', v_{-i}')$. 
+Proof Suppose players declare valuations $v_1^\prime, \cdots, v_n^\prime$. Suppose player $i$’s true valuation is $v_i$. Let $c^\ast = f(v_i, v_{-i}^\prime)$, and let $c^{\prime\prime}=f(v_i^\prime, v_{-i}^\prime)$. 
 
-Recall $c^\ast\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v'_k(c^\ast)$ . In other words, for all $c\in C$, 
+Recall $c^\ast\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v^\prime_k(c^\ast)$ . In other words, for all $c\in C$, 
 
 $$
-v_i(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v_k'(c^\ast) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c)
+v_i(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v_k^\prime(c^\ast) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v^\prime_k(c)
 $$
 
 Thus, $u_i(c^\ast) =$ 
 
 $$
-\begin{align*}v_i(c^\ast) - p_i(c^\ast) &= v_i(c^\ast) + (\sum_{k\in V-\lbrace i\rbrace}v'_k(c^\ast)) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\&\geq v_i(c'') + (\sum_{k\in V-\lbrace i\rbrace}v_k'(c'')) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\ &= v_i(c'') - p_i(c'') = u_i(c'') \end{align*}
+\begin{align*}v_i(c^\ast) - p_i(c^\ast) &= v_i(c^\ast) + (\sum_{k\in V-\lbrace i\rbrace}v^\prime_k(c^\ast)) - (\max_{c^\prime\in C}\sum_{j\in V-\lbrace i\rbrace}v^\prime_j(c^\prime)) \\&\geq v_i(c^{\prime\prime}) + (\sum_{k\in V-\lbrace i\rbrace}v_k^\prime(c^{\prime\prime})) - (\max_{c^\prime\in C}\sum_{j\in V-\lbrace i\rbrace}v^\prime_j(c^\prime)) \\ &= v_i(c^{\prime\prime}) - p_i(c^{\prime\prime}) = u_i(c^{\prime\prime}) \end{align*}
 $$

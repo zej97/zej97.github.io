@@ -9,13 +9,13 @@ nav_order: 11
 
 ### Markov Decision Processes
 
-Definition A Markov Decision Process is given by a game graph $G_{v_0} = (V, E, pl, q, v_0, u)$, where:
+**Definition** A Markov Decision Process (MDP) is given by a game graph $G_{v_0} = (V, E, pl, q, v_0, u)$, where:
 
 - $V$ is a (finite) set of vertices.
 - $pl: V \mapsto \lbrace 0, 1\rbrace$, maps each vertex either to player 0 (Nature) or player 1.
     - Let $V_0 = pl^{-1}(0)$, and $V_1 = pl^{-1}(1)$.
 - $E: V\mapsto 2^{V}$ (set of pairs) maps each vertex $v$ to a set $E(v)$ of “successors” (or “actions” at $v$).
-- For each “nature” vertex, $v\in V_0$, a probability distribution $q_v: E(v)\mapsto [0, 1]$, over the set of “actions” at $v$, such that $\sum _{v'\in E(v)} q_v(v') = 1$.
+- For each “nature” vertex, $v\in V_0$, a probability distribution $q_v: E(v)\mapsto [0, 1]$, over the set of “actions” at $v$, such that $\sum _{v^\prime\in E(v)} q_v(v^\prime) = 1$.
 - A start vertex $v_0\in V$.
 - A payoff function: $u: \Psi_{T_{v_0}} \mapsto \mathbb{R}$, from plays to payoffs for player 1.
 
@@ -100,7 +100,7 @@ In Shapley’s stochastic games, at each state, both player **simultaneously and
     - Inverse function $pl^{-1}$ is the same with the definition above.
 - $E:V\mapsto 2^V$ maps each vertex $v$ to a set $E(V)$ of “successors” (or “actions” at $v$).
 - Let $V_{\rm dead} = \lbrace v\in V \mid E(v) = \empty\rbrace$.
-- For each “nature” vertex, $v\in V_0$, a probability distribution $q_v: E(v)\mapsto [0, 1]$, over the set of “actions” at $v$, such that $\sum_{v'\in E(v)}q_v(v') = 1$.
+- For each “nature” vertex, $v\in V_0$, a probability distribution $q_v: E(v)\mapsto [0, 1]$, over the set of “actions” at $v$, such that $\sum_{v^\prime\in E(v)}q_v(v^\prime) = 1$.
 - A start vertex $v_0 \in V$.
 - A target vertex $v_T \in V$.
  <details>

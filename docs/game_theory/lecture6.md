@@ -13,9 +13,9 @@ nav_order: 5
 
 $\text{Input}$: Given $(f, {\rm Opt}, C)$ and a start “vertex” $x\in K(C) \subseteq \mathbb{R}^n$.
 
-$\text{While}$ ($x$ has a “neighbor vertex”, $x'$, with $f(x') > f(x)$)
+$\text{While}$ ($x$ has a “neighbor vertex”, $x^\prime$, with $f(x^\prime) > f(x)$)
 
-- Pick such a neighbor $x'$. Let $x := x'$.
+- Pick such a neighbor $x^\prime$. Let $x := x^\prime$.
 - (If the “neighbor” is at “infinity”, $\text{Output}$: “unbounded”.)
 
 $\text{Output}$: $x^\ast := x$ is optimal solution, with optimal value $f(x^\ast)$.
@@ -82,25 +82,25 @@ Call this a **basic feasible solution (BFS)**, with basis $B$.
 
 Suppose our current dictionary basis (the variables on the left) is $B = \lbrace x_{i_1}, \cdots, x_{i_m} \rbrace$, with $x_{i_r}$ the variable on the left of constraint $C_r$.
 
-The following pivoting procedure moves us from basis $B$ to basis $B':= (B\backslash\lbrace x_{i_r}\rbrace) \bigcup \lbrace x_j \rbrace$.
+The following pivoting procedure moves us from basis $B$ to basis $B^\prime:= (B\backslash\lbrace x_{i_r}\rbrace) \bigcup \lbrace x_j \rbrace$.
 
 Pivoting to add $x_j$ and remove $x_{i_r}$ from basis $B$:
 
 1. Assume $C_r$ involves $x_j$, rewrite $C_r$ as $x_j = \alpha$. (Tightest)
-2. Substitute $\alpha$ for $x_j$ in other constraints $C_I$, obtaining $C_I'.$
-3. The new constraints $C'$, have a new basis: $B':= (B\backslash\lbrace x_{i_r}\rbrace) \bigcup \lbrace x_j \rbrace$.
-4. Also substitute $\alpha$ for $x_j$ in $f(x)$, so that $f(x)$ again only depends on variables not in the new basis $B'$.
+2. Substitute $\alpha$ for $x_j$ in other constraints $C_I$, obtaining $C_I^\prime.$
+3. The new constraints $C^\prime$, have a new basis: $B^\prime:= (B\backslash\lbrace x_{i_r}\rbrace) \bigcup \lbrace x_j \rbrace$.
+4. Also substitute $\alpha$ for $x_j$ in $f(x)$, so that $f(x)$ again only depends on variables not in the new basis $B^\prime$.
 
-The new basis $B'$ is a **possible neighbor** of $B$. However, not every such basis $B'$ is eligible.
+The new basis $B^\prime$ is a **possible neighbor** of $B$. However, not every such basis $B^\prime$ is eligible.
 
 ### Sanity checks for pivoting
 
 To check eligibility of a pivot, we have to make sure:
 
-1. The new constants $b_i'$ remain $\geq 0$, so we retain a “**feasible dictionary**”, and thus $B'$ yields a BFS.
-2. The new BFS must improve, or at least must not decrease, the value $d' = f(0)$ of the new objective function. 
+1. The new constants $b_i^\prime$ remain $\geq 0$, so we retain a “**feasible dictionary**”, and thus $B^\prime$ yields a BFS.
+2. The new BFS must improve, or at least must not decrease, the value $d^\prime = f(0)$ of the new objective function. 
 3. We should also check for the following situations 
-    1. Suppose all variables in $f(x)$ have **negative coefficients**. Then any increase from $0$ in these variables will decrease the objective. We are thus at an optimal BFS $x^\ast$. $\text{Output: Opt-BFS}: x^\ast \& f(x^\ast) = f(0) = d'$
+    1. Suppose all variables in $f(x)$ have **negative coefficients**. Then any increase from $0$ in these variables will decrease the objective. We are thus at an optimal BFS $x^\ast$. $\text{Output: Opt-BFS}: x^\ast \& f(x^\ast) = f(0) = d^\prime$
     2. Suppose a variable $x_j$ in $f(x)$ has coefficient $c_j > 0$, and the coefficient of $x_j$ in every constraint $C_r$ is $\geq 0$. Then we can increase $x_j$, and objective, to “infinity” without violating constraints. So, $\text{Output:}$ **Feasible but Unbounded**.
 
 ### Example of a simplex piovting step
