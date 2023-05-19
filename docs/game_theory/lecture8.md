@@ -78,7 +78,7 @@ No matter how to choose, there always exists a strategy whose expected payoff is
 
 ### Common knowledge and strategy elimination
 
-Definition: A fact $P$ is common knowledge among all $n$ players if:
+**Definition**: A fact $P$ is common knowledge among all $n$ players if:
 
 - For every player $i$, “Player $i$ knows $P$”: call this fact $P_{\langle i \rangle}$.
 - And, inductively, for $k \geq 1$, for all players $i$, and all sequences $s = i_1 \cdots i_k\in \lbrace 1, \cdots, n\rbrace^k$, “Player $i$ knows $P_{\langle s \rangle}$”: call this fact $P_{\langle i, s \rangle}$.

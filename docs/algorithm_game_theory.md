@@ -69,21 +69,21 @@ Only a pure strategy can be strictly dominant.
 
 ### History oblivious payoff
 
-Let’s call payoff function $u()$ history oblivious (**h.o.**), if for all infinite plays $\pi\ \&\ \pi'$, if $\inf(\pi) = \inf(\pi')$, then $u(\pi) = u(\pi')$, and for all finite complete plays $wv$ and $w'v$, 
+Let’s call payoff function $u()$ history oblivious (**h.o.**), if for all infinite plays $\pi\ \&\ \pi^\prime$, if $\inf(\pi) = \inf(\pi^\prime)$, then $u(\pi) = u(\pi^\prime)$, and for all finite complete plays $wv$ and $w^\prime v$, 
 
 $$
-u(wv) = u(w'v)
+u(wv) = u(w^\prime v)
 $$
 
-Call a graph game h.o. if its payoffs are h.o.. $**w$ and $w'$ represent histories here.**
+Call a graph game h.o. if its payoffs are h.o.. $w$ and $w^\prime$ represent histories here.
 
 ### Finitistic payoff
 
-Let’s call an h.o. payoff function finitistic if for all infinite plays $\pi$ and $\pi'$, $u(\pi) = u(\pi')$. Let’s call game on a graph $\mathcal{G}_{v_0}$ finitistic if its payoff function is. 
+Let’s call an h.o. payoff function finitistic if for all infinite plays $\pi$ and $\pi^\prime$, $u(\pi) = u(\pi^\prime)$. Let’s call game on a graph $\mathcal{G}_{v_0}$ finitistic if its payoff function is. 
 
 ### Memoryless strategies and determainacy
 
-**Definition**: For a game $\mathcal{G}_{v_0}$, a pure strategy $s_i$ for player $i$ is **memoryless strategy** if for all $wv, w'v \in Pl'_i$, $s_i(wv) = s_i(w'v)$, and if $wv_0\in Pl_i'$ then $s_i(wv_0) = s_i(\epsilon)$. 
+**Definition**: For a game $\mathcal{G}_{v_0}$, a pure strategy $s_i$ for player $i$ is **memoryless strategy** if for all $wv, w^\prime v \in Pl^\prime_i$, $s_i(wv) = s_i(w^\prime v)$, and if $wv_0\in Pl_i^\prime$ then $s_i(wv_0) = s_i(\epsilon)$. 
 
 I.e., the strategy always makes the same move from vertex, regardless of the history of how it got there.
 
@@ -101,12 +101,12 @@ Assume w.l.o.g. all infinite plays are win for player 2 (other case is symmetric
 - $\text{Bad}:= \lbrace v\in V \mid v \text{ a dead end that wins for player 2} \rbrace$
 1. $\mathbf{Initialize}$:  $\text{Win}_1 := \text{Good}; St_1 := \emptyset$;
 2. $\mathbf{Repeat}$
-    1. $\text{Foreach } v\notin \text{Win}_1$:
-        1. $\text{If } (pl(v) = 1 \ \&\ \exist (v, v')\in E: v'\in \text{Win}_1)$:
+    1. $\mathbf{Foreach}\ v\notin \text{Win}_1$:
+        1. $\text{If } (pl(v) = 1 \ \&\ \exist (v, v^\prime)\in E: v^\prime\in \text{Win}_1)$:
             
-            $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace; St_1 := St_1 \cup \lbrace v\mapsto v'\rbrace$;
+            $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace; St_1 := St_1 \cup \lbrace v\mapsto v^\prime\rbrace$;
             
-        2. $\text{If } (pl(v) = 2 \ \&\ \forall (v, v')\in E: v'\in \text{Win}_1)$:
+        2. $\text{If } (pl(v) = 2 \ \&\ \forall (v, v^\prime)\in E: v^\prime\in \text{Win}_1)$:
             
             $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace$;
             
@@ -128,14 +128,14 @@ Player 1 has a winning strategy iff $v_0 \in \text{Win}_1$. If so, $St_1$ is a *
 
 **Theorem ([Vickrey,1961],[Clarke,1971],[Groves,1973])** The VCG mechanism is incentive compatible (i.e., strategy proof). In other words, declaring their true valuation function $v_i$ is a (weakly) dominant strategy for all player $i$.
 
-Proof Suppose players declare valuations $v_1', \cdots, v_n'$. Suppose player $i$’s true valuation is $v_i$. Let $c^\ast = f(v_i, v_{-i}^\ast)$, and let $c''=f(v_i', v_{-i}')$. Recall $c^\ast\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v'_k(c^\ast)$ . In other words, for all $c\in C$, 
+Proof Suppose players declare valuations $v_1^\prime, \cdots, v_n^\prime$. Suppose player $i$’s true valuation is $v_i$. Let $c^\ast = f(v_i, v_{-i}^\ast)$, and let $c^{\prime\prime}=f(v_i^\prime, v_{-i}^\prime)$. Recall $c^\ast\in \argmax_c v_i(c) + \sum_{k\in V- \lbrace i\rbrace}v^\prime_k(c^\ast)$ . In other words, for all $c\in C$, 
 
 $$
-v_i^\ast(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v_k'(c^\ast) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v'_k(c)
+v_i^\ast(c^\ast) + \sum_{k\in V-\lbrace i\rbrace}v_k^\prime(c^\ast) \geq v_i(c) + \sum_{k\in V-\lbrace i\rbrace}v^\prime_k(c)
 $$
 
 Thus, $u_i(c^\ast) =$ 
 
 $$
-\begin{align*}v_i(c^\ast) - p_i(c^\ast) &= v_i(c^\ast) + (\sum_{k\in V-\lbrace i\rbrace}v'_k(c^\ast)) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\&\geq v_i'(c'') + (\sum_{k\in V-\lbrace i\rbrace}v_k'(c'')) - (\max_{c'\in C}\sum_{j\in V-\lbrace i\rbrace}v'_j(c')) \\ &= v_i(c'') - p_i(c'') = u_i(c'') \end{align*}
+\begin{align*}v_i(c^\ast) - p_i(c^\ast) &= v_i(c^\ast) + (\sum_{k\in V-\lbrace i\rbrace}v^\prime_k(c^\ast)) - (\max_{c^\prime\in C}\sum_{j\in V-\lbrace i\rbrace}v^\prime_j(c^\prime)) \\&\geq v_i^\prime(c^{\prime\prime}) + (\sum_{k\in V-\lbrace i\rbrace}v_k^\prime(c^{\prime\prime})) - (\max_{c^\prime\in C}\sum_{j\in V-\lbrace i\rbrace}v^\prime_j(c^\prime)) \\ &= v_i(c^{\prime\prime}) - p_i(c^{\prime\prime}) = u_i(c^{\prime\prime}) \end{align*}
 $$
