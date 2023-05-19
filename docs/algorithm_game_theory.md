@@ -99,9 +99,12 @@ Assume w.l.o.g. all infinite plays are win for player 2 (other case is symmetric
 
 - $\text{Good} := \lbrace v\in V \mid v \text{ a dead end that wins for player 1}\rbrace$.
 - $\text{Bad}:= \lbrace v\in V \mid v \text{ a dead end that wins for player 2} \rbrace$
+
 1. $\mathbf{Initialize}$:  $\text{Win}_1 := \text{Good}; St_1 := \emptyset$;
 2. $\mathbf{Repeat}$
+
     1. $\mathbf{Foreach}\ v\notin \text{Win}_1$:
+
         1. $\text{If } (pl(v) = 1 \ \&\ \exist (v, v^\prime)\in E: v^\prime\in \text{Win}_1)$:
             
             $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace; St_1 := St_1 \cup \lbrace v\mapsto v^\prime\rbrace$;
@@ -109,7 +112,6 @@ Assume w.l.o.g. all infinite plays are win for player 2 (other case is symmetric
         2. $\text{If } (pl(v) = 2 \ \&\ \forall (v, v^\prime)\in E: v^\prime\in \text{Win}_1)$:
             
             $\text{Win}_1 := \text{Win}_1 \cup \lbrace v\rbrace$;
-            
     
     $\mathbf{Until} \text{ The set Win}_1 \text{ does not change}$;
     
