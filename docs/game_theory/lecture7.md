@@ -11,7 +11,7 @@ nav_order: 6
 
 Suppose you want to optimize this Primal LP:
 
-**Maximize** $c^{\rm T} x$
+**Maximize** $c^\top  x$
 
 **Subject to**:
 
@@ -19,22 +19,22 @@ $$
 \begin{align*}&Ax \leq b\\ &x_1, \cdots, x_n \geq 0 \end{align*}
 $$
 
-Suppose an “Adversary” comes along with a $m$-vector $y\in \mathbb{R}^m, y \geq 0$, such that: $c^{\rm T} \leq y^{\rm T} A$.
+Suppose an “Adversary” comes along with a $m$-vector $y\in \mathbb{R}^m, y \geq 0$, such that: $c^\top  \leq y^\top  A$.
 
 For any solution, $x$, you may have for the Primal:
 
 $$
-\begin{align*} c^{\rm T}x &\leq (y^{\rm T}A) x &\text{ (because } x \geq 0 \text{\ \& \ } c^{\rm T} \leq y^{\rm T} A) \\ &= y^{\rm T}(Ax) \\ &\leq y^{\rm T}b &\text{ (because } y^{\rm T} \geq 0 \text{\ \&\ } Ax \leq b)\end{align*}
+\begin{align*} c^\top x &\leq (y^\top A) x &\text{ (because } x \geq 0 \text{\ \& \ } c^\top  \leq y^\top  A) \\ &= y^\top (Ax) \\ &\leq y^\top b &\text{ (because } y^\top  \geq 0 \text{\ \&\ } Ax \leq b)\end{align*}
 $$
 
-So, the adversary’s goal is to minimize $y^{\rm T}b$, subject to $c^{\rm T} \leq y^{\rm T}A$, i.e., optimize the **Dual LP**.
+So, the adversary’s goal is to minimize $y^\top b$, subject to $c^\top  \leq y^\top A$, i.e., optimize the **Dual LP**.
 
 ### The LP Duality Theorem
 
 **Proposition**: (Weak Duality)
 
 $$
-c^{\rm T} x^\ast \leq b^{\rm T}y^\ast
+c^\top  x^\ast \leq b^\top y^\ast
 $$
 
 **Theorem**: (Strong Duality, von Neumann’47) One of the following for situations holds:
@@ -42,7 +42,7 @@ $$
 1. Both the primal and dual LPs are feasible, and for any optimal solutions $x^\ast$ of the primal and $y^\ast$ of the dual:
     
     $$
-    c^{\rm T} x^\ast = b^{\rm T}y^\ast
+    c^\top  x^\ast = b^\top y^\ast
     $$
     
 2. The primal is infeasible and the dual is unbounded.
@@ -54,29 +54,29 @@ $$
 Solutions $x^\ast$ and $y^\ast$ to the primal and dual LPs, respectively, are both optimal if and only if the following hold:
 
 1. For each primal constraint, $(Ax)_i \leq b_i$, $i = 1, \cdots, m$, either $(Ax^\ast)_i = b_i$ or $y_i^* = 0$ (or both).
-2. For each dual constraint, $(A^{\rm T}y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^{\rm T}y^\ast)_j = c_j$ or $x^\ast_j = 0$ (or both).
+2. For each dual constraint, $(A^\top y)_j \geq c_j$, $j = 1, \cdots, n$, either $(A^\top y^\ast)_j = c_j$ or $x^\ast_j = 0$ (or both).
 
 **Proof**: By weak duality
 
 $$
-c^{\rm T}x^\ast \leq ((y^\ast)^{\rm T}A)x^\ast = (y^\ast)^{\rm T}(Ax^\ast) \leq (y^\ast)^{\rm T}b
+c^\top x^\ast \leq ((y^\ast)^\top A)x^\ast = (y^\ast)^\top (Ax^\ast) \leq (y^\ast)^\top b
 $$
 
 By strong duality each inequality holds with equality precisely when $x^\ast$ and $y^\ast$ are optimal. So, when optimal,
 
 $$
-(((y^\ast)^{\rm T}A - c^{\rm T})x^\ast = 0
+(((y^\ast)^\top A - c^\top )x^\ast = 0
 $$
 
-Since both $(((y^\ast)^{\rm T}A -  c^{\rm T}) \geq 0$ and $x^\ast \geq 0$, it must be that for each $j = 1, \cdots, n$, $(A^{\rm T}y^\ast)_j = c_j$ or $x^\ast_j = 0$.
+Since both $(((y^\ast)^\top A -  c^\top ) \geq 0$ and $x^\ast \geq 0$, it must be that for each $j = 1, \cdots, n$, $(A^\top y^\ast)_j = c_j$ or $x^\ast_j = 0$.
 
-Likewise, when optimal, $(y^\ast)^{\rm T}(b - Ax^\ast) = 0$, and thus, for each $i = 1, \cdots, m$, $(Ax^\ast)_i = b_i$ or $y_i^* = 0$.
+Likewise, when optimal, $(y^\ast)^\top (b - Ax^\ast) = 0$, and thus, for each $i = 1, \cdots, m$, $(Ax^\ast)_i = b_i$ or $y_i^* = 0$.
 
 ### General Recipe for LP Duals
 
 If the primal is:
 
-**Maximize** $c^{\rm T} x$
+**Maximize** $c^\top  x$
 
 **Subject to**:
 
@@ -86,12 +86,12 @@ $$
 
 Then the dual is:
 
-**Minimize** $b^{\rm T}y$
+**Minimize** $b^\top y$
 
 **Subject to**:
 
 $$
-\begin{align*} & (A^{\rm T}y)_i \geq c_i, i = 1, \cdots, r,\\& (A^{\rm T}y)_i = c_i, i = r + 1, \cdots, n,\\& y_1, \cdots, y_d \geq 0 \end{align*}
+\begin{align*} & (A^\top y)_i \geq c_i, i = 1, \cdots, r,\\& (A^\top y)_i = c_i, i = r + 1, \cdots, n,\\& y_1, \cdots, y_d \geq 0 \end{align*}
 $$
 
 ### Duality and the Minimax Theorem
@@ -103,7 +103,7 @@ Recall the LP for solving Minimax for Player 1 in a zero-sum game given by matri
 **Subject to**:
 
 $$
-\begin{align*} & v - (x^{\rm T}A)_j \leq 0, \text{ for } j = 1, \cdots, m_2,\\& x_1 + \cdots + x_{m_1} = 1 \\& x_1 \geq 0 \text{ for } j = 1, \cdots, m_1.\end{align*}
+\begin{align*} & v - (x^\top A)_j \leq 0, \text{ for } j = 1, \cdots, m_2,\\& x_1 + \cdots + x_{m_1} = 1 \\& x_1 \geq 0 \text{ for } j = 1, \cdots, m_1.\end{align*}
 $$
 
 Dual to this LP:
