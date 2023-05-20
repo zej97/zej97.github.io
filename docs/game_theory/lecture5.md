@@ -67,7 +67,7 @@ The following three possible “answers” to an LP problem do cover all possibi
 4. Don’t need “$\alpha \geq \beta$”, where $\beta \in \mathbb{R}: \alpha \geq \beta \Leftrightarrow -\alpha \leq - \beta$.
 5. We can constrain every variable $x_i$ to be $x_i \geq 0$:
     
-    Introduce two variables $x^+_i, x_i^-$ for each variable $x_i$. Replace each occurrence of $x_i$ by $(x_i^+, x_i^-)$, and add the constraints $x_i^+\geq 0, x_i^-\geq 0$.
+    Introduce two variables $x^+_i, x_i^-$ for each variable $x_i$. Replace each occurrence of $x_i$ by $(x_i^+ - x_i^-)$, and add the constraints $x_i^+\geq 0, x_i^-\geq 0$.
     
     (N.B. can’t do both (2.) and (5.) together.)
 
@@ -88,7 +88,9 @@ $\mathbf{Input}$: LP instance $(x_0, \text{Opt}, C(x_0, x_1, \cdots, x_n))$.
         
     2. Remove $H_i$, i.e., all constraints involving $x_i$. Replace with constraints:
         
-        $\lbrace \alpha_j \le \beta_I \mid j = 1, \cdots, k, \&\ I = 1, \cdots, r\rbrace$.
+        $$
+        \lbrace \alpha_j \le \beta_I \mid j = 1, \cdots, k, \&\ I = 1, \cdots, r\rbrace
+        $$
         
 2. Only $x_0$ (or non variable) remains. All constraints have the forms $\alpha_j \le x_0, x_0 \le \beta_I$, or $\alpha_j \le \beta_I$, where $a_j$’s and $b_I$’s are constants. It’s easy to check “feasibility” & “boundedness” for such a one(or zero)-variable LP, and to find an optimal $x^\ast_0$ if one exists.
 3. Once you have $x^\ast_0$, plug it into $H_1$. Solve for $x_1^\ast$. Then use $x_0^\ast, x^\ast_1$ in $H_2$ to solve for $x^\ast_2, \cdots$, use $x^\ast_0, \cdots, x^\ast_{i - 1}$ in $H_i$ to solve for $x^\ast_i, \cdots$, then $x^\ast = (x^\ast_0, \cdots, x^\ast_n)$ is an optimal feasible solution.
