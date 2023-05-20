@@ -70,3 +70,25 @@ The following three possible “answers” to an LP problem do cover all possibi
     Introduce two variables $x^+_i, x_i^-$ for each variable $x_i$. Replace each occurrence of $x_i$ by $(x_i^+, x_i^-)$, and add the constraints $x_i^+\geq 0, x_i^-\geq 0$.
     
     (N.B. can’t do both (2.) and (5.) together.)
+
+### Fourier-Motzkin Elimination
+
+[Wiki: Fourier-Motzkin Elimination Example](https://en.wikipedia.org/wiki/Fourier%E2%80%93Motzkin_elimination#Example)
+
+$\mathbf{Input}$: LP instance $(x_0, \text{Opt}, C(x_0, x_1, \cdots, x_n))$.
+
+1. $\mathbf{For}$  $i = n\text{ downto } 1$
+    1. Rewrite each constraint involving $x_i$ as $\alpha \le x_i$, or as $x_i \le \beta$. (One of the two is possible.) Let these be:
+        
+        $$
+        \alpha_1 \le x_i, \cdots, \alpha_k \le x_i; x_i \le \beta_1, \cdots, x_i \le \beta_r
+        $$
+        
+        (Retain these constraints, $H_i$, for later.)
+        
+    2. Remove $H_i$, i.e., all constraints involving $x_i$. Replace with constraints:
+        
+        $\lbrace \alpha_j \le \beta_I \mid j = 1, \cdots, k, \&\ I = 1, \cdots, r\rbrace$.
+        
+2. Only $x_0$ (or non variable) remains. All constraints have the forms $\alpha_j \le x_0, x_0 \le \beta_I$, or $\alpha_j \le \beta_I$, where $a_j$’s and $b_I$’s are constants. It’s easy to check “feasibility” & “boundedness” for such a one(or zero)-variable LP, and to find an optimal $x^\ast_0$ if one exists.
+3. Once you have $x^\ast_0$, plug it into $H_1$. Solve for $x_1^\ast$. Then use $x_0^\ast, x^\ast_1$ in $H_2$ to solve for $x^\ast_2, \cdots$, use $x^\ast_0, \cdots, x^\ast_{i - 1}$ in $H_i$ to solve for $x^\ast_i, \cdots$, then $x^\ast = (x^\ast_0, \cdots, x^\ast_n)$ is an optimal feasible solution.

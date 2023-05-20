@@ -159,4 +159,8 @@ $$
 - In Braess’s paradox, the price of anarchy is $\frac{4}{3}$: by playing the NE the average delay is 2, but playing half-and-half on the upper and lower route, the average delay is $\frac{3}{2}$ (and that’s optimal).
 - [Roughgarden-Tardos’00] showed that in a more general flow network setting (where there can be multiple source-destination pairs $(s_j, t_j)$), as long as congestions labeling edges are linear functions of  $x$, the worst-case price of anarchy is $\frac{4}{3}$.
 
+### Back to atomic network congestion games
+
+By an “atomic” network congestion game, we simply mean a standard network congestion game with a finite number of players, where each aims to minimize its own cost. (Whereas in non-atomic network flow games that average cost in equilibrium is uniquely determined, this is not the case with atomic network congestion games.)
+
 **Theorem**: [Christodoulou-Koutsoupias’2005]. The pure price of anarchy for a pure NE in atomic network congestion games with linear utilities is $\frac{5}{2}$.
