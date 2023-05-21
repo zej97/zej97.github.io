@@ -13,7 +13,7 @@ A perfect information (PI) game: 1 node per information set.
 
 **Theorem ([Kuhn’53])** Every **finite $n$-person extensive PI-game**, $\mathcal{G}$, has a NE, in fact, a subgame-perfect NE (SPNE), in pure strategies. I.e., some **pure** profile, $s^\ast = (s_1^\ast, \cdots, s^\ast_n)$, is a SPNE.
 
-**Definition**: For a game $\mathcal{G}$ with game tree $T$, and for $w\in T$, define the subtree $T_w \subseteq T$, by: 
+**Definition**: For a game $\mathcal{G}$ with game tree $T$, and for $w\in T$, define the subtree $T_w \subseteq T$ ($w$ is the root node of the subtree), by: 
 
 $$
 T_w=\lbrace w^{\prime} \in T \mid w^{\prime}=w w^{\prime \prime} \text { for } w^{\prime \prime} \in \Sigma^\ast \rbrace

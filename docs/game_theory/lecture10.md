@@ -26,14 +26,14 @@ A game in extensive form $\mathcal{G}$ consists of:
 2. A tree $T$, called the **game tree**, over some $\Sigma$.
 3. A partition of the tree nodes $T$ into disjoint sets $Pl_0, Pl_1, \cdots, Pl_n$, such that $T = \bigcup_{i = 0}^n Pl_i$. Where $Pl_i,i\geq 1$, **denotes the nodes of player $i$, where it is player $i$’s turn to move.** (And $Pl_0$ denotes the “chance” / “nature” nodes.)
 4. For each “**nature**” node, $w \in Pl_0$, a probability distribution $q_w: Act(w) \mapsto \mathbb{R}$ over its actions: $q_w(a) \geq 0, \sum_{a\in Act(w)}q_w(a) = 1$. (That is $Act(w)$ maps probabilities.)
-5. For each player $i \geq 1$, a partition of $Pl_i$ into disjoint non-empty **information sets** $$\textit{Info}_{i, 1}, \cdots, \textit{Info}_{i, r_i}$$, such that $$Pl_i = \bigcup_{j = 0}^{r_i} \it{Info}_{i, j}$$. Moreover, for any $i, j,$ and & all nodes $w, w^\prime \in \it Info_{i, j}$, $Act(w) = Act(w^\prime)$. (i.e., **the set of possible “actions” from all nodes in one information set is the same.**) (Normal node with only one element can also make up a information set.)
+5. For each player $i \geq 1$, a partition of $Pl_i$ into disjoint non-empty **information sets** $${\rm Info}_{i, 1}, \cdots, {\rm Info}_{i, r_i}$$, such that $$Pl_i = \bigcup_{j = 0}^{r_i} {\rm Info}_{i, j}$$. Moreover, for any $i, j,$ and & all nodes $w, w^\prime \in {\rm Info}_{i, j}$, $Act(w) = Act(w^\prime)$. (i.e., **the set of possible “actions” from all nodes in one information set is the same.**) (Normal node with only one element can also make up a information set.)
 6. For each player $i$, a function $u_i: \Psi_T \to \mathbb{R}$, from (complete) plays to the **payoff** for player $i$. (p.s. it is for infinite. for finite game it can be $u_i: L_t \to \mathbb{R}$).
 
-**Definition** An extensive form game $\mathcal{G}$ is called a game of **perfect information**, if every information set $\it Info_{i, j}$ contains only 1 node.
+**Definition** An extensive form game $\mathcal{G}$ is called a game of **perfect information**, if every information set ${\rm Info}_{i, j}$ contains only 1 node.
 
 ### Pure Strategies
 
-A pure strategy $s_i$ for player $i$ in an extensive game $\mathcal G$ is a function $s_i: Pl_i \mapsto \Sigma$ (i.e., $s_i$ is a letter in the alphabet.) that assigns actions to each of player $i$’s nodes, such that $s_i(w) \in Act(w), w\in Pl_i$, and such that if $w, w^\prime \in \it Info_{i, j}$, then $s_i(w) = s_i(w^\prime)$.
+A pure strategy $s_i$ for player $i$ in an extensive game $\mathcal G$ is a function $s_i: Pl_i \mapsto \Sigma$ (i.e., $s_i$ is a letter in the alphabet.) that assigns actions to each of player $i$’s nodes, such that $s_i(w) \in Act(w), w\in Pl_i$, and such that if $w, w^\prime \in {\rm Info}_{i, j}$, then $s_i(w) = s_i(w^\prime)$.
 
 Let $S_i$ be the set of pure strategies for player $i$.
 
@@ -89,7 +89,7 @@ It is often unwise to naively translate a game from extensive strategic from in 
 ### Imperfect Information & Perfect Recall
 
 1. An extensive form game (EFG) is a game of imperfect information if it has non-trivial (size > 1) information sets. **Players don’t have full knowledge of the current “state” (current node of the game tree).**
-2. Informally, an imperfect information EFG has perfect recall if each player $i$ never forgets its own sequence of prior actions and information sets. I.e., a EFG has perfect recall if whenever $w, w^\prime \in \it Info_{i, j}$ belong to the same information set, then the “visible history” for player $i$ (sequence of information sets and actions of player $i$ during the play) prior to hitting node $w$ and $w^\prime$ must be exactly the same. The game has perfect recall if nodes in the same information set have the same experience.
+2. Informally, an imperfect information EFG has perfect recall if each player $i$ never forgets its own sequence of prior actions and information sets. I.e., a EFG has perfect recall if whenever $w, w^\prime \in {\rm Info}_{i, j}$ belong to the same information set, then the “visible history” for player $i$ (sequence of information sets and actions of player $i$ during the play) prior to hitting node $w$ and $w^\prime$ must be exactly the same. The game has perfect recall if nodes in the same information set have the same experience.
 3. With perfect recall it suffices to restrict players’ strategies to **behavior strategies**: strategies that only randomize (independently) on actions at each information set.
     - **mixed strategies** assign a probability distribution over pure strategies.
     - **[behavioural strategies](http://www.cs.umd.edu/~hajiagha/474GT13/Lecture10242013.pdf)** assign, independently for each information set, a probability distribution over actions. An agent’s (probabilistic) choice at each node is independent of his/her choices at other nodes.
