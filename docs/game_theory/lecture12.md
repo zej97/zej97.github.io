@@ -96,7 +96,7 @@ Assume w.l.o.g. all infinite plays are win for player 1 (other case is symmetric
 - $\text{Good} := \lbrace v\in V \mid v \text{ a dead end that wins for player 1}\rbrace$.
 - $\text{Bad}:= \lbrace v\in V \mid v \text{ a dead end that wins for player 2} \rbrace$
 
-1. $\mathbf{Initialize}$:  $$$\text{Win}_1 := \text{Good}; St_1 := \emptyset$;
+1. $\mathbf{Initialize}$:  $\text{Win}_1 := \text{Good}; St_1 := \emptyset$;
 2. $\mathbf{Repeat}$
 
     1. $\mathbf{Foreach}\ v\notin \text{Win}_1$:

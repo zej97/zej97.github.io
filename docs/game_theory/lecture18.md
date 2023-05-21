@@ -44,7 +44,7 @@ We shall see that some things become impossible to do without money.
 The section ***Let’s bring money back into the picture & The Vickrey-Clarke-Groves (VCG) Mechanism*** really helps us to understand the concepts.
 
 - Let $C$ be a set of **outcomes (candidates)**, and let  $L$ be the set of total **orderings (preferences)** ($\prec$) on $C$. A social choice function is a function $f: L^n\mapsto C$. ($C = \{c_1, \cdots, c_m\}$, $L^n = L_1\times \cdots \times L_n$, $\prec_i\in Li$)
-- $f$ can be **strategically manipulated** by player (voter) $i$, if some $\prec_1,\cdots,\prec_n\in L^n$, we have $c\prec_i c^\prime$ (not the best outcome for player $i$), and if $c = f(\prec_1, \cdots, \prec_n)$, and there exists some other ordering $\prec_i^\prime$ such that $c^\prime = f(\prec_1, \cdots, \prec_i^\prime, \cdots, \prec_n)$.
+- $f$ can be **strategically manipulated** by player (voter) $i$, if some $\prec_1,\cdots,\prec_n\in L^n$, we have $c\prec_i c^\prime$ ($c$ is not the best outcome for player $i$), and if $c = f(\prec_1, \cdots, \prec_n)$, and there exists some other ordering $\prec_i^\prime$ such that $c^\prime = f(\prec_1, \cdots, \prec_i^\prime, \cdots, \prec_n)$.
     - **Note**: More intuitively, player $i$ is dominant. $L_i$ can dominant the selection of outcomes (candidates).
 - $f$ is called **incentive compatible** (strategy-proof) if it can not be strategically manipulated by anyone.
 - $f$ is a **dictatorship** if there is some player $i$ such that for all $\prec_1, \cdots, \prec_n$, $f(\prec_1, \cdots, \prec_n) = c_i$, where $c_i$ is the maximum outcome for player $i$, i.e. $\forall b\neq c_i,\ b\prec_i c_i$.

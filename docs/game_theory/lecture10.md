@@ -33,7 +33,7 @@ A game in extensive form $\mathcal{G}$ consists of:
 
 ### Pure Strategies
 
-A pure strategy $s_i$ for player $i$ in an extensive game $\mathcal G$ is a function $s_i: Pl_i \mapsto \Sigma$ (i.e., $s_i$ is a letter in the alphabet.) that assigns actions to each of player $i$’s nodes, such that $s_i(w) \in Act(w), w\in Pl_i$, and such that if $w, w^\prime \in {\rm Info}_{i, j}$, then $s_i(w) = s_i(w^\prime)$.
+A **pure strategy** $s_i$ for player $i$ in an extensive game $\mathcal G$ is a function $s_i: Pl_i \mapsto \Sigma$ (i.e., $s_i$ is a letter in the alphabet.) that assigns actions to each of player $i$’s nodes, such that $s_i(w) \in Act(w), w\in Pl_i$, and such that if $w, w^\prime \in {\rm Info}_{i, j}$, then $s_i(w) = s_i(w^\prime)$.
 
 Let $S_i$ be the set of pure strategies for player $i$.
 
