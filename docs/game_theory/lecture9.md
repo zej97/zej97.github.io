@@ -25,14 +25,14 @@ nav_order: 8
     3. $\forall$ players $i = 1, \cdots,n$, $\sum_{j=1}^{m_i}x_i(j) = 1$.
     4. $\forall$ players $i = 1, \cdots,n$, and for $j \in {\rm support}_i$, $x_i(j) \ge 0$.
     5. $\forall$ players $i = 1, \cdots,n$, and for $j \notin {\rm support}_i$, $x_i(j) = 0$.
-- This system has $\sum_{i = 1}^n m_i + n$ variables:
+- This system has $\sum_{i = 1}^n m_i + n$ **variables**:
     
     $$
     x_1(1),\cdots, x_1(m_1), \cdots, x_n(1), \cdots, x_n(m_n), w_1, \cdots, w_n
     $$
     
 
-How do we find ${\rm support}_1 \& {\rm support}_2$? Just guess!
+How do we find ${\rm support}_1 \& {\rm support}_2$? Just **guess**!
 
 ### First algorithm to find NE's in 2-player games
 
@@ -44,4 +44,16 @@ $\text{Alogrithm}$:
     - Check if  the corresponding LP has a feasible solution $x^\ast, w_1, \cdots, w_n$. (using, e.g., Simplex)
     - If so, **STOP**: the feasible solution $x^\ast$ is a Nash Equilibrium (and $w_i = U_i(x^\ast)$).
 
-**Proposition**: Every finite 2-player game has a rational NE.
+**Proposition**: Every finite 2-player game has a rational NE. (Furthermore, the rational number are not too big, i.e., are polynomial sized.)
+
+The algorithm can easily be adapted to find not just any NE, but a good one. For example:
+
+Finding a NE that maximizes utility social welfare:
+
+1. For each support sets, simply solve the LP constraints while maximizing the objective
+    
+    $$
+    f(x,w) = w_1 + \cdots + w_n
+    $$
+    
+2. Keep track of best NE encountered, & output optimal NE after checking all support sets.

@@ -49,6 +49,12 @@ $$
 \inf(\pi) = \lbrace v\in V \mid \text{ for }\infty\text{-many } i \in \mathbb{N}, v_i = v\rbrace 
 $$
 
+or
+
+$$
+\inf(\pi) = \lbrace v\in V \mid \forall n\in \mathbb{N}, \exists j\ge n, v_j = v \rbrace 
+$$
+
 I.e., the entry of the cycle in the infinite play $\pi$.
 
 Let’s call payoff function $u()$ history oblivious (**h.o.**), if for all infinite plays $\pi\ \&\ \pi^\prime$, if $\inf(\pi) = \inf(\pi^\prime)$, then $u(\pi) = u(\pi^\prime)$, and for all finite complete plays $wv$ and $w^\prime v$, 

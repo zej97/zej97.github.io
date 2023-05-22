@@ -74,9 +74,9 @@ Suppose, somehow, $b_i \geq 0$ for all $i = 1, \cdots, m$. Then we have a feasib
 
 Call this a **basic feasible solution (BFS)**, with basis $B$.
 
-**Geometry**: A **BFS** corresponds to a vertex. (But different Bases $B$ may yield the same BFS.)
+**Geometry**: A **BFS** corresponds to a vertex. (But different basis $B$ may yield the same BFS.)
 
-**Questions**: How do we move from one BFS with basis $B$ to neighboring BFS with basis $B’$? **Answers**: Pivoting.
+**Questions**: How do we move from one BFS with basis $B$ to neighboring BFS with basis $B^\prime$? **Answers**: Pivoting.
 
 ### Pivoting
 

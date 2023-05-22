@@ -94,3 +94,15 @@ $\mathbf{Input}$: LP instance $(x_0, \text{Opt}, C(x_0, x_1, \cdots, x_n))$.
         
 2. Only $x_0$ (or non variable) remains. All constraints have the forms $\alpha_j \le x_0, x_0 \le \beta_I$, or $\alpha_j \le \beta_I$, where $a_j$’s and $b_I$’s are constants. It’s easy to check “feasibility” & “boundedness” for such a one(or zero)-variable LP, and to find an optimal $x^\ast_0$ if one exists.
 3. Once you have $x^\ast_0$, plug it into $H_1$. Solve for $x_1^\ast$. Then use $x_0^\ast, x^\ast_1$ in $H_2$ to solve for $x^\ast_2, \cdots$, use $x^\ast_0, \cdots, x^\ast_{i - 1}$ in $H_i$ to solve for $x^\ast_i, \cdots$, then $x^\ast = (x^\ast_0, \cdots, x^\ast_n)$ is an optimal feasible solution.
+### Remarks
+
+IN the worst case, if every variable $x_i$ is involved in every constraint, each iteration of the "For loop" squares the number of constraints.
+
+**Gaussian Elimination** is much nicer and does not suffer from this explosion.
+
+**Corollary 1**: The three possible "answers" to an LP problem do cover all possibilities.
+
+**Corollary 2**: If an LP has an OFS, then it has a rational OFS, $x^\ast$, and $f(x^\ast)$ is also rational.
+
+Although Fourier-Motzkin Elimination is bad in the worst case, it can still be quite useful. It can be used to remove redundant variables and constraints. And its worst-case behavior may in some cases not arise in practice.
+
