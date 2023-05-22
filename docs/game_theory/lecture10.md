@@ -94,7 +94,7 @@ It is often unwise to naively translate a game from extensive strategic from in 
     - **mixed strategies** assign a probability distribution over pure strategies.
     - **[behavioural strategies](http://www.cs.umd.edu/~hajiagha/474GT13/Lecture10242013.pdf)** assign, independently for each information set, a probability distribution over actions. An agent’s (probabilistic) choice at each node is independent of his/her choices at other nodes.
 
-[Eamples of imperfect information games](https://www.math.kth.se/matstat/gru/sf2972/2015/lecture5_2015.pdf)
+[Eamples of imperfect recall](https://www.math.kth.se/matstat/gru/sf2972/2015/lecture5_2015.pdf)
 
 ### Subgames and (Subgame) Perfection
 

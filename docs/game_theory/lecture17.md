@@ -46,7 +46,7 @@ A **Bayesian Game**, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p
     u_i: A_1\times \cdots \times A_n \times T_1 \times \cdots \times T_n \mapsto \mathbb{R}
     $$
 
-- A (joint) probability distribution over types:
+- A **(joint) probability distribution over types**:
 
     $$
     p: T_1\times \cdots \times T_n\mapsto [0, 1]
@@ -58,7 +58,7 @@ A **Bayesian Game**, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p
     \sum\limits_{(t_1,\cdots, t_n) \in T} p(t_1, \cdots, t_n) = 1
     $$
 
-    $p$ is sometimes called a common prior.
+    $p$ is sometimes called a **common prior**.
 
 ### Strategies and expected payoffs in Bayesian games
 
