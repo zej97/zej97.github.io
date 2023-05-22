@@ -21,7 +21,7 @@ Consider one formulation of a **single-item**, **sealed-bid**, **auction** as a 
     
     and all other players $j \neq i$ get payoff $0$: $u_j(\text{outcome}) := 0$.
     
-- Let us require that the auctioneer must set up the rules of the auction so that they satisfy the following reasonable constraints: given (sealed) bids $(b_1, \cdots, b_n)$, one of the highest bidders must win, and must pay a price $pr$ such that $0 \leq pr \leq \max_i b_i$.
+- Let us require that the auctioneer must set up the rules of the auction so that they satisfy the following reasonable constraints: given (sealed) bids $(b_1, \cdots, b_n)$, one of the highest bidders must win, and must pay a price ${\rm pr}$ such that $0 \leq {\rm pr} \leq \max_i b_i$.
 - Question: What rule should the auctioneer employ, so that for each player $i$, bidding their “**true valuation**” $v_i$ (i.e., letting $b_i = v_i$) is a dominant strategy.
     - Note: it is the rule compels players to bid their true valuation.
 
@@ -35,7 +35,7 @@ In a Vickery auction, a.k.a., second-price, sealed bid auction, a highest bidder
 
 ### Bayesian Games (Games of Incomplete Information) [Harsanyi,’67,’68]
 
-A Bayesian Game, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p)$$, has 
+A **Bayesian Game**, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p)$$, has 
 
 - A finite set $N = \lbrace 1, \cdots, n\rbrace$  of **players**.
 - A (finite) set $A_i$ of **auctions** for each player $i \in N$.
@@ -62,8 +62,7 @@ A Bayesian Game, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p)$$,
 
 ### Strategies and expected payoffs in Bayesian games
 
-- A pure strategy for player $i$ is a function $s_i: T_i \mapsto A_i$.
-    
+- A **pure strategy** for player $i$ is a function $s_i: T_i \mapsto A_i$.
     I.e., player $i$ knows its own type, $t_i$, and chooses action $s_i(t_i)\in A_i$. 
     
 - Players’ types are chosen randomly according to (joint) distribution $p$.

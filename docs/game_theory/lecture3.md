@@ -138,7 +138,7 @@ A profile $x \in X$ is **Pareto efficient** (a.k.a.,**Pareto Optimal**) if there
 
 ### Evolutionarily Stable Strategies
 
-**Definitio**n: A 2-player game is symmetric if $S_1 = S_2$, and for all $s_1, s_2 \in S_1$, $u_1(s_1, s_2) = u_2(s_2, s_1)$.
+**Definition**: A 2-player game is symmetric if $S_1 = S_2$, and for all $s_1, s_2 \in S_1$, $u_1(s_1, s_2) = u_2(s_2, s_1)$.
 
 **Definition**: In a 2p-sym-game, mixed strategy $x_1^\ast$ is an **evolutionarily stable strategy (ESS)** if:
 
