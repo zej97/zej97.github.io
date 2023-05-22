@@ -31,15 +31,15 @@ In a Vickery auction, a.k.a., second-price, sealed bid auction, a highest bidder
 
 **Claim**: Bidding their true valuation, $v_i$, i.e., letting $b_i :=  v_i$, is a (weakly) dominant strategy in this game for all players $i$.
 
-**Note**: there is something very fishy/unsatisfactory about our formulation so far of an auction as a complete information game: player $i$ normally does not know the valuation $v_j$ of other players $j \neq i$. But if viewed as a complete information game, then every player knows every one else’s valuation. This is totally unrealistic.
+**Note**: there is something very fishy/unsatisfactory about our formulation so far of an auction as a complete information game: player $i$ normally does not know the valuation $v_j$ of other players $j \neq i$. But if viewed as **a complete information game**, then every player knows every one else’s valuation. This is totally unrealistic. We thus need a better game-theoretic model for settings like auctions.
 
 ### Bayesian Games (Games of Incomplete Information) [Harsanyi,’67,’68]
 
-A **Bayesian Game**, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p)$$, has 
+A [**Bayesian Game**](https://en.wikipedia.org/wiki/Bayesian_game), $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p)$$, has 
 
 - A finite set $N = \lbrace 1, \cdots, n\rbrace$  of **players**.
-- A (finite) set $A_i$ of **auctions** for each player $i \in N$.
-- A (finite) set of **possible types**, $T_i$, for each player $i \in N$.
+- A (finite) set $A_i$ of **actions** for each player $i \in N$ (or for each type). $A_{t_i} = A_i = (A_i^1, A_i^2, \cdots, A_n^{k_i})$ for all $t_i \in T_i$ and for all $i\in N$.
+- A (finite) set of **possible types (or signals)**, $T_i$, for each player $i \in N$. It represents peice of private information that player $i$ knows.
 - A **payoff (utility) function**, for each player $i \in N$:
 
     $$
@@ -59,6 +59,12 @@ A **Bayesian Game**, $$G = (N, (A_i)_{i\in N}, (T_i)_{i\in N}, (u_i)_{i\in N}, p
     $$
 
     $p$ is sometimes called a **common prior**.
+
+[Example of Bayesian game: Wiki](https://en.wikipedia.org/wiki/Bayesian_game#Example)
+
+[Example of Bayesian game: NYU page2](https://www.eco.uc3m.es/docencia/new_juegos/en_doc/3.3%20Bayesian.pdf)
+
+[Example of Bayesian game: Auctions](https://zej97.github.io/docs/game_theory/lecture17.html#back-to-vickrey-auctions)
 
 ### Strategies and expected payoffs in Bayesian games
 
@@ -88,6 +94,12 @@ $$
 
 ### Back to Vickrey auctions
 
-Now suppose we model a sealed-bid single-item auction using a **Bayesian game**, with some **arbitrary** prior probability distribution $p(v_1, \cdots, v_n)$ over valuations (suppose every $v_i$ is in some finite nonnegative range $[0, v_{\max}]$). The **private information** of each player $i$ is $t_i := v_i$.
+Now suppose we model a **sealed-bid single-item auction** using a **Bayesian game**, with some **arbitrary** prior probability distribution $p(v_1, \cdots, v_n)$ over valuations (suppose every $v_i$ is in some finite non-negative range $[0, v_{\max}]$). The **private information** of each player $i$ is $t_i := v_i$. I.e., each player $i$ knows its own valuation $v_i$, but doesn’t know the valuations $v_j$ of other players $j \neq i$.
 
-**Proposition**: In the Vickrey (second-price, sealed-bid) auction game, with any prior $p$, the **truth revealing** profile of bids $v = (v_1, \cdots, v_n)$, is a weakly dominant strategy profile.
+**Proposition**: In the Vickrey (second-price, sealed-bid) auction game, with **any** prior $p$, the **truth revealing** profile of bids $v = (v_1, \cdots, v_n)$, is a weakly dominant strategy profile.
+
+However, in first-price, sealed-bid auctions, (maximum bidder gets the item and pays ${\rm pr} = \max_ib_i$), bidding truthfully may indeed not be a dominant strategy. E.g., if player $i$ knows (with high probability) that its valuation $v_i$ is much higher than the other players’ valuations, then it may want to bid $b_i < v_i$, since it will still win the auction and pay less.
+
+**Proposition**: If prior $p$ is a product of i.i.d. uniform distributions over some interval $[0, v_{\max}]$, then the expected revenue of the second-price and first-price sealed-bid auctions are both **the same** in their (unique) symmetric BNEs.
+
+This is actually a special case of a much more general result in Mechanism Design called the **Revenue Equivalence Principle**. (But anyway, note that one-shot revenue maximization is **not** always a wise goal for an auctioneer.)
