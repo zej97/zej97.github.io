@@ -150,7 +150,7 @@ In some settings, such as congestion games, where we know that a pure equilibriu
 Let pure-${\rm NE}(\Gamma)$ denote the set of pure NEs in the game $\Gamma$. For settings (such as congestion games) where we know pure-${\rm NE}(\Gamma)$ is non-empty, we define “the pure price of anarchy” as:
 
 $$
-\text{pure-PoA}(\Gamma) := \frac{\max_{s\in S}{\rm welfare}(s)}{\min_{s\in\text{pure-}{\rm NE}(\Gamma)(\Gamma)}{\rm welfare}(s)}
+\text{pure-PoA}(\Gamma) := \frac{\max_{s\in S}{\rm welfare}(s)}{\min_{s\in\text{pure-}{\rm NE}(\Gamma)}{\rm welfare}(s)}
 $$
 
 ### Price of anarchy in the flow network game

@@ -142,7 +142,7 @@ A profile $x \in X$ is **Pareto efficient** (a.k.a.,**Pareto Optimal**) if there
 
 **Definition**: In a 2p-sym-game, mixed strategy $x_1^\ast$ is an **evolutionarily stable strategy (ESS)** if:
 
-1. $x_1^\ast$ is a best response to itself, i.e., $x^\ast = (x_1^\ast, x_2^\ast)$ is a symmetric NE &
+1. $x_1^\ast$ is a best response to itself, i.e., $x^\ast = (x_1^\ast, x_1^\ast)$ is a symmetric NE &
 2. If $x_1^\prime \neq x_1^\ast$ is another best response to $x_1^\ast$, then $U_1(x^\prime_1, x^\prime_1) < U_1(x_1^\ast, x^\prime_1)$.
 
-Nash also proves that every symmetric game has a symmetric NE, $(x_1^\ast, x_2^\ast)$. However, not every symmetric game has a ESS.
+Nash also proves that every symmetric game has a symmetric NE, $(x_1^\ast, x_1^\ast)$. However, not every symmetric game has a ESS.
