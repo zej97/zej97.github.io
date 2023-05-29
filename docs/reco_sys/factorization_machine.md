@@ -34,7 +34,7 @@ FM has the following advantages:
 The main idea of FM is to decompose the second-order feature combinations into the product of first-order feature combinations. That is, decoposing the elements of the cooccurrence matrix into the product of the user's latent vectors and the item's latent vectors - $\langle \mathbf{v}_i, \mathbf{v}_j \rangle$. Then we have the mathematical expression of FM as follows:
 
 $$
-\hat y(\mathbf{x}|\Theta) = w_0+ \sum_{i=1}^n w_i x_i + \sum_{i=1}^n \sum_{j=i+1}^n \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j \tag{2}
+\hat y(\mathbf{x}\vert\Theta) = w_0+ \sum_{i=1}^n w_i x_i + \sum_{i=1}^n \sum_{j=i+1}^n \langle \mathbf{v}_i, \mathbf{v}_j \rangle x_i x_j \tag{2}
 $$
     
 where $\Theta = (w_0, \mathbf{w}, \mathbf{V})$ is the model parameters. The latent factor matrix $\mathbf{V}$ is a $n \times k$ matrix, where $n$ is the number of features, and $k$ is the dimension of the latent factor. $\mathbf{v}_i, \mathbf{v}_j\in \mathbb{R}^k$ represnt the latent factor of feature $x_i$ and $x_j$ separately. Therefore, the inner product $\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ is the feature interaction between $x_i$ and $x_j$:
@@ -76,13 +76,16 @@ $$
 
 Where the $U$ and $I$ are the set of users and items respectively. The $x_u$ and $x_t$ are the user's feature vector and the item's feature vector respectively. 
 
-For the same user, even if they interact with different items, the scores of the first-order and second-order interaction terms between user features are the same. Therefore, the formula can be simplified again by removing the internal interaction features, and get the matching score of the user and the item:
+For the same user, even when they interact with different items, the scores of the first-order and second-order interaction terms between user features remain constant. This implies that it does not impact the final sorting result. Therefore, the formula can be simplified again by **removing the user internal interaction features**, and get the matching score of the user and the item:
 
 $$
-\begin{align*}&\text{MatchScore}_{FM} = \sum_{t \in I} w_{t} x_{t} + \\&\frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{t \in I} v_{t, f} x_{t}\right)^{2} - \sum_{t \in I} v_{t, f}^{2} x_{t}^{2}\right) + \sum_{f=1}^{k}\left( {\sum_{u \in U} v_{u, f} x_{u}}{\sum_{t \in I} v_{t, f} x_{t}} \right) \end{align*}\tag{7}
+\begin{align*}&\text{MatchScore}_{FM} = \mathbf{W}_t + \mathbf{V}_{tt} + \mathbf{V}_{ut} \\ &=\sum_{t \in I} w_{t} x_{t} + \frac{1}{2} \sum_{f=1}^{k}\left(\left(\sum_{t \in I} v_{t, f} x_{t}\right)^{2} - \sum_{t \in I} v_{t, f}^{2} x_{t}^{2}\right) + \sum_{f=1}^{k}\left( {\sum_{u \in U} v_{u, f} x_{u}}{\sum_{t \in I} v_{t, f} x_{t}} \right) \end{align*}\tag{7}
 $$
 
-## Parameter Update[^2]
+## Parameter Update
+
+### Parameter Gradient Update[^2]
+
 FM parameters:
 
 $$
@@ -91,16 +94,16 @@ $$
 
 where $w_0$ is the bias term, $\mathbf{w}$ is the first-order feature weight vector, and $\mathbf{V}$ is the second-order feature interaction matrix.
 
-If we regard the $\hat{y}(x\mid\Theta)$ as a binary classification problem, we can use the logistic loss function to optimize the parameters. For binary classification task, we need a sigmoid function to transform the output of the model to the probability of the positive class:
+If we regard the $\hat{y}(x\vert\Theta)$ as a binary classification problem, we can use the logistic loss function to optimize the parameters. For binary classification task, we need a sigmoid function to transform the output of the model to the probability of the positive class:
 
 $$
-P(y = 1 | x, \Theta) = \frac{1}{1 + \exp(-\hat{y}(x|\Theta))} = \sigma(\hat{y}(x|\Theta))
+P(y = 1 \vert x, \Theta) = \frac{1}{1 + \exp(-\hat{y}(x|\Theta))} = \sigma(\hat{y}(x|\Theta))
 $$
 
 If we assign 1 to the positive class (clicked) and -1 to the negative class (not clicked), the probability of the positive class can be expressed as:
 
 $$
-P(y|x, \Theta) = \frac{1}{1 + e(-y\hat{y}(x|\Theta))} = \sigma(y\hat{y}(x|\Theta))
+P(y\vert x, \Theta) = \frac{1}{1 + e(-y\hat{y}(x|\Theta))} = \sigma(y\hat{y}(x|\Theta))
 $$
 
 The parameters estimation can be calculated by the maximum likelihood estimation method. For training data set $S$, the optimal problem would be:
@@ -112,7 +115,7 @@ $$
 Therefore, the loss function for one sample $(x, y)$ is:
 
 $$
-\ell(y|x, \Theta) = - \ln P(y|x, \Theta) = - \ln \sigma(y\hat{y}(x|\Theta))
+\ell(y\vert x, \Theta) = - \ln P(y|x, \Theta) = - \ln \sigma(y\hat{y}(x|\Theta))
 $$
 
 Calculate the derivation of the loss function with respect to the parameter $\hat{y}$:
@@ -133,25 +136,51 @@ $$
 g_0^w=\frac{\partial l}{\partial w_0}=y(\sigma(y\hat{y})-1)\\ g_i^w=\frac{\partial l}{\partial w_i}=y(\sigma(y\hat{y})-1)x_i\\ g_{i,f}^v=\frac{\partial l}{\partial v_{i,f}}=y(\sigma(y\hat{y})-1)(x_i\sum_{j=1}^nv_{j,f}x_j-v_{i,f}x_i^2)
 $$
 
-In the industry, the most commonly used optimization algorithm is the stochastic gradient descent (SGD). However, we can also use the more efficient FTRL algorithm to optimize the parameters.
+In the industry, the most commonly used optimization algorithm is the **stochastic gradient descent (SGD)**. SGD supports online learning naturally. If we use only one sample to update the parameters, SGD becomes the **online gradient descent (OGD)**. 
+
+$$
+\mathbf{w}_{t+1} = \mathbf{w}_t - \eta_t \nabla \ell(\mathbf{w}_t) = \mathbf{w}_t - \eta_t \mathbf{g}_t
+$$
+
+While OGD may perform well in the online learning scenario, it is not efficient enough as it cannot sparsify the parameters. The reason is that $\mathbf{g}_t$ is calculated by only one sample at a time, which can be highly random. Even with L1 regularization, it can be still difficult to find a sparse solution. Therefore, Google introduced the **Follow-the-Regularized-Leader** (FTRL)[^3] algorithm as a solution for parameter optimization. FTRL not only ensures superior performance of the model but also possesses the ability to sparsify parameters in online learning scenarios.
 
 ## Insights
-When traning the model, if we only have the user features and item features, the size $n$ of the one-hot vector $x$ is the sum of the number of users and the number of items. The size of the second-order feature interaction matrix $V$ is $n \times k$. This latent matrix $V$ is also the ***table*** where stores the user and item embeddings. The size of each embedding is $k$.
+When traning the model, if we only have the user features and item features, the size $n$ of the one-hot vector $x$ is the sum of the number of users and the number of items. The size of the second-order feature interaction matrix $\mathbf{V}$ is $n \times k$. This latent matrix $V$ is also the ***table*** where stores the user and item embeddings. The size of each embedding is $k$.
 
 Furthermore, it is obvious the following two terms are the equivalent:
 
 $$
-\sum_{u\in U}\sum_{t\in I}\langle V^{\rm T}x_u, V^{\rm T}x_t\rangle \tag{8}
+\sum_{u\in U}\sum_{t\in I}\langle \mathbf{V}^{\rm T}x_u, \mathbf{V}^{\rm T}x_t\rangle \tag{8}
 $$
 
 $$
-\langle \sum_{u\in U} V^{\rm T}x_u, \sum_{t\in I}V^{\rm T}x_t \rangle \tag{9}
+\langle \sum_{u\in U} \mathbf{V}^{\rm T}x_u, \sum_{t\in I}\mathbf{V}^{\rm T}x_t \rangle \tag{9}
 $$
 
-Therefore, the FM mechansim can be viewed as a ***table lookup*** operation. The table is the second-order feature interaction matrix $V$. The lookup key is the user and item embeddings. The model is simplified to a shallow network and the model just calculates the multiplication of the user and item embeddings.
+Therefore, the FM mechansim can be viewed as a **table lookup** operation. The table is the second-order feature interaction matrix $V$. The lookup key is the user and item embeddings. To be more specific, recall the formula $(7)$, the ${\rm MatchScore}_{FM}$ can be viewed as the dot product of the user and item embeddings:
 
-For recall (matching) tasks, after training the model, we can get the user and item embeddings. Then, we employ the approximate nearest neighbor (ANN) algorithm to find the nearest neighbors of the user and item embeddings. Using the pre-trained embeddings, we can conduct U2I and I2I recommendation tasks. Moreover, the embeddings can also be used for other more complex tasks as input features.
+$$
+{\rm MatchScore}_{FM} = \mathbf{E}_u \cdot \mathbf{E}_t \tag{10}
+$$
+
+where
+
+$$
+\begin{align*}
+\mathbf{E}_u &= {\rm concat}(1, \sum_{u\in U}\mathbf{v}_u) \\
+\mathbf{E}_t &= {\rm concat}(\mathbf{W}_t + \mathbf{V}_{tt}, \sum_{t\in I}\mathbf{v}_t)
+\end{align*}
+$$
+
+where $\mathbf{E}_u$ represents user embedding that is calculated online, and $\mathbf{E}_t$ represents item emebedding that is calculated offline and stored in the sever to build the index. Note that $$\mathbf{W}_t + \mathbf{V}_{tt}$$ plays the significant role when $$\mathbf{V}_{ut}$$ cannot provide enough information, especially for new users.
+
+The model is simplified to a shallow network and the model just calculates the multiplication of the user and item embeddings.
+
+For recall (matching) tasks, after training the model, we can get the user and item embeddings. Then, we employ the **approximate nearest neighbor (ANN) algorithm** to find the nearest neighbors of the user and item embeddings. Using the pre-trained embeddings, we can conduct U2I and I2I recommendation tasks. Moreover, the embeddings can also be used for other more complex tasks as input features.
 
 ----
 [^1]: [FM, 2010](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5694074)
-[^2]: [FM, FTRL, Softmax](http://castellanzhang.github.io/2016/10/16/fm_ftrl_softmax/).
+
+[^2]: [FM, FTRL, Softmax](http://castellanzhang.github.io/2016/10/16/fm_ftrl_softmax/)
+
+[^3]: [FTRL](https://research.google.com/pubs/archive/41159.pdf)
