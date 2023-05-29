@@ -5,16 +5,17 @@ parent: Recommendation System
 nav_order: 3
 ---
 # De Position Bias
-## Background
-Ideally, we want users' click behavior to reflect their actual preferences. However, in reality, their click behavior is often influenced by various factors such as position, freshness, and popularity. These factors introduce bias, causing users' click behavior to deviate from their actual preferences. For instance, if a user doesn't click on an item, it doesn't necessarily mean that they don't like it. Similarly, if a user clicks on an item, it doesn't necessarily mean that they like it. Bias reduces the accuracy of recommendation systems, so debiasing the data is necessary to improve system performance.
 
-In this paper, I will introduce the methods I used to debias position bias while working at ByteDance. Debiasing is always a challenging problem in the industry, as it is difficult to evaluate the performance of debiasing algorithms.
+## Background
+Ideally, we want users' click behavior to reflect their actual preferences. However, in reality, their click behavior is often influenced by various factors such as position, freshness, and popularity. These factors introduce bias, causing users' click behavior to deviate from their actual preferences. For instance, if a user doesn't click on an item, it doesn't necessarily mean that they don't like it. Similarly, if a user clicks on an item, it doesn't necessarily mean that they like it. Bias reduces the accuracy of recommendation systems, so debiasing data is necessary to improve system performance.
+
+In this article, I will introduce the methods I used to debias position bias while working at ByteDance. Debiasing is always a challenging problem in the industry, as it is difficult to evaluate the performance of debiasing algorithms.
 
 ### Position Bias
 Position bias is the most common bias in recommendation systems. It occurs because users are more likely to click on items that are displayed in a prominent position. Our investigation reveals that even when two items have the same ranking score, the item in the first position is more likely to be clicked. Therefore, the data we collect from the real world is biased. However, we often fail to account for this bias when training our model, resulting in a model that is biased towards the first position. To address this issue, we need to introduce a debiasing mechanism into our model.
 
 ## Debiasing Mechanism
-There are three ways to introduce a debiasing mechanism into our model. The first is to use item position in each session as a feature when training the model. Since we don't know the actual position of the item when serving, we set every item's position to the same value, e.g. 0. Then, we use our model to predict scores with this dummy position.
+There are three main ways to introduce a debiasing mechanism into our model. The first is to use item position in each session as a feature when training the model. Since we don't know the actual position of the item when serving, we set every item's position to the same value, e.g. 0. Then, we use our model to predict scores with this dummy position.
 
 The second approach is to model the position bias separately and only use the ranking model when serving. This method avoids the problem of the dummy position explained below.
 
@@ -53,9 +54,9 @@ where $\rm DNN$ is the ranking model, $u$ is the user's features, $t$ is the can
 (Todo: the difference between relative position and absolute position).
 
 ## Conclusion
-The experiment was conducted on the Douyin (TikTok) live broadcast. This model resulted in an average increase of 0.2% in viewing time and a 0.18% increase in CTR UAUC.
+The experiment was conducted on the Douyin (TikTok) Live. This model resulted in **an average increase of 0.2% in viewing time and a 0.18% increase in CTR UAUC**.
 
-Debiasing is not without its challenges. Firstly, our understanding of bias may be flawed. Secondly, our debiasing approach cannot guarantee complete removal of bias; in fact, it may even introduce new biases. These points should be considered when designing debiasing algorithms from the outset.
+Debiasing always comes with challenges. Firstly, our understanding of bias may be flawed. Secondly, our debiasing approach cannot guarantee complete removal of bias; in fact, it may even introduce new biases. These points should be considered when designing debiasing algorithms from the outset.
 
 Earning short-term indicators is certainly challenging, but it can greatly benefit the long-term health of the recommendation system's ecology.
 

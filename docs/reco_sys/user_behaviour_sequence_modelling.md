@@ -29,7 +29,7 @@ In 2017, Attentional Factorization Machines (AFM) introduced the attention mecha
 
 <figure>
     <img src="../../assets/images/DIN.png">
-    <figcaption>Figure1: <i>Deep Interest Network (DIN)</i></figcaption>
+    <figcaption>Figure 1: <i>Deep Interest Network (DIN)</i></figcaption>
 </figure>
 
 One limitation observed in traditional CTR prediction models like FM (Factorization Machines), CF (Collaborative Filtering), and the YouTube model is their tendency to map the sequence of a user's historical behavior to a fixed-length vector regardless of the candidate items. This approach significantly restricts the expressiveness of the features. To address this issue, the DIN will evaluate the similarity between a user historical behavior sequence with different candidate objects via attention mechanism, and then it will extract various interest features in an adaptive manner.
@@ -38,7 +38,7 @@ One limitation observed in traditional CTR prediction models like FM (Factorizat
 
 <figure>
     <img src="../../assets/images/DIEN.png">
-    <figcaption>Figure2: <i>Deep Interest Evolution Network (DIEN)</i></figcaption>
+    <figcaption>Figure 2: <i>Deep Interest Evolution Network (DIEN)</i></figcaption>
 </figure>
 
 After DIN was proposed, Zhou et al. released its upgraded version, **Deep Interest Evolution Network (DIEN)**, in 2019. The innovation lies in the use of a sequence model **AUGRU (GRU with attentional update gate)** to simulate the evolution of users' interests. Both AFM and DIN simply score the relevance of different actions, such that the scores are time-independent, or sequence-independent. However, models will be less effective at learning about time and trends if sequential information is removed. Instead of recommending for "next behavior," the recommendation model would continue to be based on an analysis of all the user's past behavior. This is the flaw that was emphasised as having to be fixed in the earlier section.
@@ -48,7 +48,7 @@ To be specific, as shown in figure, the key components of the model are the **in
 
 <figure>
     <img src="../../assets/images/SIM.png">
-    <figcaption>Figure3: <i>Search-based User Interest Modelling (SIM)</i></figcaption>
+    <figcaption>Figure 3: <i>Search-based User Interest Modelling (SIM)</i></figcaption>
 </figure>
 
 Industry experts are gradually coming to the consensus that **the more detailed (long) the user behavior data, the more useful it is for model prediction**. Because if the modeled sequence is too short, it will inevitably contain some impromptu behaviors of the user, which can be regarded as a kind of **noise**. In addition, too short behavior sequences cannot reflect some **periodic behaviors** of users, such as weekly and monthly habitual purchases.
