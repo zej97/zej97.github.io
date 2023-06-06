@@ -2,6 +2,7 @@
 layout: default
 title: User Behavior Sequence Modeling
 parent: Recommendation System
+has_children: true
 nav_order: 4
 ---
 # Ranking Models: User Behavior Sequence Modeling
@@ -51,15 +52,51 @@ To be specific, as shown in figure, the key components of the model are the **in
     <figcaption>Figure 3: <i>Search-based User Interest Modelling (SIM)</i></figcaption>
 </figure>
 
-Industry experts are gradually coming to the consensus that **the more detailed (long) the user behavior data, the more useful it is for model prediction**. Because if the modeled sequence is too short, it will inevitably contain some impromptu behaviors of the user, which can be regarded as a kind of **noise**. In addition, too short behavior sequences cannot reflect some **periodic behaviors** of users, such as weekly and monthly habitual purchases.
+Industry experts are gradually coming to the consensus that **the more detailed (longer) the user behavior data, the more useful it is for model prediction**. Because if the modeled sequence is too short, it will inevitably contain some impromptu behaviors of the user, which can be regarded as a kind of **noise**. In addition, too short behavior sequences cannot reflect some **periodic behaviors** of users, such as weekly and monthly habitual purchases.
 
 Notwithstanding, longer user historical behavior sequences provide more information for user interest modeling, but they place a significant load on an online serving system's latency and storage. Consequently, the majority of proposed techniques can only model sequential user behavior data with length scaling up to hundreds. To tackle this problem, Pi et al. designed a new modeling paradigm called **search-based user interest modeling (SIM)** based on DIEN in 2020. It extends the maximum length for modeling user behavior sequences up to $54,000$, which is significant increase over Multi-channel user Interest Memory Network (MIMN), the released state-of-the-art industry solution for this work in 2020.
 
-To solve the performance problem caused by very long user behavior sequences, SIM divides the search of the full sequence of candidate items into two phases, namely **GSU (General Search Unit)** and **ESU (Exact Search Unit)**. 
+To solve the performance problem caused by very long user behavior sequences, SIM divides the search of the full sequence of candidate items into two cascaded search units, namely **GSU (General Search Unit)** and **ESU (Exact Search Unit)**. 
 
 Pi et al. indicate that **only some user behaviors, given a certain candidate item, are valuable.** The final user decision is closely tied to this portion of the user's past actions. In the first stage, as shown in the Figure 3, GSU picks out these relative user behaviors to reduce the number of user historical behaviors that need to be processed. In the second stage, ESU uses multi-head attention to extract users' varied interests. After that, it adopts the conventional Embedding & MLP paradigm, which combines with other features such as user profiles and context features as inputs.
 
-These three models from Alibaba are important in terms of application and serve as an example of the work that has been done recently in the industry. From DIN to SIM, Alibaba has made solid and practical breakthroughs in each case, building on its previous model. The technical evolution of Alibaba's recommendation model is very informative. At present, companies like ByteDance and Kwai have developed their recommendation models based on the SIM, and have achieved significant success. However, given the large data scale in the industry, soft search requires a higher level of computing resources, which may be unacceptably expensive.
+These three models from Alibaba are important in terms of application and serve as an example of the work that has been done recently in the industry. From DIN to SIM, Alibaba has made solid and practical breakthroughs in each case, building on its previous model. The technical evolution of Alibaba's recommendation model is very informative. The number of citations of SIM papers is only 93, but it has considerable influence in the industry. At present, companies like ByteDance and Kwai have developed their recommendation models based on the SIM, and have achieved significant success. However, given the large data scale in the industry, soft search requires a higher level of computing resources, which may be unacceptably expensive.
+
+## More Details about SIM
+
+### General Search Unit (GSU)
+
+> **In the first stage**, we utilize General Search Unit (GSU) to seek top-K relevant sub behavior from original long-term behavior sequences with sub-linear time complexity.
+
+GSU not only shortens the length of raw sequential behaviors but also effectively filters out the substantial noise present in the long-term user behavior sequence.
+
+There are two efficient search methods: hard-search and soft-search. 
+
+**Notations**:
+
+1. $\mathbf{B} = [\mathbf{b}_1; \cdots, \mathbf{b}_T]$, where $\mathbf{b}_i$ is the $i$-th user behavior and $T$ is the length of the user behaviors.
+
+2. $r_i$ is the relevant score for each behavior $\mathbf{b}_i$ w.r.t. the candidate item and then select the Top-K relevant behaviors.
+
+    $$
+    r_i = 
+    \begin{cases}
+    {\rm Sign}(C_i = C_a)\quad &\text{hard-search}\\
+    (W_b \mathbf{e}_i)\odot(W_a\mathbf{e}_a)\quad &\text{soft-search}
+    \end{cases}
+    $$
+
+    where $C_a$ and $C_i$ denote the categories of target item and the $i$-th behavior, respectively. $\mathbf{e}_i$ and $\mathbf{e}_a$ are the embedding vectors of the $i$-th behavior and the target item, respectively. $W_b$ and $W_a$ are the trainable parameters.
+
+3. $\mathbf{B}^{\ast}$ is the Top-K relevant sub-behaviors.
+
+**Hard-search**: The hard-search method is a straightforward and simple approach that is highly suitable for online serving. It involves selecting behaviors with the same category as the candidate item. It is unreasonable to search over the whole sequence of user behaviors for every candidate item. To accelerate the search process, they design a **User Behavior Tree (UBT)**. The UBT is a *Key-Key-Value* data structure: the outer hashmap's key is user id, the inner hashmap's keys are category ids and the last values are the specific behavior items that belong to the category. The UBT is constructed offline and then loaded into the memory of the online serving system. Instead of searching through the entire sequence of user behaviors, the UBT enables rapid retrieval of relevant behaviors using a 2-layer hash table lookup.
+
+**Soft-search**: 
+Similar to the **matching stage** of a recommender system, the soft-search technique leverages ANN algorithms to identify the Top-K relevant behaviors based on their corresponding relevance scores. In the paper, they pretrain a naive CTR prediction model to obtain the item embeddings. Soft-search and ESU share the same embedding parameters which are trained simultaneously. There are numerous approaches to obtaining item embeddings. One such method is utilizing the FM (Factorization Machine) technique mentioned in earlier article to pretrain general item embeddings. The item embeddings are then stored in an embedding search engine like Faiss to build index for later use. We can choose the best embedding generation method based on the A/B test results. It is noticable that the distribution of long-term user behavior sequences is different from that of short-term user behavior sequences. Therefore, the pre-trained short-term item embeddings may not be suitable for long-term user behavior sequences modeling. To tackle this challenge, it is crucial to pre-train item embeddings using long-term user behavior sequences. However, if these sequences are excessively long, it may hinder effective training. In such cases, one potential solution is to randomly sample the long-term user behavior sequences to align their distribution and ensure more efficient training.
+
+### Exact Search Unit (ESU)
+After obtaining the Top-K relevant sub-behaviors sequence $\mathbf{B}^{\ast}$, the next step is to model the user's varied interests. The ESU is designed to capture the user's varied interests from the Top-K relevant sub-behaviors sequence $\mathbf{B}^{\ast}$ through **multi-head attention**. To mitigate the drawback that attention mechanism loses temporal information, they introduce the time intervals $\mathbf{D} = [\Delta_1; \cdots; \Delta_K]$ between target item and selected $K$ user behaviors.The $\mathbf{B}^\ast$ and $\mathbf{D}$ are encoded as embedding vectors $\mathbf{E}^\ast = [\mathbf{e}_1^\ast; \cdots; \mathbf{e}_K^\ast]$ and $\mathbf{E}^t = [\mathbf{e}_1^t; \cdots; \mathbf{e}_K^t]$, respectively. Then they concatenate $\mathbf{e}_j^\ast$ and $\mathbf{e}_j^t$ to obtain the final input $\mathbf{z}_j = {\rm concat}(\mathbf{e}_j^\ast, \mathbf{e}_j^t)$ for the $j$-th behavior. The ESU concates the output of different head of multi-head attention and then feed into the MLP to predict the CTR.
 
 ---
 
