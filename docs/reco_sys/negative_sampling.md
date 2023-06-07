@@ -13,7 +13,7 @@ According to Facebook's research[^1], **non-click impressions** cannot be used a
 - Non-click impressions are more likely to be items that the user is not interested in compared to random sampling.
 - The scale of non-click impressions is much smaller, which makes them faster to process.
 
-In some sense, using non-click impression samples as negative samples can improve offline training performance. However, in the online stage, the model recall is significantly worse. **The key reason for this is that the data distribution of offline training does not align with the online stage.** The offline data distribution should always match the online data distribution.
+In some sense, using non-click impression samples as negative samples can improve **offline** training performance. However, in the online stage, the model recall is significantly worse. **The key reason for this is that the data distribution of offline training does not align with the online stage.** The offline data distribution should always match the online data distribution.
 
 Non-click impression samples are the ***hard cases*** that successfully pass through the recall and cascade stages and ultimately get displayed to the user. Therefore, they might match the query in one or multiple factors, while the majority of items in the online environment do not match the query at all. Having all negatives be hard negatives will change the representativeness of the training data for the real retrieval task, which might impose non-trivial bias to the learned embeddings.[^1]
 
