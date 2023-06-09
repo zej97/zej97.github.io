@@ -4,7 +4,7 @@ layout: home
 nav_exclude: false
 nav_order: 1
 ---
-<!-- <img style="float: left; border-radius: 50%; margin:1px 24px" src="./assets/images/ze-jin.jpg"  width="25%"> -->
+
 <div class="staffer">
    <a> 
     <img style="float: left; border-radius: 50%; height: 120px; margin-right: 1rem;" class="staffer-image" src="./assets/images/ze-jin.jpg" alt=""> 
@@ -13,7 +13,7 @@ nav_order: 1
       <h3 style="margin: 0.5rem; color: #7253ed" class="staffer-name"> 
         Ze Jin
       </h3>
-      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">Postgraduate Student at the University of Edinburgh</p>
+      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">MSc at <a href="https://www.ed.ac.uk/informatics">the School of Informatics, UoE</a></p>
       <p style="color: #959396; margin: 0.25rem" class="staffer-meta">LinkedIn: <a href="https://www.linkedin.com/in/ze-jin-7219531b2/">@Ze Jin</a></p>
       <p style="color: #959396; margin: 0.25rem" class="staffer-meta">Email: zejin.97@gmail.com</p>
       <hr/>
