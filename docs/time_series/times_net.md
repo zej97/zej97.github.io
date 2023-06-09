@@ -20,7 +20,7 @@ TimesNet is a general framework for time series analysis, including time series 
 
 Intuitively, Fast Fourier Transform (FFT) is a natural choice for decoupling different periods from a time series. 
 
-Assume the time series is $\mathbf{X}_{\rm 1D} = \lbrace \mathbf{x}_1, \cdots, \mathbf{x}_T\rbrace$, where $T$ denotes the length of the time series. Each element $\mathbf{x}_t$ records $C$ variates. Therefore, the original $\rm 1D$ organization is $\mathbf{X}_{\rm 1D} \in \mathbb{R}^{T\times C}$. 
+Assume the time series is $$\mathbf{X}_{\rm 1D} = \lbrace \mathbf{x}_1, \cdots, \mathbf{x}_T\rbrace$$, where $$T$$ denotes the length of the time series. Each element $$\mathbf{x}_t$$ records $$C$$ variates. Therefore, the original $$\rm 1D$$ organization is $$\mathbf{X}_{\rm 1D} \in \mathbb{R}^{T\times C}$$. Then our first step is to extract the periodical functions from the time series:
 
 $$
 \begin{align*}
