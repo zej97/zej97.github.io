@@ -6,11 +6,9 @@ nav_order: 1
 ---
 # TimesNet
 
-[THU 2023: TIMESNET: TEMPORAL 2D-VARIATION MODELING FOR GENERAL TIME SERIES ANALYSIS](https://arxiv.org/pdf/2210.02186.pdf)
-
 ## Introduction
 
-The latest research result from the Tsinghua University, ***TimesNet***, is a temporal 2D-variation modeling method for general time series analysis. I realized this research matches my thought precisely at my first glance. 
+The latest research result from the *BNRist, Tsinghua University 2023*, [***TimesNet***](https://arxiv.org/pdf/2210.02186.pdf), is a temporal 2D-variation modeling method for general time series analysis. I realized this research matches my thought precisely at my first glance. 
 
 From my perspective, it is essential to decouple different periods within a time series. It is widely recognized that even if some simple periodic functions can be integrated into a chaotic waveform. Therefore, decoupling different periods from a time series can substantially reduce the complexity for model to process. By doing so, the decoupled time series gains a clearer physical meaning, making it more interpretable not only for humans but also for algorithms. 
 
