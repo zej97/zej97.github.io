@@ -8,9 +8,9 @@ nav_order: 1
 
 ## Introduction
 
-The latest research result from the *BNRist, Tsinghua University 2023*, [***TimesNet***](https://arxiv.org/pdf/2210.02186.pdf), is a temporal 2D-variation modeling method for general time series analysis. I realized this research matches my thought precisely at my first glance. 
+The latest research result from the *BNRist, Tsinghua University 2023*, [***TimesNet***](https://arxiv.org/pdf/2210.02186.pdf), is a temporal 2D-variation modeling method for general time series analysis. At first glance, I immediately realized that this research perfectly aligns with my thoughts.
 
-From my perspective, it is essential to decouple different periods within a time series. It is widely recognized that even if some simple periodic functions can be integrated into a chaotic waveform. Therefore, decoupling different periods from a time series can substantially reduce the complexity for model to process. By doing so, the decoupled time series gains a clearer physical meaning, making it more interpretable not only for humans but also for algorithms. 
+From my perspective, it is essential to decouple different periods within a time series. It is widely recognized that even if simple periodic functions can be integrated into a chaotic waveform. Hence, the act of decoupling different periods from a time series can significantly reduce the complexity for models to handle. In addition, FFT helps us capture the variations within and between periods. This process enables the decoupled time series to possess a more distinct physical interpretation, enhancing its interpretability for both humans and algorithms.
 
 <figure>
     <img src="../../assets/images/2d-variation_of_time_series.png">
@@ -102,6 +102,4 @@ $$
 \end{align*}
 $$
 
-> Since the variations within and between periods are already involved in multiple highly-structured 2D tensors, TimesBlock can fully capture multi-scale temporal 2D-variations simultaneously. Thus, TimesNet can achieve a more effective representation learning than directly from 1D time series.
-
-All these advantages benefit from FFT.
+Given that the variations within and between periods are already encompassed in multiple highly-structured 2D tensors, the TimesBlock module is capable of capturing multi-scale temporal 2D variations simultaneously. As a result, TimesNet can accomplish more effective representation learning compared to learning directly from 1D time series.
