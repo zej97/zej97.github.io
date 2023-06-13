@@ -20,7 +20,7 @@ nav_order: 1
    </div>
 </div>
 
-Welcome to the my blog! Here you will find a collection of articles about recommendation systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.
+Welcome to my blog! Here you will find a collection of articles about recommendation systems. The articles are written by [me](https://www.linkedin.com/in/ze-jin-7219531b2/) and are based on my experience in the industry. Furthermore, I will share some knowledge that I have acquired, such as game theory and LLM. I hope you will find them useful.
 
 In 2020, I graduated from [Beihang University](https://ev.buaa.edu.cn/) with a Bachelor of Engineering degree in Computer Science. Throughout my undergraduate studies, I immersed myself in a variety of computer science subjects, including *operation systems*, *compilers*, *computer organization and architecture*, *software engineering*, *computer networking*, etc. By designing and developing a single-cycle CPU, a C0 compiler, and complex multi-threaded software systems, I acquired practical skills and knowledge that helped me gain a holistic understanding of computer science.
 
