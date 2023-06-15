@@ -103,3 +103,5 @@ $$
 $$
 
 Given that the variations within and between periods are already encompassed in multiple highly-structured 2D tensors, the TimesBlock module is capable of capturing multi-scale temporal 2D variations simultaneously. As a result, TimesNet can accomplish more effective representation learning compared to learning directly from 1D time series.
+
+In this particular scenario, FFT emerges as a pivotal technique for feature engineering. Nevertheless, feature engineering tends to be overlooked by many individuals who believe that developing more intricate models can simulate the process of mapping raw data to our desired targets.
