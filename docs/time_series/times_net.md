@@ -10,7 +10,7 @@ nav_order: 1
 
 The latest research result from the *BNRist, Tsinghua University 2023*, [***TimesNet***](https://arxiv.org/pdf/2210.02186.pdf), is a temporal 2D-variation modeling method for general time series analysis. At first glance, I immediately realized that this research perfectly aligns with my thoughts.
 
-From my perspective, it is essential to decouple different periods within a time series. It is widely recognized that even if simple periodic functions can be integrated into a chaotic waveform. Hence, the act of decoupling different periods from a time series can significantly reduce the complexity for models to handle. In addition, FFT helps us capture the variations within and between periods. This process enables the decoupled time series to possess a more distinct physical interpretation, enhancing its interpretability for both humans and algorithms.
+From my perspective, it is essential to decouple different periods within a time series. It is widely recognized that even if simple periodic functions can be integrated into an extremely chaotic waveform. Hence, the act of decoupling different periods from a time series can significantly reduce the complexity for models to handle. In addition, FFT helps us capture the variations within and between periods. This process enables the decoupled time series to possess a more distinct physical interpretation, enhancing its interpretability for both humans and algorithms.
 
 <figure>
     <img src="../../assets/images/2d-variation_of_time_series.png">
@@ -25,7 +25,7 @@ TimesNet is a general framework for time series analysis, including time series 
 
 Intuitively, Fast Fourier Transform (FFT) is a natural choice for decoupling different periods from a time series. 
 
-Assume the time series is $$\mathbf{X}_{\rm 1D} = \lbrace \mathbf{x}_1, \cdots, \mathbf{x}_T\rbrace$$, where $$T$$ denotes the length of the time series. Each element $$\mathbf{x}_t$$ records $$C$$ variates. Therefore, the original $1D$ organization is $$\mathbf{X}_{\rm 1D} \in \mathbb{R}^{T\times C}$$. Then our first step is to extract the periodical functions from the time series:
+Assume the time series is $$\mathbf{X}_{\rm 1D} = \lbrace \mathbf{x}_1, \cdots, \mathbf{x}_T\rbrace$$, where $$T$$ denotes the length of the time series. Each element $$\mathbf{x}_t$$ records $$C$$ variates. Therefore, the original 1D organization is $$\mathbf{X}_{\rm 1D} \in \mathbb{R}^{T\times C}$$. Then our first step is to extract the periodical functions from the time series:
 
 $$
 \begin{align*}
@@ -37,7 +37,7 @@ $$
 
 Here, 
 
-1. $\rm FFT(\cdot)$ denote the Fast Fourier Transform, and $\rm Amp(\cdot)$ denotes the amplitude of different periodical functions. 
+1. $\rm FFT(\cdot)$ denotes the Fast Fourier Transform, and $\rm Amp(\cdot)$ denotes the amplitude of different periodical functions. 
 2. $\mathbf{A} \in \mathbb{R}^{T}$ denotes the amplitude of each frequency, which is average from $C$ dimensions by $\rm Avg(\cdot)$. 
 3. $\rm argTopk(\cdot)$ represents that we only select the frequencies of the top $k$ amplitudes in $\mathbf{A}$ to avoid the noises brought by meaningless high frequencies. 
 4. $f_i$ denotes the frequency of the $i$-th periodical function (only consdier the frequencies withinn $\lbrace 1, \cdots, [\frac{T}{2}]\rbrace$ due to the conjugacy of frequency domain). $p_i$ denotes the period length of the $i$-th periodical function.
