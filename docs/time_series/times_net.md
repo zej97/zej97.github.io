@@ -80,7 +80,7 @@ $$
 \mathbf{X}^l_{\rm 1D} = {\rm TimesBlock}(\mathbf{X}^{l-1}_{\rm 1D}) + \mathbf{X}^{l-1}_{\rm 1D} \tag{4}
 $$
 
-TimesBlock utilizes a parameter-efficient inception block as $\rm Inception(\cdot)$ to extract the high-dimensional features from the 2D tensors. In addition to inception block, other computer vision backbones such as ResNet, ResNeXt, ConvNeXt and attention-based models can also be used as the backbone of TimesBlock, **making the time series analysis take advantages of the development of computer vison community.**. The process of capturing temporal 2D-variations is formalized as follows:
+TimesBlock utilizes a parameter-efficient inception block as $\rm Inception(\cdot)$ to extract the high-dimensional features from the 2D tensors. In addition to inception block, other computer vision backbones such as ResNet, ResNeXt, ConvNeXt and attention-based models can also be used as the backbone of TimesBlock, **making the time series analysis take advantages of the development of computer vison community**. The process of capturing temporal 2D-variations is formalized as follows:
 
 $$
 \begin{align*}
