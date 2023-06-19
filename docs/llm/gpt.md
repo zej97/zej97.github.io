@@ -91,6 +91,6 @@ For example,
 2. **Similarity**: There is a semantic difference between `Text 1` being similar to `Text 2` and `Text 2` being similar to `Text 1`. Therefore, we need to construct two new seqences, one is `[Start] Text 1 [Delim] Text 2 [Extract]`, the other is `[Start] Text 2 [Delim] Text 1 [Extract]`. Then we sum (or concate) the representations of the two sequences and use a linear layer to calculate the logits. 
 3. **Multiple Choice**: We need to construct a new sequence for each choice: `[Start] Question [Delim] Choice i [Extract]`. Each new sequence for each choice is fed into the pre-trained Transformer to obtain the representation, which is then fed into a linear layer to calculate the logits. At the end, use a softmax layer to calculate the probability of each choice.
 
-## Zero-shot Behavior
+Only after several months, Google introduced its own language model called BERT, which proved to be a significant development. In comparison to GPT, BERT-large boasts a substantially higher number of parameters and achieves superior performance across various NLP tasks. Even BERT-base, which has a similar scale of parameters as GPT, exhibits better performance than GPT in most cases. This underscores the effectiveness of BERT's architecture and its ability to excel in a wide range of NLP applications. Indeed, BERT's introduction had a significant impact and garnered considerable attention within the field of NLP. Its success demonstrated the potential and promise of language models based on the **Transformer encoder** architecture. 
 
-TODO
+The "arms race" between Google and OpenAI kicked off. A few months later, GPT-2 debuted.
