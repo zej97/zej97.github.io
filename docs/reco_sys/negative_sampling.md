@@ -6,6 +6,9 @@ nav_order: 2
 ---
 
 # Negative Sampling
+
+## Introduction
+
 In the ranking stage, it is common to utilize various sophisticated models, while the recall model is typically kept simple in comparison. This is primarily due to the significantly smaller number of samples processed in the ranking stage compared to the recall stage. Consequently, the selection of appropriate samples during the recall phase becomes crucial, and one key issue in the recall stage is the selection of negative samples.
 
 According to Facebook's research[^1], **non-click impressions** cannot be used as negative samples. A model trained using non-click impressions as negatives has significantly worse model recall compared to using random negatives, with an absolute regression in recall of 55% for the people embedding model. This finding contradicts the ideas of some colleagues, since non-click impressions have several straightforward properties that could be quite useful:

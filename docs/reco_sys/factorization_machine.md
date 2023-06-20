@@ -5,7 +5,8 @@ parent: Recommendation System
 nav_order: 1
 ---
 # Factorization Machine is All You Need (maybe)
-## Backgorund
+
+## Introduction
 The polynomial model is widely regarded as one of the most intuitive models for incorporating feature combinations. It allows for the explicit modeling of interactions between features by including polynomial terms in the model. By considering feature combinations of different degrees, the polynomial model captures non-linear relationships and can provide a more expressive representation of the data. 
 
 The combination of features $x_i$ and $x_j$ is represented by $x_ix_j$, and the combination feature is only meaningful when both are nonzero. From a comparative perspective, this article only discusses the second-order polynomial model. The expression of the model obtained by adding second-order feature combinations to the traditional linear model is as follows:
@@ -45,7 +46,7 @@ $$
 \langle \mathbf{v}_i, \mathbf{v}_j \rangle = \sum_{f=1}^k v_{i,f}v_{j,f} \tag{3}
 $$
 
-Does this look familiar? Yes, that is what embedding is. The nature of FM is to embed features. The latent factor $\mathbf{v}_i$ is the embedding of feature $x_i$. The inner product $\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ is the similarity between the embeddings of $x_i$ and $x_j$. Note that $\mathbf{v}_i$ and $\mathbf{v}_j$ are in the same matrix $\mathbf{V}$, even if they are different type of feautres (e.g. users or items).
+Does this look familiar? Yes, that is what embedding is. The nature of FM is to embed features. The latent factor $\mathbf{v}_i$ is the embedding of feature $x_i$. The inner product $\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ is the similarity between the embeddings of $x_i$ and $x_j$. Note that $\mathbf{v}_i$ and $\mathbf{v}_j$ are in the same matrix $\mathbf{V}$, even if they are different type of feautres (e.g., users or items).
 
 But why does embedding help when there are numerous sparse features? And why people say that FM has strong generalization ability? The answer is that if two features $x_i, x_j$ have never appeared together in the training set, the embedding $\mathbf{v}_i$ ($\mathbf{v}_j$) corresponding to $x_i$ ($x_j$) are still learned if $x_i$ appears with other features. Therefore, the inner product $\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ can still be calculated when inferencing even if $x_i$ and $x_j$ have never appeared together in the training set.
 

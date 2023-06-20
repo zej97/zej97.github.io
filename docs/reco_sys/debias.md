@@ -6,7 +6,7 @@ nav_order: 3
 ---
 # De Position Bias
 
-## Background
+## Introduction
 Ideally, we want users' click behavior to reflect their actual preferences. However, in reality, their click behavior is often influenced by various factors such as position, freshness, and popularity. These factors introduce bias, causing users' click behavior to deviate from their actual preferences. For instance, if a user doesn't click on an item, it doesn't necessarily mean that they don't like it. Similarly, if a user clicks on an item, it doesn't necessarily mean that they like it. Bias reduces the accuracy of recommendation systems, so debiasing data is necessary to improve system performance.
 
 In this article, I will introduce the methods I used to debias position bias while working at ByteDance. Debiasing is always a challenging problem in the industry, as it is difficult to evaluate the performance of debiasing algorithms.
