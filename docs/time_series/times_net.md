@@ -42,7 +42,7 @@ Here,
 3. $\rm argTopk(\cdot)$ represents that we only select the frequencies of the top $k$ amplitudes in $\mathbf{A}$ to avoid the noises brought by meaningless high frequencies. 
 4. $f_i$ denotes the frequency of the $i$-th periodical function (only consdier the frequencies withinn $\lbrace 1, \cdots, [\frac{T}{2}]\rbrace$ due to the conjugacy of frequency domain). $p_i$ denotes the period length of the $i$-th periodical function.
 
-Summarize Equation $1$ as follows:
+Summarize Equation $(1)$ as follows:
 
 $$
 \mathbf{A}, \lbrace f_1, \cdots, f_k\rbrace, \lbrace p_1, \cdots, p_k\rbrace = {\rm Period}(\mathbf{X}_{\rm 1D}) \tag{2}

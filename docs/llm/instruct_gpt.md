@@ -1,9 +1,9 @@
----
+<!-- ---
 layout: default
 title: "InstructGPT"
 parent: Large Language Models
 nav_order: 4
----
+--- -->
 
 # InstructGPT: Training language models to follow instructions with human feedback
 
