@@ -1,33 +1,17 @@
 {% assign math = page.math | default: layout.math | default: site.math %}
 
 {% case math %}
-  {% when "katex" %}
-    {% include katex.html %}
-  {% when "mathjax" %}
-    {% include mathjax.html %}
+{% when "katex" %}
+{% include katex.html %}
+{% when "mathjax" %}
+{% include mathjax.html %}
 {% endcase %}
 
-<!-- <button class="btn js-toggle-dark-mode">Light Mode</button> -->
-
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D76HN0NQCW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-D76HN0NQCW');
-</script>
-
-<script> 
-  const toggleDarkMode = document.querySelector('.js-toggle-dark-mode'); 
-  jtd.addEvent(toggleDarkMode, 'click', function(){ 
-    if (jtd.getTheme() === 'dark') { 
-      jtd.setTheme('light'); 
-      toggleDarkMode.textContent = 'Dark Mode'; 
-    } 
-    else { 
-      jtd.setTheme('dark'); toggleDarkMode.textContent = 'Light Mode'; 
-    } 
-  }); 
 </script>

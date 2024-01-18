@@ -7,15 +7,15 @@ nav_order: 1
 
 <div class="staffer">
    <a> 
-    <img style="float: left; border-radius: 50%; height: 120px; margin-right: 1rem;" class="staffer-image" src="./assets/images/ze-jin.jpg" alt=""> 
+    <img style="float: left; border-radius: 50%; height: 120px; margin-right: 1rem;" class="staffer-image" src="../assets/images/ze-jin.jpg" alt=""> 
    </a>
    <div>
-      <h3 style="margin: 0.5rem; color: #7253ed" class="staffer-name"> 
+      <h3 style="margin: 0.5rem;" class="staffer-name"> 
         Ze Jin
       </h3>
-      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">MSc at <a href="https://www.ed.ac.uk/informatics">the School of Informatics, UoE</a></p>
-      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">LinkedIn: <a href="https://www.linkedin.com/in/ze-jin-7219531b2/">@Ze Jin</a></p>
-      <p style="color: #959396; margin: 0.25rem" class="staffer-meta">Email: zejin.97@gmail.com</p>
+      <p style="margin: 0.25rem" class="staffer-meta text-grey-dk-000">MSc at <a href="https://www.ed.ac.uk/informatics">the School of Informatics, UoE</a></p>
+      <p style="margin: 0.25rem" class="staffer-meta text-grey-dk-000">LinkedIn: <a href="https://www.linkedin.com/in/ze-jin-7219531b2/">@Ze Jin</a></p>
+      <p style="margin: 0.25rem" class="staffer-meta text-grey-dk-000">Email: <a href="mailto: zejin.97@gmail.com">zejin.97@gmail.com</a></p>
       <hr/>
    </div>
 </div>
@@ -33,3 +33,5 @@ In 2021, I joined [ByteDance](https://www.bytedance.com/en/)'s recommendation de
 In 2022, driven by an interest in quant, I am currently pursuing my master's degree in financial computing at [the School of Informatics, University of Edinburgh](https://www.ed.ac.uk/informatics).
 
 I welcome any opportunity to engage in discussions related to the topics I address in my blog. Sharing knowledge and exchanging ideas with others is a vital part of my learning process. Therefore, I encourage you to share your thoughts and opinions with me, as I am always eager to expand my understanding and learn from others.
+
+<!-- <p style="font-family: 'Times New Roman'; font-size: 20px">You appear, have a chance to blaze in the sky, then you disappear.</p> -->
